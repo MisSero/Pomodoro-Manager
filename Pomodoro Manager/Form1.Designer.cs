@@ -47,6 +47,7 @@
             // 
             // FormTimer
             // 
+            FormTimer.Interval = 25;
             FormTimer.Tick += FormTimer_Tick;
             // 
             // label1

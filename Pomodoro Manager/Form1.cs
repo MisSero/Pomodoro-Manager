@@ -1,11 +1,13 @@
 using System.Text;
+using System.Media;
 using Pomodoro_Manager.Model;
 
 namespace Pomodoro_Manager
 {
     public partial class Form1 : Form
     {
-        PomodoroTimer? pomodoroTimer;
+        PomodoroTimer? _pomodoroTimer;
+        AudioPlayer _audioPlayer = new AudioPlayer();
 
         public Form1()
         {
@@ -14,19 +16,21 @@ namespace Pomodoro_Manager
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            pomodoroTimer = new PomodoroTimer(1, FinishTask);
         }
 
         private void FormTimer_Tick(object sender, EventArgs e)
         {
-            label1.Text = pomodoroTimer?.ToString();
-            pomodoroTimer?.SubSecond();
+            label1.Text = _pomodoroTimer?.ToString();
+            _pomodoroTimer?.SubSecond();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (!FormTimer.Enabled)
+            {
+                _pomodoroTimer = new PomodoroTimer(1, FinishTask);
                 FormTimer.Enabled = true;
+            }
             else
                 FormTimer.Enabled = false;
         }
@@ -34,8 +38,13 @@ namespace Pomodoro_Manager
         private void FinishTask()
         {
             FormTimer.Enabled = false;
-            pomodoroTimer = null;
+            _pomodoroTimer = null;
             label1.Text = "End of Timer";
+            if (this.WindowState == FormWindowState.Minimized)
+                this.WindowState = FormWindowState.Normal;
+            else
+                this.Activate();
+            _audioPlayer.Play();
         }
     }
 }
