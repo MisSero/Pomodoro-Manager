@@ -16,7 +16,6 @@ namespace Pomodoro_Manager
             Button button = new Button();
             button.Text = "button text";
             button.Dock = DockStyle.Right;
-            
 
             Panel taskPanel = new Panel();
             taskPanel.Size = new Size(panelTaskWidth, panelTaskHeight);
@@ -25,10 +24,6 @@ namespace Pomodoro_Manager
             taskPanel.Controls.Add(taskLabel);
             taskPanel.Controls.Add(button);
             
-            //Y location base on count of elements in panel with offset = panelTaskHeight,
-            //5 and current offset of AutoScroll
-            taskPanel.Location = new Point(3, (panelTaskHeight + 5) * panel.Controls.Count + 
-                panel.AutoScrollPosition.Y);
             panel.Controls.Add(taskPanel);
         }
     }
