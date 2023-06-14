@@ -2,6 +2,7 @@ using System.Text;
 using System.Media;
 using Pomodoro_Manager.Model;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace Pomodoro_Manager
 {
@@ -18,7 +19,7 @@ namespace Pomodoro_Manager
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            mainTaskPanel.VerticalScroll.Maximum = 0;
+            mainTaskPanel.HorizontalScroll.Maximum = 0;
             mainTaskPanel.AutoScroll = true;
         }
 
@@ -42,7 +43,6 @@ namespace Pomodoro_Manager
             //Test block
             TaskFormObject task = new TaskFormObject($"My task {++counter}", 15);
             TaskController.AddToPanel(task, mainTaskPanel);
-
         }
 
         private void FinishTask()
@@ -55,6 +55,11 @@ namespace Pomodoro_Manager
             else
                 this.Activate();
             _audioPlayer.Play();
+        }
+
+        private void flowLayoutPanel1_Resize(object sender, EventArgs e)
+        {
+            TaskResizer.ResizeTasks(mainTaskPanel);
         }
     }
 }

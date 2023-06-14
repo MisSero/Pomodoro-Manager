@@ -33,7 +33,7 @@
             button1 = new Button();
             FormTimer = new System.Windows.Forms.Timer(components);
             label1 = new Label();
-            mainTaskPanel = new Panel();
+            this.mainTaskPanel = new FlowLayoutPanel();
             SuspendLayout();
             // 
             // button1
@@ -62,14 +62,16 @@
             // 
             // mainTaskPanel
             // 
-            mainTaskPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            mainTaskPanel.BorderStyle = BorderStyle.FixedSingle;
-            mainTaskPanel.ForeColor = SystemColors.ControlText;
-            mainTaskPanel.Location = new Point(191, 147);
-            mainTaskPanel.Name = "mainTaskPanel";
-            mainTaskPanel.RightToLeft = RightToLeft.No;
-            mainTaskPanel.Size = new Size(630, 365);
-            mainTaskPanel.TabIndex = 3;
+            this.mainTaskPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            this.mainTaskPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            this.mainTaskPanel.BorderStyle = BorderStyle.FixedSingle;
+            this.mainTaskPanel.FlowDirection = FlowDirection.TopDown;
+            this.mainTaskPanel.Location = new Point(375, 182);
+            this.mainTaskPanel.Name = "mainTaskPanel";
+            this.mainTaskPanel.Size = new Size(445, 269);
+            this.mainTaskPanel.TabIndex = 0;
+            this.mainTaskPanel.WrapContents = false;
+            this.mainTaskPanel.Resize += this.flowLayoutPanel1_Resize;
             // 
             // Form1
             // 
@@ -77,7 +79,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkGray;
             ClientSize = new Size(965, 587);
-            Controls.Add(mainTaskPanel);
+            Controls.Add(this.mainTaskPanel);
             Controls.Add(label1);
             Controls.Add(button1);
             ForeColor = SystemColors.ControlText;
@@ -96,6 +98,6 @@
         private Button button1;
         private System.Windows.Forms.Timer FormTimer;
         private Label label1;
-        private Panel mainTaskPanel;
+        private FlowLayoutPanel mainTaskPanel;
     }
 }

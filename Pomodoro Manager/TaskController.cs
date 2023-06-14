@@ -5,7 +5,7 @@ namespace Pomodoro_Manager
     {
         public static void AddToPanel(TaskFormObject task, Panel panel)
         {
-            int panelTaskWidth = panel.Width - 6;
+            int panelTaskWidth = panel.Width - 30;
             int panelTaskHeight = 35;
 
             Label taskLabel = new Label();
@@ -20,8 +20,7 @@ namespace Pomodoro_Manager
 
             Panel taskPanel = new Panel();
             taskPanel.Size = new Size(panelTaskWidth, panelTaskHeight);
-            taskPanel.Anchor = AnchorStyles.Left | AnchorStyles.Right |
-                AnchorStyles.Top;
+            taskPanel.Anchor = AnchorStyles.Left | AnchorStyles.Top;
             taskPanel.BorderStyle = BorderStyle.FixedSingle;
             taskPanel.Controls.Add(taskLabel);
             taskPanel.Controls.Add(button);
