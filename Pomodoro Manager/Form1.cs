@@ -1,6 +1,7 @@
 using System.Text;
 using System.Media;
 using Pomodoro_Manager.Model;
+using System.Windows.Forms;
 
 namespace Pomodoro_Manager
 {
@@ -8,6 +9,7 @@ namespace Pomodoro_Manager
     {
         PomodoroTimer? _pomodoroTimer;
         AudioPlayer _audioPlayer = new AudioPlayer();
+        int counter = 0;
 
         public Form1()
         {
@@ -16,6 +18,8 @@ namespace Pomodoro_Manager
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            mainTaskPanel.VerticalScroll.Maximum = 0;
+            mainTaskPanel.AutoScroll = true;
         }
 
         private void FormTimer_Tick(object sender, EventArgs e)
@@ -33,6 +37,12 @@ namespace Pomodoro_Manager
             }
             else
                 FormTimer.Enabled = false;
+
+
+            //Test block
+            TaskFormObject task = new TaskFormObject($"My task {++counter}", 15);
+            TaskController.AddToPanel(task, mainTaskPanel);
+
         }
 
         private void FinishTask()
