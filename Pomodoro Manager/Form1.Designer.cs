@@ -58,7 +58,6 @@
             mainTaskPanel.Size = new Size(712, 384);
             mainTaskPanel.TabIndex = 0;
             mainTaskPanel.WrapContents = false;
-            mainTaskPanel.Resize += MainTaskPanel_Resize;
             // 
             // inputPanel
             // 

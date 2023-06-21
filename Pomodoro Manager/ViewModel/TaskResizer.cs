@@ -1,11 +1,19 @@
 ﻿namespace Pomodoro_Manager.ViewModel
 {
-    public static class TaskResizer
+    public class TaskResizer
     {
-        public static void ResizeTasks(Panel panel)
+        Panel _panel;
+
+        public TaskResizer(Panel panel)
         {
-            int panelWidth = panel.Width - 30;
-            foreach (Panel taskPanel in panel.Controls)
+            _panel = panel;
+            panel.SizeChanged += ResizeTasks;
+        }
+
+        public void ResizeTasks(object sender, EventArgs e)
+        {
+            int panelWidth = _panel.Width - 30;
+            foreach (Panel taskPanel in _panel.Controls)
             {
                 taskPanel.Width = panelWidth;
             }
