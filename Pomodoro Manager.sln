@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pomodoro Manager", "Pomodoro Manager\Pomodoro Manager.csproj", "{D7CCCA20-BE06-4923-AD7E-4EF4989343B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pomodoro Manager", "Pomodoro Manager\Pomodoro Manager.csproj", "{D7CCCA20-BE06-4923-AD7E-4EF4989343B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -30,41 +30,23 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            button1 = new Button();
-            FormTimer = new System.Windows.Forms.Timer(components);
-            label1 = new Label();
+            formTimer = new System.Windows.Forms.Timer(components);
             mainTaskPanel = new FlowLayoutPanel();
             panel1 = new Panel();
             addTaskButton = new Button();
             taskCountNumericUpDown = new NumericUpDown();
             nameTextBox = new TextBox();
+            timerPanel = new Panel();
+            timerLabel = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)taskCountNumericUpDown).BeginInit();
+            timerPanel.SuspendLayout();
             SuspendLayout();
             // 
-            // button1
+            // formTimer
             // 
-            button1.Location = new Point(59, 330);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // FormTimer
-            // 
-            FormTimer.Interval = 25;
-            FormTimer.Tick += FormTimer_Tick;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(73, 233);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 20);
-            label1.TabIndex = 1;
-            label1.Text = "label1";
+            formTimer.Interval = 25;
+            formTimer.Tick += FormTimer_Tick;
             // 
             // mainTaskPanel
             // 
@@ -81,6 +63,8 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(addTaskButton);
             panel1.Controls.Add(taskCountNumericUpDown);
             panel1.Controls.Add(nameTextBox);
@@ -91,6 +75,7 @@
             // 
             // addTaskButton
             // 
+            addTaskButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             addTaskButton.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             addTaskButton.Location = new Point(653, 3);
             addTaskButton.Name = "addTaskButton";
@@ -102,6 +87,7 @@
             // 
             // taskCountNumericUpDown
             // 
+            taskCountNumericUpDown.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             taskCountNumericUpDown.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             taskCountNumericUpDown.Location = new Point(467, 4);
             taskCountNumericUpDown.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
@@ -114,6 +100,7 @@
             // 
             // nameTextBox
             // 
+            nameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             nameTextBox.BackColor = SystemColors.ActiveBorder;
             nameTextBox.BorderStyle = BorderStyle.FixedSingle;
             nameTextBox.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
@@ -126,16 +113,36 @@
             nameTextBox.Enter += TextBox_Enter;
             nameTextBox.Leave += TextBox_Leave;
             // 
+            // timerPanel
+            // 
+            timerPanel.Controls.Add(timerLabel);
+            timerPanel.Dock = DockStyle.Fill;
+            timerPanel.Location = new Point(0, 0);
+            timerPanel.Name = "timerPanel";
+            timerPanel.Size = new Size(965, 587);
+            timerPanel.TabIndex = 6;
+            timerPanel.Visible = false;
+            // 
+            // timerLabel
+            // 
+            timerLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            timerLabel.AutoSize = true;
+            timerLabel.Font = new Font("Segoe UI", 25F, FontStyle.Regular, GraphicsUnit.Point);
+            timerLabel.Location = new Point(420, 208);
+            timerLabel.Name = "timerLabel";
+            timerLabel.Size = new Size(126, 57);
+            timerLabel.TabIndex = 0;
+            timerLabel.Text = "00:00";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkGray;
             ClientSize = new Size(965, 587);
+            Controls.Add(timerPanel);
             Controls.Add(panel1);
             Controls.Add(mainTaskPanel);
-            Controls.Add(label1);
-            Controls.Add(button1);
             ForeColor = SystemColors.ControlText;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
@@ -147,19 +154,19 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)taskCountNumericUpDown).EndInit();
+            timerPanel.ResumeLayout(false);
+            timerPanel.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Button button1;
-        private System.Windows.Forms.Timer FormTimer;
-        private Label label1;
+        private System.Windows.Forms.Timer formTimer;
         private FlowLayoutPanel mainTaskPanel;
         private Panel panel1;
         private TextBox nameTextBox;
         private Button addTaskButton;
         private NumericUpDown taskCountNumericUpDown;
+        private Panel timerPanel;
+        private Label timerLabel;
     }
 }

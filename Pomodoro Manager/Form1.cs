@@ -6,9 +6,7 @@ namespace Pomodoro_Manager
     public partial class Form1 : Form
     {
         string _nameTextBoxPlaceholder;
-        PomodoroTimer? _pomodoroTimer;
-        AudioPlayer _audioPlayer = new AudioPlayer();
-        int counter = 0;
+        TimerController _timerController;
 
         public Form1()
         {
@@ -16,38 +14,11 @@ namespace Pomodoro_Manager
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            _timerController = new TimerController(timerPanel, timerLabel, formTimer, this);
+
             mainTaskPanel.HorizontalScroll.Maximum = 0;
             mainTaskPanel.AutoScroll = true;
             _nameTextBoxPlaceholder = nameTextBox.Text;
-        }
-
-        private void FormTimer_Tick(object sender, EventArgs e)
-        {
-            label1.Text = _pomodoroTimer?.ToString();
-            _pomodoroTimer?.SubSecond();
-        }
-
-        public void button1_Click(object sender, EventArgs e)
-        {
-            if (!FormTimer.Enabled)
-            {
-                _pomodoroTimer = new PomodoroTimer(1, FinishTask);
-                FormTimer.Enabled = true;
-            }
-            else
-                FormTimer.Enabled = false;
-        }
-
-        private void FinishTask()
-        {
-            FormTimer.Enabled = false;
-            _pomodoroTimer = null;
-            label1.Text = "End of Timer";
-            if (this.WindowState == FormWindowState.Minimized)
-                this.WindowState = FormWindowState.Normal;
-            else
-                this.Activate();
-            _audioPlayer.Play();
         }
 
         private void MainTaskPanel_Resize(object sender, EventArgs e)
@@ -82,7 +53,7 @@ namespace Pomodoro_Manager
         {
             TaskFormObject task = new TaskFormObject(
                 nameTextBox.Text, (int)taskCountNumericUpDown.Value);
-            TaskController.AddToPanel(task, mainTaskPanel, this);
+            TaskController.AddToPanel(task, mainTaskPanel, _timerController);
         }
 
         private void Form1_Click(object sender, EventArgs e)
