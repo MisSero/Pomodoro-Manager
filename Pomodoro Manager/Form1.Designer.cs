@@ -82,7 +82,6 @@
             addTaskButton.TabIndex = 5;
             addTaskButton.Text = "Add";
             addTaskButton.UseVisualStyleBackColor = true;
-            addTaskButton.Click += AddTaskButton_Click;
             // 
             // taskCountNumericUpDown
             // 

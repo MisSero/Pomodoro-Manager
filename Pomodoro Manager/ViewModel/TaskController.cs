@@ -2,11 +2,33 @@
 
 namespace Pomodoro_Manager.ViewModel
 {
-    public static class TaskController
+    public class TaskController
     {
-        public static void AddToPanel(TaskFormObject task, Panel panel, TimerController timerController)
+        private List<TaskFormObject> _tasks;
+        private Panel _mainPanel;
+        private TimerController _timerController;
+        private TextBox _nameTextBox;
+        private NumericUpDown _taskCountNumericUpDown;
+        public TaskController(Panel mainPanel, TimerController timerController,
+            TextBox nameTextBox, NumericUpDown taskCountNumeric)
         {
-            int panelTaskWidth = panel.Width - 30;
+            _mainPanel = mainPanel;
+            _timerController = timerController;
+            _nameTextBox = nameTextBox;
+            _taskCountNumericUpDown = taskCountNumeric;
+
+            _tasks = new List<TaskFormObject>();
+        }
+        public void CreateTask(object sender, EventArgs e)
+        {
+            TaskFormObject task = new TaskFormObject(
+                _nameTextBox.Text, (int)_taskCountNumericUpDown.Value);
+            _tasks.Add(task);
+            AddToPanel(task);
+        }
+        private void AddToPanel(TaskFormObject task)
+        {
+            int panelTaskWidth = _mainPanel.Width - 30;
             int panelTaskHeight = 33;
 
             Label taskLabel = new Label();
@@ -18,7 +40,7 @@ namespace Pomodoro_Manager.ViewModel
             Button button = new Button();
             button.Text = "Play!";
             button.Dock = DockStyle.Right;
-            button.Click += timerController.PlayButton_Click;
+            button.Click += _timerController.PlayButton_Click;
 
 
             Panel taskPanel = new Panel();
@@ -29,7 +51,7 @@ namespace Pomodoro_Manager.ViewModel
             taskPanel.Controls.Add(button);
             taskPanel.Controls.Add(taskLabel);
 
-            panel.Controls.Add(taskPanel);
+            _mainPanel.Controls.Add(taskPanel);
         }
     }
 }
