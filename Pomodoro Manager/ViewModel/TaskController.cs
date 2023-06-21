@@ -9,17 +9,20 @@ namespace Pomodoro_Manager.ViewModel
         private TimerController _timerController;
         private TextBox _nameTextBox;
         private NumericUpDown _taskCountNumericUpDown;
+        private Button _addButton;
         public TaskController(Panel mainPanel, TimerController timerController,
-            TextBox nameTextBox, NumericUpDown taskCountNumeric)
+            TextBox nameTextBox, NumericUpDown taskCountNumeric, Button addButton)
         {
+            _tasks = new List<TaskFormObject>();
             _mainPanel = mainPanel;
             _timerController = timerController;
             _nameTextBox = nameTextBox;
             _taskCountNumericUpDown = taskCountNumeric;
+            _addButton = addButton;
 
-            _tasks = new List<TaskFormObject>();
+            _addButton.Click += CreateTask;
         }
-        public void CreateTask(object sender, EventArgs e)
+        private void CreateTask(object sender, EventArgs e)
         {
             TaskFormObject task = new TaskFormObject(
                 _nameTextBox.Text, (int)_taskCountNumericUpDown.Value);

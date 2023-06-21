@@ -19,8 +19,7 @@ namespace Pomodoro_Manager
             _inputPanelController = new InputPanelController(nameTextBox.Text, 
                 nameTextBox, taskCountNumericUpDown);
             _taskController = new TaskController(mainTaskPanel, _timerController, 
-                nameTextBox, taskCountNumericUpDown);
-            addTaskButton.Click += _taskController.CreateTask;
+                nameTextBox, taskCountNumericUpDown, addTaskButton);
 
 
             mainTaskPanel.HorizontalScroll.Maximum = 0;
