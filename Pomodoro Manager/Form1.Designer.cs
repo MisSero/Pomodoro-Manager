@@ -34,7 +34,12 @@
             FormTimer = new System.Windows.Forms.Timer(components);
             label1 = new Label();
             mainTaskPanel = new FlowLayoutPanel();
-            label2 = new Label();
+            panel1 = new Panel();
+            addTaskButton = new Button();
+            taskCountNumericUpDown = new NumericUpDown();
+            nameTextBox = new TextBox();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)taskCountNumericUpDown).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -65,22 +70,61 @@
             // 
             mainTaskPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             mainTaskPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            mainTaskPanel.BorderStyle = BorderStyle.FixedSingle;
             mainTaskPanel.FlowDirection = FlowDirection.TopDown;
             mainTaskPanel.Location = new Point(206, 166);
             mainTaskPanel.Name = "mainTaskPanel";
-            mainTaskPanel.Size = new Size(712, 380);
+            mainTaskPanel.Size = new Size(712, 384);
             mainTaskPanel.TabIndex = 0;
             mainTaskPanel.WrapContents = false;
-            mainTaskPanel.Resize += flowLayoutPanel1_Resize;
+            mainTaskPanel.Resize += MainTaskPanel_Resize;
             // 
-            // label2
+            // panel1
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(375, 131);
-            label2.Name = "label2";
-            label2.Size = new Size(50, 20);
-            label2.TabIndex = 2;
-            label2.Text = "label2";
+            panel1.Controls.Add(addTaskButton);
+            panel1.Controls.Add(taskCountNumericUpDown);
+            panel1.Controls.Add(nameTextBox);
+            panel1.Location = new Point(206, 122);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(712, 38);
+            panel1.TabIndex = 3;
+            // 
+            // addTaskButton
+            // 
+            addTaskButton.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            addTaskButton.Location = new Point(653, 3);
+            addTaskButton.Name = "addTaskButton";
+            addTaskButton.Size = new Size(56, 30);
+            addTaskButton.TabIndex = 5;
+            addTaskButton.Text = "Add";
+            addTaskButton.UseVisualStyleBackColor = true;
+            addTaskButton.Click += AddTaskButton_Click;
+            // 
+            // taskCountNumericUpDown
+            // 
+            taskCountNumericUpDown.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            taskCountNumericUpDown.Location = new Point(467, 4);
+            taskCountNumericUpDown.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+            taskCountNumericUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            taskCountNumericUpDown.Name = "taskCountNumericUpDown";
+            taskCountNumericUpDown.Size = new Size(86, 30);
+            taskCountNumericUpDown.TabIndex = 4;
+            taskCountNumericUpDown.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            taskCountNumericUpDown.MouseWheel += NumericUpDown_MouseWheel;
+            // 
+            // nameTextBox
+            // 
+            nameTextBox.BackColor = SystemColors.ActiveBorder;
+            nameTextBox.BorderStyle = BorderStyle.FixedSingle;
+            nameTextBox.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            nameTextBox.Location = new Point(3, 3);
+            nameTextBox.MaxLength = 60;
+            nameTextBox.Name = "nameTextBox";
+            nameTextBox.Size = new Size(458, 32);
+            nameTextBox.TabIndex = 3;
+            nameTextBox.Text = "Enter task name";
+            nameTextBox.Enter += TextBox_Enter;
+            nameTextBox.Leave += TextBox_Leave;
             // 
             // Form1
             // 
@@ -88,7 +132,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkGray;
             ClientSize = new Size(965, 587);
-            Controls.Add(label2);
+            Controls.Add(panel1);
             Controls.Add(mainTaskPanel);
             Controls.Add(label1);
             Controls.Add(button1);
@@ -99,6 +143,10 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Pomodoro Manager";
             Load += Form1_Load;
+            Click += Form1_Click;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)taskCountNumericUpDown).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -109,6 +157,9 @@
         private System.Windows.Forms.Timer FormTimer;
         private Label label1;
         private FlowLayoutPanel mainTaskPanel;
-        private Label label2;
+        private Panel panel1;
+        private TextBox nameTextBox;
+        private Button addTaskButton;
+        private NumericUpDown taskCountNumericUpDown;
     }
 }
