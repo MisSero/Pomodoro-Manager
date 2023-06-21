@@ -9,7 +9,7 @@ namespace Pomodoro_Manager.ViewModel
         private Label _timerLabel;
         private System.Windows.Forms.Timer _formTimer;
         private Form1 _form;
-        AudioPlayer _audioPlayer;
+        private AudioPlayer _audioPlayer;
 
         public TimerController(Panel timerPanel, Label timerLabel,
             System.Windows.Forms.Timer timer, Form1 form)

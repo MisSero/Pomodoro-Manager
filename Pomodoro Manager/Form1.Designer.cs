@@ -32,13 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             formTimer = new System.Windows.Forms.Timer(components);
             mainTaskPanel = new FlowLayoutPanel();
-            panel1 = new Panel();
+            inputPanel = new Panel();
             addTaskButton = new Button();
             taskCountNumericUpDown = new NumericUpDown();
             nameTextBox = new TextBox();
             timerPanel = new Panel();
             timerLabel = new Label();
-            panel1.SuspendLayout();
+            inputPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)taskCountNumericUpDown).BeginInit();
             timerPanel.SuspendLayout();
             SuspendLayout();
@@ -46,7 +46,6 @@
             // formTimer
             // 
             formTimer.Interval = 25;
-            formTimer.Tick += FormTimer_Tick;
             // 
             // mainTaskPanel
             // 
@@ -61,17 +60,17 @@
             mainTaskPanel.WrapContents = false;
             mainTaskPanel.Resize += MainTaskPanel_Resize;
             // 
-            // panel1
+            // inputPanel
             // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(addTaskButton);
-            panel1.Controls.Add(taskCountNumericUpDown);
-            panel1.Controls.Add(nameTextBox);
-            panel1.Location = new Point(206, 122);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(712, 38);
-            panel1.TabIndex = 3;
+            inputPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            inputPanel.BorderStyle = BorderStyle.FixedSingle;
+            inputPanel.Controls.Add(addTaskButton);
+            inputPanel.Controls.Add(taskCountNumericUpDown);
+            inputPanel.Controls.Add(nameTextBox);
+            inputPanel.Location = new Point(206, 122);
+            inputPanel.Name = "inputPanel";
+            inputPanel.Size = new Size(712, 38);
+            inputPanel.TabIndex = 3;
             // 
             // addTaskButton
             // 
@@ -96,7 +95,6 @@
             taskCountNumericUpDown.Size = new Size(86, 30);
             taskCountNumericUpDown.TabIndex = 4;
             taskCountNumericUpDown.Value = new decimal(new int[] { 1, 0, 0, 0 });
-            taskCountNumericUpDown.MouseWheel += NumericUpDown_MouseWheel;
             // 
             // nameTextBox
             // 
@@ -110,8 +108,6 @@
             nameTextBox.Size = new Size(458, 32);
             nameTextBox.TabIndex = 3;
             nameTextBox.Text = "Enter task name";
-            nameTextBox.Enter += TextBox_Enter;
-            nameTextBox.Leave += TextBox_Leave;
             // 
             // timerPanel
             // 
@@ -140,9 +136,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkGray;
             ClientSize = new Size(965, 587);
-            Controls.Add(timerPanel);
-            Controls.Add(panel1);
+            Controls.Add(inputPanel);
             Controls.Add(mainTaskPanel);
+            Controls.Add(timerPanel);
             ForeColor = SystemColors.ControlText;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
@@ -151,8 +147,8 @@
             Text = "Pomodoro Manager";
             Load += Form1_Load;
             Click += Form1_Click;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            inputPanel.ResumeLayout(false);
+            inputPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)taskCountNumericUpDown).EndInit();
             timerPanel.ResumeLayout(false);
             timerPanel.PerformLayout();
@@ -162,7 +158,7 @@
         #endregion
         private System.Windows.Forms.Timer formTimer;
         private FlowLayoutPanel mainTaskPanel;
-        private Panel panel1;
+        private Panel inputPanel;
         private TextBox nameTextBox;
         private Button addTaskButton;
         private NumericUpDown taskCountNumericUpDown;
