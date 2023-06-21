@@ -1,5 +1,6 @@
 ﻿using Pomodoro_Manager.Model;
-namespace Pomodoro_Manager
+
+namespace Pomodoro_Manager.ViewModel
 {
     public static class TaskController
     {
@@ -27,7 +28,7 @@ namespace Pomodoro_Manager
             taskPanel.BorderStyle = BorderStyle.FixedSingle;
             taskPanel.Controls.Add(button);
             taskPanel.Controls.Add(taskLabel);
-            
+
             panel.Controls.Add(taskPanel);
         }
     }

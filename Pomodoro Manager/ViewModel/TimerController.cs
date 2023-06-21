@@ -1,6 +1,6 @@
 ﻿using Pomodoro_Manager.Model;
 
-namespace Pomodoro_Manager
+namespace Pomodoro_Manager.ViewModel
 {
     public class TimerController
     {
@@ -11,7 +11,7 @@ namespace Pomodoro_Manager
         private Form1 _form;
         AudioPlayer _audioPlayer;
 
-        public TimerController(Panel timerPanel, Label timerLabel, 
+        public TimerController(Panel timerPanel, Label timerLabel,
             System.Windows.Forms.Timer timer, Form1 form)
         {
             _timerPanel = timerPanel;
