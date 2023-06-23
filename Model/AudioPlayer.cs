@@ -4,7 +4,7 @@ namespace Pomodoro_Manager.Model
 {
     public class AudioPlayer
     {
-        string _soundPath = @"../../../../Resourses/End Pomodoro Sound.wav";
+        string _soundPath = @"../../../Resourses/End Pomodoro Sound.wav";
         SoundPlayer _soundPlayer;
         public AudioPlayer()
         {
