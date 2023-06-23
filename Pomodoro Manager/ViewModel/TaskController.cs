@@ -35,7 +35,8 @@ namespace Pomodoro_Manager.ViewModel
             int panelTaskHeight = 33;
 
             Label taskLabel = new Label();
-            taskLabel.DataBindings.Add(new Binding("Text", task, "Name"));
+            taskLabel.DataBindings.Add(new Binding("Text", task, "Name", 
+                false, DataSourceUpdateMode.OnPropertyChanged));
             taskLabel.AutoSize = true;
             taskLabel.Font = new Font("Malgun Gothic", 12);
             taskLabel.TextAlign = ContentAlignment.MiddleLeft;
@@ -46,7 +47,8 @@ namespace Pomodoro_Manager.ViewModel
             button.Click += _timerController.PlayButton_Click;
 
             Label labelCounter = new Label();
-            labelCounter.DataBindings.Add(new Binding("Text", task, "DisplayCounter"));
+            labelCounter.DataBindings.Add(new Binding("Text", task, "DisplayCounter", 
+                false, DataSourceUpdateMode.OnPropertyChanged));
             labelCounter.Dock = DockStyle.Right;
             labelCounter.AutoSize = true;
             labelCounter.Font = new Font("Malgun Gothic", 12);
@@ -61,6 +63,7 @@ namespace Pomodoro_Manager.ViewModel
             taskPanel.Controls.Add(labelCounter);
             taskPanel.Controls.Add(button);
             taskPanel.Controls.Add(taskLabel);
+            taskPanel.DataContext = task;
 
             _mainPanel.Controls.Add(taskPanel);
         }

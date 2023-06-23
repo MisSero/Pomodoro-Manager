@@ -1,18 +1,30 @@
-﻿namespace Pomodoro_Manager.Model
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
+
+namespace Pomodoro_Manager.Model
 {
-    public class TaskFormObject
+    public class TaskFormObject : INotifyPropertyChanged
     {
+        private string _name;
         private int _goalCounter;
         private int _currentCounter;
-        private string _displayCounter;
-        public string Name { get; set; }
+        public event PropertyChangedEventHandler PropertyChanged;
+        public string Name
+        {
+            get => _name;
+            set
+            {
+                _name = value;
+                OnPropertyChanged();
+            }
+        }
         public int GoalCounter
         {
             get => _goalCounter;
             set
             {
                 _goalCounter = value;
-                DisplayCounter = "";
+                OnPropertyChanged("DisplayCounter");
             }
         }
         public int CurrentCounter
@@ -21,19 +33,23 @@
             set
             {
                 _currentCounter = value;
-                DisplayCounter = "";
+                OnPropertyChanged("DisplayCounter");
             }
         }
         public string DisplayCounter
         {
-            get => _displayCounter;
-            set => _displayCounter = $"{CurrentCounter}/{GoalCounter}";
+            get => $"{CurrentCounter}/{GoalCounter}";
         }
 
         public TaskFormObject(string name, int pomodoroCounter)
         {
             Name = name;
             GoalCounter = pomodoroCounter;
+        }
+
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
         }
     }
 }
