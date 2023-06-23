@@ -17,9 +17,9 @@ namespace Pomodoro_Manager
         private void Form1_Load(object sender, EventArgs e)
         {
             _timerController = new TimerController(timerPanel, timerLabel, formTimer, this);
-            _inputPanelController = new InputPanelController(nameTextBox.Text, 
+            _inputPanelController = new InputPanelController(nameTextBox.Text,
                 nameTextBox, taskCountNumericUpDown);
-            _taskController = new TaskController(mainTaskPanel, _timerController, 
+            _taskController = new TaskController(mainTaskPanel, _timerController,
                 nameTextBox, taskCountNumericUpDown, addTaskButton);
             _taskResizer = new TaskResizer(mainTaskPanel);
 
