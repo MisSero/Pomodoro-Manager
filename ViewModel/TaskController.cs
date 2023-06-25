@@ -31,6 +31,12 @@ namespace Pomodoro_Manager.ViewModel
                 _nameTextBox.Text, (int)_taskCountNumericUpDown.Value);
             _tasks.Add(task);
             AddToPanel(task);
+
+            // update TextBox and NumericUpDown
+            _nameTextBox.Focus();
+            _nameTextBox.Text = "";
+            _taskCountNumericUpDown.Value = _taskCountNumericUpDown.Minimum;
+            ((Button)sender).Focus();
         }
         private void LoadTasks()
         {

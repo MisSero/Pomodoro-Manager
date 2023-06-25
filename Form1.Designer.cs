@@ -100,6 +100,7 @@
             nameTextBox.BackColor = SystemColors.ActiveBorder;
             nameTextBox.BorderStyle = BorderStyle.FixedSingle;
             nameTextBox.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            nameTextBox.ForeColor = Color.DimGray;
             nameTextBox.Location = new Point(3, 3);
             nameTextBox.MaxLength = 60;
             nameTextBox.Name = "nameTextBox";
@@ -143,9 +144,9 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Pomodoro Manager";
+            FormClosing += Form1_Closing;
             Load += Form1_Load;
             Click += Form1_Click;
-            FormClosing += Form1_Closing;
             inputPanel.ResumeLayout(false);
             inputPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)taskCountNumericUpDown).EndInit();

@@ -21,13 +21,19 @@
         private void TextBox_Enter(object sender, EventArgs e)
         {
             if (_nameTextBox.Text == _nameTextBoxPlaceholder)
+            {
                 _nameTextBox.Text = string.Empty;
+                _nameTextBox.ForeColor = Color.Black;
+            }
         }
 
         private void TextBox_Leave(object sender, EventArgs e)
         {
             if (_nameTextBox.Text == "")
+            {
                 _nameTextBox.Text = _nameTextBoxPlaceholder;
+                _nameTextBox.ForeColor = Color.DimGray;
+            }
         }
         void NumericUpDown_MouseWheel(object sender, MouseEventArgs e)
         {
