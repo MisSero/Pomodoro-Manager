@@ -9,6 +9,7 @@ namespace Pomodoro_Manager
         InputPanelController _inputPanelController;
         TaskController _taskController;
         TaskResizer _taskResizer;
+        SaveController _saveController;
 
         public Form1()
         {
@@ -19,8 +20,9 @@ namespace Pomodoro_Manager
             _timerController = new TimerController(timerPanel, timerLabel, formTimer, this);
             _inputPanelController = new InputPanelController(nameTextBox.Text,
                 nameTextBox, taskCountNumericUpDown);
+            _saveController = new SaveController();
             _taskController = new TaskController(mainTaskPanel, _timerController,
-                nameTextBox, taskCountNumericUpDown, addTaskButton);
+                nameTextBox, taskCountNumericUpDown, addTaskButton, _saveController.Tasks);
             _taskResizer = new TaskResizer(mainTaskPanel);
 
             mainTaskPanel.HorizontalScroll.Maximum = 0;
@@ -29,6 +31,10 @@ namespace Pomodoro_Manager
         private void Form1_Click(object sender, EventArgs e)
         {
             this.ActiveControl = null;
+        }
+        private void Form1_Closing(object sender, EventArgs e)
+        {
+            _saveController.Save();
         }
     }
 }

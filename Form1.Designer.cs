@@ -145,6 +145,7 @@
             Text = "Pomodoro Manager";
             Load += Form1_Load;
             Click += Form1_Click;
+            FormClosing += Form1_Closing;
             inputPanel.ResumeLayout(false);
             inputPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)taskCountNumericUpDown).EndInit();

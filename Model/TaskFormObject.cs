@@ -3,12 +3,14 @@ using System.Runtime.CompilerServices;
 
 namespace Pomodoro_Manager.Model
 {
+    [Serializable]
     public class TaskFormObject : INotifyPropertyChanged
     {
+        [field:NonSerialized]
+        public event PropertyChangedEventHandler PropertyChanged;
         private string _name;
         private int _goalCounter;
         private int _currentCounter;
-        public event PropertyChangedEventHandler PropertyChanged;
         public string Name
         {
             get => _name;
@@ -40,6 +42,7 @@ namespace Pomodoro_Manager.Model
         {
             get => $"{CurrentCounter}/{GoalCounter}";
         }
+        public TaskFormObject() { }
 
         public TaskFormObject(string name, int pomodoroCounter)
         {

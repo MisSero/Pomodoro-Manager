@@ -10,10 +10,11 @@ namespace Pomodoro_Manager.ViewModel
         private TextBox _nameTextBox;
         private NumericUpDown _taskCountNumericUpDown;
         private Button _addButton;
-        public TaskController(Panel mainPanel, TimerController timerController,
-            TextBox nameTextBox, NumericUpDown taskCountNumeric, Button addButton)
+      
+        public TaskController(Panel mainPanel, TimerController timerController, TextBox nameTextBox,
+            NumericUpDown taskCountNumeric, Button addButton, List<TaskFormObject> tasks)
         {
-            _tasks = new List<TaskFormObject>();
+            _tasks = tasks;
             _mainPanel = mainPanel;
             _timerController = timerController;
             _nameTextBox = nameTextBox;
@@ -21,6 +22,8 @@ namespace Pomodoro_Manager.ViewModel
             _addButton = addButton;
 
             _addButton.Click += CreateTask;
+
+            LoadTasks();
         }
         private void CreateTask(object sender, EventArgs e)
         {
@@ -28,6 +31,11 @@ namespace Pomodoro_Manager.ViewModel
                 _nameTextBox.Text, (int)_taskCountNumericUpDown.Value);
             _tasks.Add(task);
             AddToPanel(task);
+        }
+        private void LoadTasks()
+        {
+            foreach (TaskFormObject task in _tasks)
+                AddToPanel(task);
         }
         private void AddToPanel(TaskFormObject task)
         {
