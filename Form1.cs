@@ -10,6 +10,7 @@ namespace Pomodoro_Manager
         TaskController _taskController;
         TaskResizer _taskResizer;
         SaveController _saveController;
+        MenuPanelController _menuPanelController;
 
         public Form1()
         {
@@ -24,6 +25,7 @@ namespace Pomodoro_Manager
             _taskController = new TaskController(mainTaskPanel, _timerController,
                 nameTextBox, taskCountNumericUpDown, addTaskButton, _saveController.Tasks);
             _taskResizer = new TaskResizer(mainTaskPanel);
+            _menuPanelController = new MenuPanelController(ArchivePanel, ArchiveButton);
 
             mainTaskPanel.HorizontalScroll.Maximum = 0;
             mainTaskPanel.AutoScroll = true;
