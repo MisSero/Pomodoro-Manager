@@ -10,9 +10,11 @@ namespace Pomodoro_Manager.ViewModel
         private TextBox _nameTextBox;
         private NumericUpDown _taskCountNumericUpDown;
         private Button _addButton;
+        private ContextMenuStrip _contextMenuStrip;
       
         public TaskController(Panel mainPanel, TimerController timerController, TextBox nameTextBox,
-            NumericUpDown taskCountNumeric, Button addButton, List<TaskFormObject> tasks)
+            NumericUpDown taskCountNumeric, Button addButton, List<TaskFormObject> tasks,
+            ContextMenuStrip contextMenuStrip)
         {
             _tasks = tasks;
             _mainPanel = mainPanel;
@@ -20,11 +22,13 @@ namespace Pomodoro_Manager.ViewModel
             _nameTextBox = nameTextBox;
             _taskCountNumericUpDown = taskCountNumeric;
             _addButton = addButton;
+            _contextMenuStrip = contextMenuStrip;
 
             _addButton.Click += CreateTask;
 
             LoadTasks();
         }
+        public void DeleteTask(TaskFormObject task) => _tasks.Remove(task);
         private void CreateTask(object sender, EventArgs e)
         {
             TaskFormObject task = new TaskFormObject(
@@ -78,6 +82,7 @@ namespace Pomodoro_Manager.ViewModel
             taskPanel.Controls.Add(button);
             taskPanel.Controls.Add(taskLabel);
             taskPanel.DataContext = task;
+            taskPanel.ContextMenuStrip = _contextMenuStrip;
 
             _mainPanel.Controls.Add(taskPanel);
         }

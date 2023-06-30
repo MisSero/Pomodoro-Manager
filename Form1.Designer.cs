@@ -33,8 +33,8 @@
             formTimer = new System.Windows.Forms.Timer(components);
             mainTaskPanel = new FlowLayoutPanel();
             inputPanel = new Panel();
-            contextMenuStrip1 = new ContextMenuStrip(components);
-            deleteToolStripMenuItem = new ToolStripMenuItem();
+            TaskContextMenu = new ContextMenuStrip(components);
+            Delete = new ToolStripMenuItem();
             addTaskButton = new Button();
             taskCountNumericUpDown = new NumericUpDown();
             nameTextBox = new TextBox();
@@ -45,7 +45,7 @@
             ArchivePanel = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
             inputPanel.SuspendLayout();
-            contextMenuStrip1.SuspendLayout();
+            TaskContextMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)taskCountNumericUpDown).BeginInit();
             timerPanel.SuspendLayout();
             MenuPanel.SuspendLayout();
@@ -72,7 +72,7 @@
             // 
             inputPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             inputPanel.BorderStyle = BorderStyle.FixedSingle;
-            inputPanel.ContextMenuStrip = contextMenuStrip1;
+            inputPanel.ContextMenuStrip = TaskContextMenu;
             inputPanel.Controls.Add(addTaskButton);
             inputPanel.Controls.Add(taskCountNumericUpDown);
             inputPanel.Controls.Add(nameTextBox);
@@ -81,18 +81,18 @@
             inputPanel.Size = new Size(712, 38);
             inputPanel.TabIndex = 3;
             // 
-            // contextMenuStrip1
+            // TaskContextMenu
             // 
-            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
-            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { deleteToolStripMenuItem });
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(123, 28);
+            TaskContextMenu.ImageScalingSize = new Size(20, 20);
+            TaskContextMenu.Items.AddRange(new ToolStripItem[] { Delete });
+            TaskContextMenu.Name = "contextMenuStrip1";
+            TaskContextMenu.Size = new Size(211, 56);
             // 
-            // deleteToolStripMenuItem
+            // Delete
             // 
-            deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            deleteToolStripMenuItem.Size = new Size(122, 24);
-            deleteToolStripMenuItem.Text = "Delete";
+            Delete.Name = "Delete";
+            Delete.Size = new Size(210, 24);
+            Delete.Text = "Delete";
             // 
             // addTaskButton
             // 
@@ -213,7 +213,7 @@
             Click += Form1_Click;
             inputPanel.ResumeLayout(false);
             inputPanel.PerformLayout();
-            contextMenuStrip1.ResumeLayout(false);
+            TaskContextMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)taskCountNumericUpDown).EndInit();
             timerPanel.ResumeLayout(false);
             timerPanel.PerformLayout();
@@ -231,8 +231,8 @@
         private NumericUpDown taskCountNumericUpDown;
         private Panel timerPanel;
         private Label timerLabel;
-        private ContextMenuStrip contextMenuStrip1;
-        private ToolStripMenuItem deleteToolStripMenuItem;
+        private ContextMenuStrip TaskContextMenu;
+        private ToolStripMenuItem Delete;
         private Button ArchiveButton;
         private Panel MenuPanel;
         private Panel ArchivePanel;
