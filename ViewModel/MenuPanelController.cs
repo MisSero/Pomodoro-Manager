@@ -2,17 +2,16 @@
 
 public class MenuPanelController
 {
-    Panel _archivePanel;
+    TabControl _tabControl;
 
-    public MenuPanelController(Panel archive, Button arhciveButton)
+    public MenuPanelController(TabControl tabControl, Button arhciveButton)
     {
-        _archivePanel = archive;
+        _tabControl = tabControl;
         arhciveButton.Click += AchiveOpen;
     }
 
     public void AchiveOpen(object sender, EventArgs e)
     {
-        _archivePanel.Enabled = true;
-        _archivePanel.Visible = true;
+        _tabControl.SelectedTab = _tabControl.TabPages[1];
     }
 }

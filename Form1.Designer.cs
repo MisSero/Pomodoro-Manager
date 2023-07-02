@@ -38,25 +38,21 @@
             addTaskButton = new Button();
             taskCountNumericUpDown = new NumericUpDown();
             nameTextBox = new TextBox();
-            timerPanel = new Panel();
-            timerLabel = new Label();
             ArchiveButton = new Button();
             MenuPanel = new Panel();
             MainTabControl = new TabControl();
             MainPage = new TabPage();
             ArchivePage = new TabPage();
-            ArchivePanel = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
             TimerPage = new TabPage();
+            timerLabel = new Label();
             inputPanel.SuspendLayout();
             TaskContextMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)taskCountNumericUpDown).BeginInit();
-            timerPanel.SuspendLayout();
             MenuPanel.SuspendLayout();
             MainTabControl.SuspendLayout();
             MainPage.SuspendLayout();
             ArchivePage.SuspendLayout();
-            ArchivePanel.SuspendLayout();
             TimerPage.SuspendLayout();
             SuspendLayout();
             // 
@@ -72,7 +68,7 @@
             mainTaskPanel.FlowDirection = FlowDirection.TopDown;
             mainTaskPanel.Location = new Point(207, 177);
             mainTaskPanel.Name = "mainTaskPanel";
-            mainTaskPanel.Size = new Size(703, 305);
+            mainTaskPanel.Size = new Size(635, 187);
             mainTaskPanel.TabIndex = 0;
             mainTaskPanel.WrapContents = false;
             // 
@@ -86,7 +82,7 @@
             inputPanel.Controls.Add(nameTextBox);
             inputPanel.Location = new Point(207, 103);
             inputPanel.Name = "inputPanel";
-            inputPanel.Size = new Size(703, 38);
+            inputPanel.Size = new Size(635, 38);
             inputPanel.TabIndex = 3;
             // 
             // TaskContextMenu
@@ -106,9 +102,9 @@
             // 
             addTaskButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             addTaskButton.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            addTaskButton.Location = new Point(603, 3);
+            addTaskButton.Location = new Point(574, 1);
             addTaskButton.Name = "addTaskButton";
-            addTaskButton.Size = new Size(56, 30);
+            addTaskButton.Size = new Size(56, 34);
             addTaskButton.TabIndex = 5;
             addTaskButton.Text = "Add";
             addTaskButton.UseVisualStyleBackColor = true;
@@ -117,7 +113,7 @@
             // 
             taskCountNumericUpDown.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             taskCountNumericUpDown.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            taskCountNumericUpDown.Location = new Point(417, 4);
+            taskCountNumericUpDown.Location = new Point(349, 4);
             taskCountNumericUpDown.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             taskCountNumericUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             taskCountNumericUpDown.Name = "taskCountNumericUpDown";
@@ -135,31 +131,9 @@
             nameTextBox.Location = new Point(3, 3);
             nameTextBox.MaxLength = 60;
             nameTextBox.Name = "nameTextBox";
-            nameTextBox.Size = new Size(408, 32);
+            nameTextBox.Size = new Size(340, 32);
             nameTextBox.TabIndex = 3;
             nameTextBox.Text = "Enter task name";
-            // 
-            // timerPanel
-            // 
-            timerPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            timerPanel.BackColor = Color.DarkGray;
-            timerPanel.Controls.Add(timerLabel);
-            timerPanel.Location = new Point(0, 0);
-            timerPanel.Name = "timerPanel";
-            timerPanel.Size = new Size(959, 511);
-            timerPanel.TabIndex = 6;
-            timerPanel.Visible = false;
-            // 
-            // timerLabel
-            // 
-            timerLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            timerLabel.AutoSize = true;
-            timerLabel.Font = new Font("Segoe UI", 25F, FontStyle.Regular, GraphicsUnit.Point);
-            timerLabel.Location = new Point(420, 208);
-            timerLabel.Name = "timerLabel";
-            timerLabel.Size = new Size(126, 57);
-            timerLabel.TabIndex = 0;
-            timerLabel.Text = "00:00";
             // 
             // ArchiveButton
             // 
@@ -177,7 +151,7 @@
             MenuPanel.Controls.Add(ArchiveButton);
             MenuPanel.Location = new Point(0, 0);
             MenuPanel.Name = "MenuPanel";
-            MenuPanel.Size = new Size(140, 515);
+            MenuPanel.Size = new Size(140, 505);
             MenuPanel.TabIndex = 8;
             // 
             // MainTabControl
@@ -186,10 +160,10 @@
             MainTabControl.Controls.Add(MainPage);
             MainTabControl.Controls.Add(ArchivePage);
             MainTabControl.Controls.Add(TimerPage);
-            MainTabControl.Location = new Point(12, 3);
+            MainTabControl.Location = new Point(-2, 2);
             MainTabControl.Name = "MainTabControl";
-            MainTabControl.SelectedIndex = 1;
-            MainTabControl.Size = new Size(967, 544);
+            MainTabControl.SelectedIndex = 0;
+            MainTabControl.Size = new Size(905, 471);
             MainTabControl.TabIndex = 1;
             // 
             // MainPage
@@ -201,31 +175,20 @@
             MainPage.Location = new Point(4, 29);
             MainPage.Name = "MainPage";
             MainPage.Padding = new Padding(3);
-            MainPage.Size = new Size(959, 511);
+            MainPage.Size = new Size(897, 438);
             MainPage.TabIndex = 0;
             MainPage.Text = "MainPage";
             // 
             // ArchivePage
             // 
-            ArchivePage.Controls.Add(ArchivePanel);
+            ArchivePage.BackColor = Color.DarkGray;
+            ArchivePage.Controls.Add(flowLayoutPanel1);
             ArchivePage.Location = new Point(4, 29);
             ArchivePage.Name = "ArchivePage";
             ArchivePage.Padding = new Padding(3);
-            ArchivePage.Size = new Size(959, 511);
+            ArchivePage.Size = new Size(897, 438);
             ArchivePage.TabIndex = 1;
             ArchivePage.Text = "ArchivePage";
-            ArchivePage.UseVisualStyleBackColor = true;
-            // 
-            // ArchivePanel
-            // 
-            ArchivePanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            ArchivePanel.BackColor = Color.DarkGray;
-            ArchivePanel.Controls.Add(flowLayoutPanel1);
-            ArchivePanel.Location = new Point(0, 0);
-            ArchivePanel.Name = "ArchivePanel";
-            ArchivePanel.Size = new Size(959, 511);
-            ArchivePanel.TabIndex = 9;
-            ArchivePanel.Visible = false;
             // 
             // flowLayoutPanel1
             // 
@@ -235,27 +198,38 @@
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.Location = new Point(207, 177);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(706, 308);
-            flowLayoutPanel1.TabIndex = 1;
+            flowLayoutPanel1.Size = new Size(635, 187);
+            flowLayoutPanel1.TabIndex = 2;
             flowLayoutPanel1.WrapContents = false;
             // 
             // TimerPage
             // 
-            TimerPage.Controls.Add(timerPanel);
+            TimerPage.BackColor = Color.DarkGray;
+            TimerPage.Controls.Add(timerLabel);
             TimerPage.Location = new Point(4, 29);
             TimerPage.Name = "TimerPage";
             TimerPage.Padding = new Padding(3);
-            TimerPage.Size = new Size(959, 511);
+            TimerPage.Size = new Size(897, 438);
             TimerPage.TabIndex = 2;
             TimerPage.Text = "TimerPage";
-            TimerPage.UseVisualStyleBackColor = true;
+            // 
+            // timerLabel
+            // 
+            timerLabel.Anchor = AnchorStyles.None;
+            timerLabel.AutoSize = true;
+            timerLabel.Font = new Font("Segoe UI", 25F, FontStyle.Regular, GraphicsUnit.Point);
+            timerLabel.Location = new Point(364, 170);
+            timerLabel.Name = "timerLabel";
+            timerLabel.Size = new Size(126, 57);
+            timerLabel.TabIndex = 1;
+            timerLabel.Text = "00:00";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkGray;
-            ClientSize = new Size(983, 549);
+            ClientSize = new Size(907, 475);
             Controls.Add(MainTabControl);
             ForeColor = SystemColors.ControlText;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -270,14 +244,12 @@
             inputPanel.PerformLayout();
             TaskContextMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)taskCountNumericUpDown).EndInit();
-            timerPanel.ResumeLayout(false);
-            timerPanel.PerformLayout();
             MenuPanel.ResumeLayout(false);
             MainTabControl.ResumeLayout(false);
             MainPage.ResumeLayout(false);
             ArchivePage.ResumeLayout(false);
-            ArchivePanel.ResumeLayout(false);
             TimerPage.ResumeLayout(false);
+            TimerPage.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -288,17 +260,15 @@
         private TextBox nameTextBox;
         private Button addTaskButton;
         private NumericUpDown taskCountNumericUpDown;
-        private Panel timerPanel;
-        private Label timerLabel;
         private ContextMenuStrip TaskContextMenu;
         private ToolStripMenuItem Delete;
         private Button ArchiveButton;
         private Panel MenuPanel;
-        private Panel ArchivePanel;
-        private FlowLayoutPanel flowLayoutPanel1;
         private TabControl MainTabControl;
         private TabPage MainPage;
         private TabPage ArchivePage;
         private TabPage TimerPage;
+        private Label timerLabel;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }

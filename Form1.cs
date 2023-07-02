@@ -19,7 +19,7 @@ namespace Pomodoro_Manager
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            _timerController = new TimerController(timerPanel, timerLabel, formTimer, this);
+            _timerController = new TimerController(MainTabControl, timerLabel, formTimer, this);
             _inputPanelController = new InputPanelController(nameTextBox.Text,
                 nameTextBox, taskCountNumericUpDown);
             _saveController = new SaveController();
@@ -27,7 +27,7 @@ namespace Pomodoro_Manager
                 nameTextBox, taskCountNumericUpDown, addTaskButton, _saveController.Tasks,
                 TaskContextMenu);
             _taskResizer = new TaskResizer(mainTaskPanel);
-            _menuPanelController = new MenuPanelController(ArchivePanel, ArchiveButton);
+            _menuPanelController = new MenuPanelController(MainTabControl, ArchiveButton);
             _contextMenu = new TaskContextMenuController(TaskContextMenu, _taskController);
 
             mainTaskPanel.HorizontalScroll.Maximum = 0;

@@ -5,17 +5,17 @@ namespace Pomodoro_Manager.ViewModel
     public class TimerController
     {
         private PomodoroTimer? _pomodoroTimer;
-        private Panel _timerPanel;
+        private TabControl _tabControl;
         private Label _timerLabel;
         private System.Windows.Forms.Timer _formTimer;
         private Form1 _form;
         private AudioPlayer _audioPlayer;
         private TaskFormObject _taskSender;
 
-        public TimerController(Panel timerPanel, Label timerLabel,
+        public TimerController(TabControl tabControl, Label timerLabel,
             System.Windows.Forms.Timer timer, Form1 form)
         {
-            _timerPanel = timerPanel;
+            _tabControl = tabControl;
             _timerLabel = timerLabel;
             _form = form;
             _formTimer = timer;
@@ -30,7 +30,7 @@ namespace Pomodoro_Manager.ViewModel
             {
                 _pomodoroTimer = new PomodoroTimer(1, FinishTask);
                 _formTimer.Enabled = true;
-                _timerPanel.Visible = true;
+                _tabControl.SelectedTab = _tabControl.TabPages[2];
             }
             if (sender is Button button)
             {
@@ -54,7 +54,6 @@ namespace Pomodoro_Manager.ViewModel
             else
                 _form.Activate();
             _audioPlayer.Play();
-            _timerPanel.Visible = false;
         }
     }
 }
