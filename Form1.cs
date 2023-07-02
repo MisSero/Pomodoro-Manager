@@ -32,6 +32,7 @@ namespace Pomodoro_Manager
 
             mainTaskPanel.HorizontalScroll.Maximum = 0;
             mainTaskPanel.AutoScroll = true;
+
         }
         private void Form1_Click(object sender, EventArgs e)
         {

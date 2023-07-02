@@ -9,4 +9,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="iswnh3x5.534~" />
+  </ItemGroup>
+
 </Project>
