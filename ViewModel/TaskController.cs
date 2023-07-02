@@ -5,19 +5,25 @@ namespace Pomodoro_Manager.ViewModel
     public class TaskController
     {
         private List<TaskFormObject> _tasks;
+        private List<TaskFormObject> _archiveTasks;
         private Panel _mainPanel;
+        private Panel _archivePanel;
         private TimerController _timerController;
         private TextBox _nameTextBox;
         private NumericUpDown _taskCountNumericUpDown;
         private Button _addButton;
         private ContextMenuStrip _contextMenuStrip;
       
-        public TaskController(Panel mainPanel, TimerController timerController, TextBox nameTextBox,
-            NumericUpDown taskCountNumeric, Button addButton, List<TaskFormObject> tasks,
-            ContextMenuStrip contextMenuStrip)
+        public TaskController(Panel mainPanel, Panel archivePanel,TimerController timerController, 
+            TextBox nameTextBox, NumericUpDown taskCountNumeric, Button addButton, 
+            List<TaskFormObject> tasks, ContextMenuStrip contextMenuStrip)
         {
+            //todo: add _archiveTasks from parameter
+            _archiveTasks = new List<TaskFormObject>();
+
             _tasks = tasks;
             _mainPanel = mainPanel;
+            _archivePanel = archivePanel;
             _timerController = timerController;
             _nameTextBox = nameTextBox;
             _taskCountNumericUpDown = taskCountNumeric;
@@ -29,12 +35,13 @@ namespace Pomodoro_Manager.ViewModel
             LoadTasks();
         }
         public void DeleteTask(TaskFormObject task) => _tasks.Remove(task);
+        public void DeleteArchiveTask(TaskFormObject task) => _archiveTasks.Remove(task);
         private void CreateTask(object sender, EventArgs e)
         {
             TaskFormObject task = new TaskFormObject(
                 _nameTextBox.Text, (int)_taskCountNumericUpDown.Value);
             _tasks.Add(task);
-            AddToPanel(task);
+            AddToMainPanel(task);
 
             // update TextBox and NumericUpDown
             _nameTextBox.Focus();
@@ -45,9 +52,12 @@ namespace Pomodoro_Manager.ViewModel
         private void LoadTasks()
         {
             foreach (TaskFormObject task in _tasks)
-                AddToPanel(task);
+                AddToMainPanel(task);
+
+            foreach (TaskFormObject task in _archiveTasks)
+                AddToArhivePanel(task);
         }
-        private void AddToPanel(TaskFormObject task)
+        private Panel CreateTaskPanel(TaskFormObject task)
         {
             int panelTaskWidth = _mainPanel.Width - 30;
             int panelTaskHeight = 33;
@@ -59,11 +69,6 @@ namespace Pomodoro_Manager.ViewModel
             taskLabel.Font = new Font("Malgun Gothic", 12);
             taskLabel.TextAlign = ContentAlignment.MiddleLeft;
 
-            Button button = new Button();
-            button.Text = "Play!";
-            button.Dock = DockStyle.Right;
-            button.Click += _timerController.PlayButton_Click;
-
             Label labelCounter = new Label();
             labelCounter.DataBindings.Add(new Binding("Text", task, "DisplayCounter", 
                 false, DataSourceUpdateMode.OnPropertyChanged));
@@ -72,19 +77,38 @@ namespace Pomodoro_Manager.ViewModel
             labelCounter.Font = new Font("Malgun Gothic", 12);
             labelCounter.TextAlign = ContentAlignment.MiddleLeft;
 
-
             Panel taskPanel = new Panel();
             taskPanel.Size = new Size(panelTaskWidth, panelTaskHeight);
             taskPanel.Padding = new Padding(1);
             taskPanel.Anchor = AnchorStyles.Left | AnchorStyles.Top;
             taskPanel.BorderStyle = BorderStyle.FixedSingle;
             taskPanel.Controls.Add(labelCounter);
-            taskPanel.Controls.Add(button);
+            //taskPanel.Controls.Add(button);
             taskPanel.Controls.Add(taskLabel);
             taskPanel.DataContext = task;
+            //taskPanel.ContextMenuStrip = _contextMenuStrip;
+
+            return taskPanel;
+        }
+        private void AddToMainPanel(TaskFormObject task)
+        {
+            Button button = new Button();
+            button.Text = "Play!";
+            button.Dock = DockStyle.Right;
+            button.Click += _timerController.PlayButton_Click;
+
+            Panel taskPanel = CreateTaskPanel(task);
+
+            taskPanel.Controls.Add(button);
             taskPanel.ContextMenuStrip = _contextMenuStrip;
 
             _mainPanel.Controls.Add(taskPanel);
+        }
+        private void AddToArhivePanel(TaskFormObject task)
+        {
+            Panel taskPanel = CreateTaskPanel(task);
+
+            _archivePanel.Controls.Add(taskPanel);
         }
     }
 }

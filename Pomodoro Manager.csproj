@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Form1.cs~RF2694e46.TMP" />
     <None Remove="iswnh3x5.534~" />
   </ItemGroup>
 
