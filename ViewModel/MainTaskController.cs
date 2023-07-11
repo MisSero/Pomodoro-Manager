@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Pomodoro_Manager.Model;
-using Pomodoro_Manager.ViewModel;
+namespace Pomodoro_Manager.ViewModel;
 public class MainTaskController : TaskController
 {
     private NumericUpDown _taskCountNumericUpDown;

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Pomodoro_Manager.Model;
-using Pomodoro_Manager.ViewModel;
+namespace Pomodoro_Manager.ViewModel;
 public class ArchiveTaskController : TaskController
 {
     public ArchiveTaskController(Panel panel, TimerController timerController,
