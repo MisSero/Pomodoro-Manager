@@ -7,7 +7,8 @@ namespace Pomodoro_Manager
     {
         TimerController _timerController;
         InputPanelController _inputPanelController;
-        TaskController _taskController;
+        MainTaskController _mainTaskController;
+        ArchiveTaskController _archiveTaskControlle;
         TaskResizer _taskResizer;
         SaveController _saveController;
         MenuPanelController _menuPanelController;
@@ -23,12 +24,13 @@ namespace Pomodoro_Manager
             _inputPanelController = new InputPanelController(nameTextBox.Text,
                 nameTextBox, taskCountNumericUpDown);
             _saveController = new SaveController();
-            _taskController = new TaskController(mainTaskPanel, _timerController,
-                nameTextBox, taskCountNumericUpDown, addTaskButton, _saveController.Tasks,
-                TaskContextMenu);
             _taskResizer = new TaskResizer(mainTaskPanel);
             _menuPanelController = new MenuPanelController(MainTabControl, ArchiveButton);
-            _contextMenu = new TaskContextMenuController(TaskContextMenu, _taskController);
+
+            _mainTaskController = new MainTaskController(mainTaskPanel, _timerController,
+                nameTextBox, taskCountNumericUpDown, addTaskButton, _saveController.Tasks,
+                TaskContextMenu);
+            _contextMenu = new TaskContextMenuController(TaskContextMenu, _mainTaskController);
 
             mainTaskPanel.HorizontalScroll.Maximum = 0;
             mainTaskPanel.AutoScroll = true;
