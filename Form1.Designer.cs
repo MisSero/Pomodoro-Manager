@@ -46,6 +46,7 @@
             flowLayoutPanel1 = new FlowLayoutPanel();
             TimerPage = new TabPage();
             timerLabel = new Label();
+            moveFromtoArchiveToolStripMenuItem = new ToolStripMenuItem();
             inputPanel.SuspendLayout();
             TaskContextMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)taskCountNumericUpDown).BeginInit();
@@ -88,14 +89,14 @@
             // TaskContextMenu
             // 
             TaskContextMenu.ImageScalingSize = new Size(20, 20);
-            TaskContextMenu.Items.AddRange(new ToolStripItem[] { Delete });
+            TaskContextMenu.Items.AddRange(new ToolStripItem[] { Delete, moveFromtoArchiveToolStripMenuItem });
             TaskContextMenu.Name = "contextMenuStrip1";
-            TaskContextMenu.Size = new Size(123, 28);
+            TaskContextMenu.Size = new Size(223, 80);
             // 
             // Delete
             // 
             Delete.Name = "Delete";
-            Delete.Size = new Size(122, 24);
+            Delete.Size = new Size(222, 24);
             Delete.Text = "Delete";
             // 
             // addTaskButton
@@ -224,6 +225,12 @@
             timerLabel.TabIndex = 1;
             timerLabel.Text = "00:00";
             // 
+            // moveFromtoArchiveToolStripMenuItem
+            // 
+            moveFromtoArchiveToolStripMenuItem.Name = "moveFromtoArchiveToolStripMenuItem";
+            moveFromtoArchiveToolStripMenuItem.Size = new Size(222, 24);
+            moveFromtoArchiveToolStripMenuItem.Text = "Move from/to archive";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -270,5 +277,6 @@
         private TabPage TimerPage;
         private Label timerLabel;
         private FlowLayoutPanel flowLayoutPanel1;
+        private ToolStripMenuItem moveFromtoArchiveToolStripMenuItem;
     }
 }
