@@ -1,6 +1,6 @@
-﻿using Pomodoro_Manager.Model;
+﻿using Pomodoro_Manager.ViewModel;
 
-namespace Pomodoro_Manager.ViewModel
+namespace Pomodoro_Manager.Model
 {
     public abstract class TaskController
     {
@@ -10,8 +10,8 @@ namespace Pomodoro_Manager.ViewModel
         protected TimerController _timerController;
         protected ContextMenuStrip _contextMenuStrip;
         public TaskController AnotherController { get; set; }
-      
-        public TaskController(Panel panel,TimerController timerController, 
+
+        public TaskController(Panel panel, TimerController timerController,
             TextBox nameTextBox, List<TaskFormObject> tasks, ContextMenuStrip contextMenuStrip)
         {
             _tasks = tasks;
@@ -39,14 +39,14 @@ namespace Pomodoro_Manager.ViewModel
             int panelTaskHeight = 33;
 
             Label taskLabel = new Label();
-            taskLabel.DataBindings.Add(new Binding("Text", task, "Name", 
+            taskLabel.DataBindings.Add(new Binding("Text", task, "Name",
                 false, DataSourceUpdateMode.OnPropertyChanged));
             taskLabel.AutoSize = true;
             taskLabel.Font = new Font("Malgun Gothic", 12);
             taskLabel.TextAlign = ContentAlignment.MiddleLeft;
 
             Label labelCounter = new Label();
-            labelCounter.DataBindings.Add(new Binding("Text", task, "DisplayCounter", 
+            labelCounter.DataBindings.Add(new Binding("Text", task, "DisplayCounter",
                 false, DataSourceUpdateMode.OnPropertyChanged));
             labelCounter.Dock = DockStyle.Right;
             labelCounter.AutoSize = true;
