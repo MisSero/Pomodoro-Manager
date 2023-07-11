@@ -8,8 +8,8 @@ public class TaskContextMenuController
     {
         _taskController = taskController;
 
-        contextMenuStrip.Items.Find("Delete", false)[0].Click += DeleteTask;
-        contextMenuStrip.Items.Find("Move from/to archive", false)[0].Click += MoveTask;
+        contextMenuStrip.Items[0].Click += DeleteTask;
+        contextMenuStrip.Items[1].Click += MoveTask;
     }
 
     private void DeleteTask(object? sender, EventArgs e)
@@ -26,5 +26,6 @@ public class TaskContextMenuController
         ContextMenuStrip contextMenu = (ContextMenuStrip)clickedItem!.GetCurrentParent();
         Control? sourceControl = contextMenu.SourceControl;
         _taskController.ChangePanel((TaskFormObject)sourceControl!.DataContext!);
+        sourceControl!.Parent!.Controls.Remove(sourceControl); // delete from panel
     }
 }

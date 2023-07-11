@@ -61,6 +61,7 @@ namespace Pomodoro_Manager.Model
             taskPanel.Controls.Add(labelCounter);
             taskPanel.Controls.Add(taskLabel);
             taskPanel.DataContext = task;
+            taskPanel.ContextMenuStrip = _contextMenuStrip;
 
             return taskPanel;
         }

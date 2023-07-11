@@ -44,7 +44,6 @@ public class MainTaskController : TaskController
         Panel taskPanel = CreateTaskPanel(task);
 
         taskPanel.Controls.Add(button);
-        taskPanel.ContextMenuStrip = _contextMenuStrip;
 
         _tasksPanel.Controls.Add(taskPanel);
     }

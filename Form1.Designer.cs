@@ -31,10 +31,11 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             formTimer = new System.Windows.Forms.Timer(components);
-            mainTaskPanel = new FlowLayoutPanel();
+            MainTaskPanel = new FlowLayoutPanel();
             inputPanel = new Panel();
-            TaskContextMenu = new ContextMenuStrip(components);
-            Delete = new ToolStripMenuItem();
+            MainTaskContextMenu = new ContextMenuStrip(components);
+            MainDelete = new ToolStripMenuItem();
+            MainMove = new ToolStripMenuItem();
             addTaskButton = new Button();
             taskCountNumericUpDown = new NumericUpDown();
             nameTextBox = new TextBox();
@@ -43,41 +44,44 @@
             MainTabControl = new TabControl();
             MainPage = new TabPage();
             ArchivePage = new TabPage();
-            flowLayoutPanel1 = new FlowLayoutPanel();
+            ArchivePanel = new FlowLayoutPanel();
             TimerPage = new TabPage();
             timerLabel = new Label();
-            moveFromtoArchiveToolStripMenuItem = new ToolStripMenuItem();
+            ArchiveTaskContextMenu = new ContextMenuStrip(components);
+            ArchiveDelete = new ToolStripMenuItem();
+            ArchiveMove = new ToolStripMenuItem();
             inputPanel.SuspendLayout();
-            TaskContextMenu.SuspendLayout();
+            MainTaskContextMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)taskCountNumericUpDown).BeginInit();
             MenuPanel.SuspendLayout();
             MainTabControl.SuspendLayout();
             MainPage.SuspendLayout();
             ArchivePage.SuspendLayout();
             TimerPage.SuspendLayout();
+            ArchiveTaskContextMenu.SuspendLayout();
             SuspendLayout();
             // 
             // formTimer
             // 
             formTimer.Interval = 25;
             // 
-            // mainTaskPanel
+            // MainTaskPanel
             // 
-            mainTaskPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            mainTaskPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            mainTaskPanel.BorderStyle = BorderStyle.FixedSingle;
-            mainTaskPanel.FlowDirection = FlowDirection.TopDown;
-            mainTaskPanel.Location = new Point(207, 177);
-            mainTaskPanel.Name = "mainTaskPanel";
-            mainTaskPanel.Size = new Size(635, 187);
-            mainTaskPanel.TabIndex = 0;
-            mainTaskPanel.WrapContents = false;
+            MainTaskPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            MainTaskPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            MainTaskPanel.BorderStyle = BorderStyle.FixedSingle;
+            MainTaskPanel.FlowDirection = FlowDirection.TopDown;
+            MainTaskPanel.Location = new Point(207, 177);
+            MainTaskPanel.Name = "MainTaskPanel";
+            MainTaskPanel.Size = new Size(635, 187);
+            MainTaskPanel.TabIndex = 0;
+            MainTaskPanel.WrapContents = false;
             // 
             // inputPanel
             // 
             inputPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             inputPanel.BorderStyle = BorderStyle.FixedSingle;
-            inputPanel.ContextMenuStrip = TaskContextMenu;
+            inputPanel.ContextMenuStrip = MainTaskContextMenu;
             inputPanel.Controls.Add(addTaskButton);
             inputPanel.Controls.Add(taskCountNumericUpDown);
             inputPanel.Controls.Add(nameTextBox);
@@ -86,18 +90,24 @@
             inputPanel.Size = new Size(635, 38);
             inputPanel.TabIndex = 3;
             // 
-            // TaskContextMenu
+            // MainTaskContextMenu
             // 
-            TaskContextMenu.ImageScalingSize = new Size(20, 20);
-            TaskContextMenu.Items.AddRange(new ToolStripItem[] { Delete, moveFromtoArchiveToolStripMenuItem });
-            TaskContextMenu.Name = "contextMenuStrip1";
-            TaskContextMenu.Size = new Size(223, 80);
+            MainTaskContextMenu.ImageScalingSize = new Size(20, 20);
+            MainTaskContextMenu.Items.AddRange(new ToolStripItem[] { MainDelete, MainMove });
+            MainTaskContextMenu.Name = "contextMenuStrip1";
+            MainTaskContextMenu.Size = new Size(185, 52);
             // 
-            // Delete
+            // MainDelete
             // 
-            Delete.Name = "Delete";
-            Delete.Size = new Size(222, 24);
-            Delete.Text = "Delete";
+            MainDelete.Name = "MainDelete";
+            MainDelete.Size = new Size(184, 24);
+            MainDelete.Text = "Delete";
+            // 
+            // MainMove
+            // 
+            MainMove.Name = "MainMove";
+            MainMove.Size = new Size(184, 24);
+            MainMove.Text = "Move to archive";
             // 
             // addTaskButton
             // 
@@ -170,7 +180,7 @@
             // MainPage
             // 
             MainPage.BackColor = Color.DarkGray;
-            MainPage.Controls.Add(mainTaskPanel);
+            MainPage.Controls.Add(MainTaskPanel);
             MainPage.Controls.Add(inputPanel);
             MainPage.Controls.Add(MenuPanel);
             MainPage.Location = new Point(4, 29);
@@ -183,7 +193,7 @@
             // ArchivePage
             // 
             ArchivePage.BackColor = Color.DarkGray;
-            ArchivePage.Controls.Add(flowLayoutPanel1);
+            ArchivePage.Controls.Add(ArchivePanel);
             ArchivePage.Location = new Point(4, 29);
             ArchivePage.Name = "ArchivePage";
             ArchivePage.Padding = new Padding(3);
@@ -191,17 +201,17 @@
             ArchivePage.TabIndex = 1;
             ArchivePage.Text = "ArchivePage";
             // 
-            // flowLayoutPanel1
+            // ArchivePanel
             // 
-            flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            flowLayoutPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            flowLayoutPanel1.BorderStyle = BorderStyle.FixedSingle;
-            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanel1.Location = new Point(207, 177);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(635, 187);
-            flowLayoutPanel1.TabIndex = 2;
-            flowLayoutPanel1.WrapContents = false;
+            ArchivePanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            ArchivePanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            ArchivePanel.BorderStyle = BorderStyle.FixedSingle;
+            ArchivePanel.FlowDirection = FlowDirection.TopDown;
+            ArchivePanel.Location = new Point(207, 177);
+            ArchivePanel.Name = "ArchivePanel";
+            ArchivePanel.Size = new Size(635, 187);
+            ArchivePanel.TabIndex = 2;
+            ArchivePanel.WrapContents = false;
             // 
             // TimerPage
             // 
@@ -225,11 +235,24 @@
             timerLabel.TabIndex = 1;
             timerLabel.Text = "00:00";
             // 
-            // moveFromtoArchiveToolStripMenuItem
+            // ArchiveTaskContextMenu
             // 
-            moveFromtoArchiveToolStripMenuItem.Name = "moveFromtoArchiveToolStripMenuItem";
-            moveFromtoArchiveToolStripMenuItem.Size = new Size(222, 24);
-            moveFromtoArchiveToolStripMenuItem.Text = "Move from/to archive";
+            ArchiveTaskContextMenu.ImageScalingSize = new Size(20, 20);
+            ArchiveTaskContextMenu.Items.AddRange(new ToolStripItem[] { ArchiveDelete, ArchiveMove });
+            ArchiveTaskContextMenu.Name = "contextMenuStrip1";
+            ArchiveTaskContextMenu.Size = new Size(211, 80);
+            // 
+            // ArchiveDelete
+            // 
+            ArchiveDelete.Name = "ArchiveDelete";
+            ArchiveDelete.Size = new Size(210, 24);
+            ArchiveDelete.Text = "Delete";
+            // 
+            // ArchiveMove
+            // 
+            ArchiveMove.Name = "ArchiveMove";
+            ArchiveMove.Size = new Size(210, 24);
+            ArchiveMove.Text = "Move from archive";
             // 
             // Form1
             // 
@@ -249,7 +272,7 @@
             Click += Form1_Click;
             inputPanel.ResumeLayout(false);
             inputPanel.PerformLayout();
-            TaskContextMenu.ResumeLayout(false);
+            MainTaskContextMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)taskCountNumericUpDown).EndInit();
             MenuPanel.ResumeLayout(false);
             MainTabControl.ResumeLayout(false);
@@ -257,18 +280,19 @@
             ArchivePage.ResumeLayout(false);
             TimerPage.ResumeLayout(false);
             TimerPage.PerformLayout();
+            ArchiveTaskContextMenu.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
         private System.Windows.Forms.Timer formTimer;
-        private FlowLayoutPanel mainTaskPanel;
+        private FlowLayoutPanel MainTaskPanel;
         private Panel inputPanel;
         private TextBox nameTextBox;
         private Button addTaskButton;
         private NumericUpDown taskCountNumericUpDown;
-        private ContextMenuStrip TaskContextMenu;
-        private ToolStripMenuItem Delete;
+        private ContextMenuStrip MainTaskContextMenu;
+        private ToolStripMenuItem MainDelete;
         private Button ArchiveButton;
         private Panel MenuPanel;
         private TabControl MainTabControl;
@@ -276,7 +300,10 @@
         private TabPage ArchivePage;
         private TabPage TimerPage;
         private Label timerLabel;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private ToolStripMenuItem moveFromtoArchiveToolStripMenuItem;
+        private FlowLayoutPanel ArchivePanel;
+        private ToolStripMenuItem MainMove;
+        private ContextMenuStrip ArchiveTaskContextMenu;
+        private ToolStripMenuItem ArchiveDelete;
+        private ToolStripMenuItem ArchiveMove;
     }
 }
