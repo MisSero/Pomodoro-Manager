@@ -1,4 +1,5 @@
 ﻿using Pomodoro_Manager.Model;
+using Pomodoro_Manager.Enums;
 
 namespace Pomodoro_Manager.ViewModel
 {
@@ -30,7 +31,8 @@ namespace Pomodoro_Manager.ViewModel
             {
                 _pomodoroTimer = new PomodoroTimer(1, FinishTask);
                 _formTimer.Enabled = true;
-                _tabControl.SelectedTab = _tabControl.TabPages[2];
+                _tabControl.SelectedTab = _tabControl
+                    .TabPages[(int)TabPagesEnum.TimerPage];
             }
             if (sender is Button button)
             {

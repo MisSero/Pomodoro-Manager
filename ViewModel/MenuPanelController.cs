@@ -1,4 +1,5 @@
-﻿namespace Pomodoro_Manager.ViewModel;
+﻿using Pomodoro_Manager.Enums;
+namespace Pomodoro_Manager.ViewModel;
 
 public class MenuPanelController
 {
@@ -12,6 +13,7 @@ public class MenuPanelController
 
     public void AchiveOpen(object sender, EventArgs e)
     {
-        _tabControl.SelectedTab = _tabControl.TabPages[1];
+        _tabControl.SelectedTab = _tabControl
+            .TabPages[(int)TabPagesEnum.ArchivePage];
     }
 }

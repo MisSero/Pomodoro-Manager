@@ -9,7 +9,8 @@ namespace Pomodoro_Manager
         InputPanelController _inputPanelController;
         MainTaskController _mainTaskController;
         ArchiveTaskController _archiveTaskControlle;
-        TaskResizer _taskResizer;
+        TaskResizer _mainTaskResizer;
+        TaskResizer _archiveTaskResizer;
         SaveController _saveController;
         MenuPanelController _menuPanelController;
         TaskContextMenuController _mainContextMenu;
@@ -25,7 +26,8 @@ namespace Pomodoro_Manager
             _inputPanelController = new InputPanelController(nameTextBox.Text,
                 nameTextBox, taskCountNumericUpDown);
             _saveController = new SaveController();
-            _taskResizer = new TaskResizer(MainTaskPanel);
+            _mainTaskResizer = new TaskResizer(MainTaskPanel);
+            _archiveTaskResizer = new TaskResizer(ArchivePanel);
             _menuPanelController = new MenuPanelController(MainTabControl, ArchiveButton);
 
             _mainTaskController = new MainTaskController(MainTaskPanel, _timerController,
