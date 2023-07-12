@@ -2,8 +2,8 @@
 {
     public class InputPanelController
     {
-        private string _nameTextBoxPlaceholder;
-        private TextBox _nameTextBox;
+        private string? _nameTextBoxPlaceholder;
+        private TextBox? _nameTextBox;
         private NumericUpDown _taskCountNumericUpDown;
 
         public InputPanelController(string placeholder, 
@@ -17,25 +17,30 @@
             _nameTextBox.Leave += TextBox_Leave;
             _taskCountNumericUpDown.MouseWheel += NumericUpDown_MouseWheel;
         }
-
-        private void TextBox_Enter(object sender, EventArgs e)
+        public InputPanelController(NumericUpDown taskCountNumericUpDown)
         {
-            if (_nameTextBox.Text == _nameTextBoxPlaceholder)
+            _taskCountNumericUpDown = taskCountNumericUpDown;
+            _taskCountNumericUpDown.MouseWheel += NumericUpDown_MouseWheel;
+        }
+
+        private void TextBox_Enter(object? sender, EventArgs e)
+        {
+            if (_nameTextBox?.Text == _nameTextBoxPlaceholder)
             {
                 _nameTextBox.Text = string.Empty;
                 _nameTextBox.ForeColor = Color.Black;
             }
         }
 
-        private void TextBox_Leave(object sender, EventArgs e)
+        private void TextBox_Leave(object? sender, EventArgs e)
         {
-            if (_nameTextBox.Text == "")
+            if (_nameTextBox?.Text == "")
             {
                 _nameTextBox.Text = _nameTextBoxPlaceholder;
                 _nameTextBox.ForeColor = Color.DimGray;
             }
         }
-        void NumericUpDown_MouseWheel(object sender, MouseEventArgs e)
+        private void NumericUpDown_MouseWheel(object? sender, MouseEventArgs e)
         {
             if (e.Delta > 0 && _taskCountNumericUpDown.Value <= _taskCountNumericUpDown.Maximum - 5)
             {
