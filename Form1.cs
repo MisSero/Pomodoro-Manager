@@ -29,10 +29,10 @@ namespace Pomodoro_Manager
             _menuPanelController = new MenuPanelController(MainTabControl, ArchiveButton);
 
             _mainTaskController = new MainTaskController(MainTaskPanel, _timerController,
-                nameTextBox, taskCountNumericUpDown, addTaskButton, _saveController.Tasks,
+                nameTextBox, taskCountNumericUpDown, addTaskButton, _saveController.MainTasks,
                 MainTaskContextMenu);
             _archiveTaskControlle = new ArchiveTaskController(ArchivePanel, _timerController,
-                nameTextBox, _saveController.Tasks, ArchiveTaskContextMenu);
+                nameTextBox, _saveController.ArchiveTasks, ArchiveTaskContextMenu);
             _mainContextMenu = new TaskContextMenuController(MainTaskContextMenu, _mainTaskController);
             _archiveContextMenu = new TaskContextMenuController(ArchiveTaskContextMenu, _archiveTaskControlle);
 

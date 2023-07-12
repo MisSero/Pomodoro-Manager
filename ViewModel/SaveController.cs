@@ -9,7 +9,9 @@ namespace Pomodoro_Manager.ViewModel
     public class SaveController
     {
         private string _path;
-        public List<TaskFormObject> Tasks { private set; get; }
+        private DataKeeper _dataKeeper;
+        public List<TaskFormObject> MainTasks { private set; get; }
+        public List<TaskFormObject> ArchiveTasks { private set; get; }
 
         public SaveController()
         {
@@ -20,26 +22,28 @@ namespace Pomodoro_Manager.ViewModel
         
         public void Save()
         {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<TaskFormObject>));
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(DataKeeper));
             using (StreamWriter streamWriter = new StreamWriter(_path))
             {
-                xmlSerializer.Serialize(streamWriter, Tasks);
+                xmlSerializer.Serialize(streamWriter, _dataKeeper);
             }
         }
         private void Load()
         {
             if (File.Exists(_path))
             {
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<TaskFormObject>));
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(DataKeeper));
                 using (StreamReader streamReader = new StreamReader(_path))
                 {
-                    Tasks = (List<TaskFormObject>)xmlSerializer.Deserialize(streamReader);
+                    _dataKeeper = (DataKeeper)xmlSerializer.Deserialize(streamReader);
                 }
             }
             else
             {
-                Tasks = new List<TaskFormObject>();
+                _dataKeeper = new DataKeeper();
             }
+            MainTasks = _dataKeeper!.MainTasks;
+            ArchiveTasks = _dataKeeper!.ArchiveTasks;
         }
     }
 }
