@@ -35,8 +35,9 @@ namespace Pomodoro_Manager
                 MainTaskContextMenu);
             _archiveTaskControlle = new ArchiveTaskController(ArchivePanel, _timerController,
                 nameTextBox, _saveController.ArchiveTasks, ArchiveTaskContextMenu);
-            _mainContextMenu = new TaskContextMenuController(MainTaskContextMenu, _mainTaskController);
-            _archiveContextMenu = new TaskContextMenuController(ArchiveTaskContextMenu, _archiveTaskControlle);
+            _mainContextMenu = new TaskContextMenuController(MainTaskContextMenu, _mainTaskController, this);
+            _archiveContextMenu = new TaskContextMenuController(ArchiveTaskContextMenu, 
+                _archiveTaskControlle, this);
 
             _mainTaskController.AnotherController = _archiveTaskControlle;
             _archiveTaskControlle.AnotherController = _mainTaskController;
@@ -45,7 +46,6 @@ namespace Pomodoro_Manager
             MainTaskPanel.AutoScroll = true;
             ArchivePanel.HorizontalScroll.Maximum = 0;
             ArchivePanel.AutoScroll = true;
-
         }
         private void Form1_Click(object sender, EventArgs e)
         {

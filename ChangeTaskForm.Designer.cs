@@ -89,15 +89,19 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DarkGray;
+            BackColor = Color.Silver;
+            CancelButton = CanсelChangeButton;
             ClientSize = new Size(460, 254);
+            ControlBox = false;
             Controls.Add(CanсelChangeButton);
             Controls.Add(SaveChangeButton);
             Controls.Add(ChangeNumericUpDown);
             Controls.Add(ChangeTextBox);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "ChangeTaskForm";
-            Text = "ChangeTaskForm";
+            StartPosition = FormStartPosition.CenterParent;
             ((System.ComponentModel.ISupportInitialize)ChangeNumericUpDown).EndInit();
             ResumeLayout(false);
             PerformLayout();
