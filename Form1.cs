@@ -36,7 +36,7 @@ namespace Pomodoro_Manager
             _archiveTaskControlle = new ArchiveTaskController(ArchivePanel, _timerController,
                 nameTextBox, _saveController.ArchiveTasks, ArchiveTaskContextMenu);
             _mainContextMenu = new TaskContextMenuController(MainTaskContextMenu, _mainTaskController, this);
-            _archiveContextMenu = new TaskContextMenuController(ArchiveTaskContextMenu, 
+            _archiveContextMenu = new TaskContextMenuController(ArchiveTaskContextMenu,
                 _archiveTaskControlle, this);
 
             _mainTaskController.AnotherController = _archiveTaskControlle;
