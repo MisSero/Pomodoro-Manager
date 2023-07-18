@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Pomodoro_Manager.Model;
+using Pomodoro_Manager.ViewModel;
+namespace Pomodoro_Manager;
 
-namespace Pomodoro_Manager
+public partial class SettingsForm : Form
 {
-    public partial class SettingsForm : Form
+    public SettingsForm(Settings settings)
     {
-        public SettingsForm()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+        SettingsFormController settingsController = new(this, PomodoroDurationUpDown,
+            PomodoroDutationPattern30, PomodoroDutationPattern60, CancelSettingsButton,
+            SaveSettingsButton, settings);
     }
 }

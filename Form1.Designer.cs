@@ -42,11 +42,11 @@
             TimerPage = new TabPage();
             TimerLabel = new Label();
             BaseImageList = new ImageList(components);
-            PickedTaskName = new Label();
-            TimerHide = new Button();
             TimerClose = new Button();
             TimerStop = new Button();
             TimerPlay = new Button();
+            TimerHide = new Button();
+            PickedTaskName = new Label();
             ArchivePage = new TabPage();
             ArchivePanel = new FlowLayoutPanel();
             MainPage = new TabPage();
@@ -58,6 +58,7 @@
             MenuPanel = new Panel();
             ArchiveButton = new Button();
             MainTabControl = new TabControl();
+            SettingsButton = new Button();
             MainTaskContextMenu.SuspendLayout();
             ArchiveTaskContextMenu.SuspendLayout();
             TimerPage.SuspendLayout();
@@ -159,27 +160,6 @@
             BaseImageList.TransparentColor = Color.Transparent;
             BaseImageList.Images.SetKeyName(0, "hide_icon.png");
             // 
-            // PickedTaskName
-            // 
-            PickedTaskName.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            PickedTaskName.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            PickedTaskName.Location = new Point(11, 33);
-            PickedTaskName.Name = "PickedTaskName";
-            PickedTaskName.Size = new Size(910, 38);
-            PickedTaskName.TabIndex = 6;
-            PickedTaskName.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // TimerHide
-            // 
-            TimerHide.Anchor = AnchorStyles.Bottom;
-            TimerHide.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TimerHide.Location = new Point(678, 300);
-            TimerHide.Name = "TimerHide";
-            TimerHide.Size = new Size(102, 40);
-            TimerHide.TabIndex = 5;
-            TimerHide.Text = "Hide";
-            TimerHide.UseVisualStyleBackColor = true;
-            // 
             // TimerClose
             // 
             TimerClose.Anchor = AnchorStyles.Bottom;
@@ -213,6 +193,27 @@
             TimerPlay.TabIndex = 3;
             TimerPlay.Text = "Play";
             TimerPlay.UseVisualStyleBackColor = true;
+            // 
+            // TimerHide
+            // 
+            TimerHide.Anchor = AnchorStyles.Bottom;
+            TimerHide.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TimerHide.Location = new Point(678, 300);
+            TimerHide.Name = "TimerHide";
+            TimerHide.Size = new Size(102, 40);
+            TimerHide.TabIndex = 5;
+            TimerHide.Text = "Hide";
+            TimerHide.UseVisualStyleBackColor = true;
+            // 
+            // PickedTaskName
+            // 
+            PickedTaskName.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            PickedTaskName.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            PickedTaskName.Location = new Point(11, 33);
+            PickedTaskName.Name = "PickedTaskName";
+            PickedTaskName.Size = new Size(910, 38);
+            PickedTaskName.TabIndex = 6;
+            PickedTaskName.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // ArchivePage
             // 
@@ -317,6 +318,7 @@
             // 
             MenuPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             MenuPanel.BackColor = Color.Silver;
+            MenuPanel.Controls.Add(SettingsButton);
             MenuPanel.Controls.Add(ArchiveButton);
             MenuPanel.Location = new Point(0, 0);
             MenuPanel.Name = "MenuPanel";
@@ -343,6 +345,15 @@
             MainTabControl.SelectedIndex = 0;
             MainTabControl.Size = new Size(936, 498);
             MainTabControl.TabIndex = 1;
+            // 
+            // SettingsButton
+            // 
+            SettingsButton.Location = new Point(25, 208);
+            SettingsButton.Name = "SettingsButton";
+            SettingsButton.Size = new Size(90, 88);
+            SettingsButton.TabIndex = 8;
+            SettingsButton.Text = "Settings";
+            SettingsButton.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -401,5 +412,6 @@
         private Button TimerPlay;
         private ImageList BaseImageList;
         private Label PickedTaskName;
+        private Button SettingsButton;
     }
 }

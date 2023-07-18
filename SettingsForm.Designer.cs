@@ -30,12 +30,12 @@
         {
             CancelSettingsButton = new Button();
             TaskDurationLabel = new Label();
-            TaskDurationNumeric = new NumericUpDown();
+            PomodoroDurationUpDown = new NumericUpDown();
             panel1 = new Panel();
             SaveSettingsButton = new Button();
             PomodoroDutationPattern30 = new Button();
             PomodoroDutationPattern60 = new Button();
-            ((System.ComponentModel.ISupportInitialize)TaskDurationNumeric).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PomodoroDurationUpDown).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -54,27 +54,29 @@
             TaskDurationLabel.Anchor = AnchorStyles.None;
             TaskDurationLabel.AutoSize = true;
             TaskDurationLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TaskDurationLabel.Location = new Point(12, 11);
+            TaskDurationLabel.Location = new Point(11, 10);
             TaskDurationLabel.Name = "TaskDurationLabel";
             TaskDurationLabel.Size = new Size(190, 28);
             TaskDurationLabel.TabIndex = 1;
             TaskDurationLabel.Text = "Pomodoro duration:";
             // 
-            // TaskDurationNumeric
+            // PomodoroDurationUpDown
             // 
-            TaskDurationNumeric.Anchor = AnchorStyles.None;
-            TaskDurationNumeric.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            TaskDurationNumeric.Location = new Point(296, 14);
-            TaskDurationNumeric.Maximum = new decimal(new int[] { 10080, 0, 0, 0 });
-            TaskDurationNumeric.Name = "TaskDurationNumeric";
-            TaskDurationNumeric.Size = new Size(82, 30);
-            TaskDurationNumeric.TabIndex = 2;
-            TaskDurationNumeric.ThousandsSeparator = true;
-            TaskDurationNumeric.Value = new decimal(new int[] { 25, 0, 0, 0 });
+            PomodoroDurationUpDown.Anchor = AnchorStyles.None;
+            PomodoroDurationUpDown.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            PomodoroDurationUpDown.Location = new Point(295, 13);
+            PomodoroDurationUpDown.Maximum = new decimal(new int[] { 10080, 0, 0, 0 });
+            PomodoroDurationUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            PomodoroDurationUpDown.Name = "PomodoroDurationUpDown";
+            PomodoroDurationUpDown.Size = new Size(82, 30);
+            PomodoroDurationUpDown.TabIndex = 2;
+            PomodoroDurationUpDown.ThousandsSeparator = true;
+            PomodoroDurationUpDown.Value = new decimal(new int[] { 25, 0, 0, 0 });
             // 
             // panel1
             // 
-            panel1.Controls.Add(TaskDurationNumeric);
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(PomodoroDurationUpDown);
             panel1.Controls.Add(TaskDurationLabel);
             panel1.Location = new Point(12, 23);
             panel1.Name = "panel1";
@@ -113,9 +115,11 @@
             // 
             // SettingsForm
             // 
+            AcceptButton = SaveSettingsButton;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Silver;
+            BackColor = Color.WhiteSmoke;
+            CancelButton = CancelSettingsButton;
             ClientSize = new Size(416, 198);
             ControlBox = false;
             Controls.Add(PomodoroDutationPattern60);
@@ -125,7 +129,8 @@
             Controls.Add(CancelSettingsButton);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "SettingsForm";
-            ((System.ComponentModel.ISupportInitialize)TaskDurationNumeric).EndInit();
+            StartPosition = FormStartPosition.CenterParent;
+            ((System.ComponentModel.ISupportInitialize)PomodoroDurationUpDown).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -135,7 +140,7 @@
 
         private Button CancelSettingsButton;
         private Label TaskDurationLabel;
-        private NumericUpDown TaskDurationNumeric;
+        private NumericUpDown PomodoroDurationUpDown;
         private Panel panel1;
         private Button SaveSettingsButton;
         private Button PomodoroDutationPattern30;
