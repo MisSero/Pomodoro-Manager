@@ -56,9 +56,11 @@
             taskCountNumericUpDown = new NumericUpDown();
             nameTextBox = new TextBox();
             MenuPanel = new Panel();
+            ProgressButton = new Button();
             SettingsButton = new Button();
             ArchiveButton = new Button();
             MainTabControl = new TabControl();
+            ProgressPage = new TabPage();
             MainTaskContextMenu.SuspendLayout();
             ArchiveTaskContextMenu.SuspendLayout();
             TimerPage.SuspendLayout();
@@ -318,6 +320,7 @@
             // 
             MenuPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             MenuPanel.BackColor = Color.Silver;
+            MenuPanel.Controls.Add(ProgressButton);
             MenuPanel.Controls.Add(SettingsButton);
             MenuPanel.Controls.Add(ArchiveButton);
             MenuPanel.Location = new Point(0, 0);
@@ -325,9 +328,18 @@
             MenuPanel.Size = new Size(144, 462);
             MenuPanel.TabIndex = 8;
             // 
+            // ProgressButton
+            // 
+            ProgressButton.Location = new Point(27, 177);
+            ProgressButton.Name = "ProgressButton";
+            ProgressButton.Size = new Size(90, 88);
+            ProgressButton.TabIndex = 9;
+            ProgressButton.Text = "Progress";
+            ProgressButton.UseVisualStyleBackColor = true;
+            // 
             // SettingsButton
             // 
-            SettingsButton.Location = new Point(25, 208);
+            SettingsButton.Location = new Point(27, 291);
             SettingsButton.Name = "SettingsButton";
             SettingsButton.Size = new Size(90, 88);
             SettingsButton.TabIndex = 8;
@@ -336,7 +348,7 @@
             // 
             // ArchiveButton
             // 
-            ArchiveButton.Location = new Point(25, 93);
+            ArchiveButton.Location = new Point(27, 68);
             ArchiveButton.Name = "ArchiveButton";
             ArchiveButton.Size = new Size(90, 88);
             ArchiveButton.TabIndex = 7;
@@ -349,11 +361,22 @@
             MainTabControl.Controls.Add(MainPage);
             MainTabControl.Controls.Add(ArchivePage);
             MainTabControl.Controls.Add(TimerPage);
+            MainTabControl.Controls.Add(ProgressPage);
             MainTabControl.Location = new Point(-3, 0);
             MainTabControl.Name = "MainTabControl";
             MainTabControl.SelectedIndex = 0;
             MainTabControl.Size = new Size(936, 498);
             MainTabControl.TabIndex = 1;
+            // 
+            // ProgressPage
+            // 
+            ProgressPage.BackColor = Color.DarkGray;
+            ProgressPage.Location = new Point(4, 29);
+            ProgressPage.Name = "ProgressPage";
+            ProgressPage.Padding = new Padding(3);
+            ProgressPage.Size = new Size(928, 465);
+            ProgressPage.TabIndex = 3;
+            ProgressPage.Text = "ProgressPage";
             // 
             // Form1
             // 
@@ -413,5 +436,7 @@
         private ImageList BaseImageList;
         private Label PickedTaskName;
         private Button SettingsButton;
+        private Button ProgressButton;
+        private TabPage ProgressPage;
     }
 }

@@ -4,5 +4,6 @@ enum TabPagesEnum
 {
     MainPage,
     ArchivePage,
-    TimerPage
+    TimerPage,
+    ProgressPage
 }

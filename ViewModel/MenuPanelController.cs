@@ -23,6 +23,11 @@ public class MenuPanelController
         _tabControl.SelectedTab = _tabControl
             .TabPages[(int)TabPagesEnum.ArchivePage];
     }
+    private void ProgressOpen(object? sender, EventArgs e)
+    {
+        _tabControl.SelectedTab = _tabControl
+            .TabPages[(int)TabPagesEnum.ProgressPage];
+    }
     private void SettingsOpen(object? sender, EventArgs e)
     {
         SettingsForm settingsForm = new SettingsForm(_settings);
