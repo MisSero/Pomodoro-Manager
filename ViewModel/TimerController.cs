@@ -16,14 +16,14 @@ namespace Pomodoro_Manager.ViewModel
         private Button _playButton;
         private Button _stopButton;
         private Button _closeButton;
-        private int _pomodoroDuration;
+        private Settings _settings;
         private bool _isHidden = false;
         private string _timerPlaceholder;
 
         public TimerController(TabControl tabControl, Label timerLabel,
             System.Windows.Forms.Timer timer, Form1 form, Button playButton,
             Button stopButton, Button closeButton, Button hideButton, 
-            Label pickedTaskName, int pomodoroDuration)
+            Label pickedTaskName, Settings settings)
         {
             _tabControl = tabControl;
             _timerLabel = timerLabel;
@@ -34,7 +34,7 @@ namespace Pomodoro_Manager.ViewModel
             _stopButton = stopButton;
             _closeButton = closeButton;
             _pickedTaskName = pickedTaskName;
-            _pomodoroDuration = pomodoroDuration;
+            _settings = settings;
 
             timer.Tick += Timer_Tick;
             _playButton.Click += Play;
@@ -47,7 +47,7 @@ namespace Pomodoro_Manager.ViewModel
         {
             if (sender is Button button)
             {
-                _timerPlaceholder = $"{_pomodoroDuration:00}:00";
+                _timerPlaceholder = $"{_settings.TaskDuration:00}:00";
 
                 _taskSender = (TaskFormObject)button.Parent.DataContext;
                 _tabControl.SelectedTab = _tabControl
@@ -81,7 +81,7 @@ namespace Pomodoro_Manager.ViewModel
         {
             if (_taskSender != null)
             {
-                _pomodoroTimer = new PomodoroTimer(_pomodoroDuration, CompleteTask);
+                _pomodoroTimer = new PomodoroTimer(_settings.TaskDuration, CompleteTask);
                 _formTimer.Enabled = true;
 
                 _stopButton.Enabled = true;

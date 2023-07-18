@@ -24,7 +24,7 @@ namespace Pomodoro_Manager
         {
             _saveController = new SaveController();
             _timerController = new TimerController(MainTabControl, TimerLabel, formTimer, this, TimerPlay, 
-                TimerStop, TimerClose, TimerHide, PickedTaskName, _saveController.AppSettings.TaskDuration);
+                TimerStop, TimerClose, TimerHide, PickedTaskName, _saveController.AppSettings);
             _inputPanelController = new InputPanelController(nameTextBox.Text,
                 nameTextBox, taskCountNumericUpDown);
             _mainTaskResizer = new TaskResizer(MainTaskPanel);
