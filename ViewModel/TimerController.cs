@@ -16,15 +16,14 @@ namespace Pomodoro_Manager.ViewModel
         private Button _playButton;
         private Button _stopButton;
         private Button _closeButton;
-        private Button _hideButton;
-        private int _taskTime = 1;
+        private int _pomodoroDuration;
         private bool _isHidden = false;
         private string _timerPlaceholder;
 
         public TimerController(TabControl tabControl, Label timerLabel,
             System.Windows.Forms.Timer timer, Form1 form, Button playButton,
             Button stopButton, Button closeButton, Button hideButton, 
-            Label pickedTaskName)
+            Label pickedTaskName, int pomodoroDuration)
         {
             _tabControl = tabControl;
             _timerLabel = timerLabel;
@@ -34,22 +33,22 @@ namespace Pomodoro_Manager.ViewModel
             _playButton = playButton;
             _stopButton = stopButton;
             _closeButton = closeButton;
-            _hideButton = hideButton;
             _pickedTaskName = pickedTaskName;
+            _pomodoroDuration = pomodoroDuration;
 
             timer.Tick += Timer_Tick;
             _playButton.Click += Play;
             _stopButton.Click += Stop;
             _closeButton.Click += Close;
-            _hideButton.Click += HideShow;
-
-            _timerPlaceholder = $"{_taskTime:00}:00";
+            hideButton.Click += HideShow;
         }
 
         public void PickTask(object sender, EventArgs e)
         {
             if (sender is Button button)
             {
+                _timerPlaceholder = $"{_pomodoroDuration:00}:00";
+
                 _taskSender = (TaskFormObject)button.Parent.DataContext;
                 _tabControl.SelectedTab = _tabControl
                     .TabPages[(int)TabPagesEnum.TimerPage];
@@ -82,7 +81,7 @@ namespace Pomodoro_Manager.ViewModel
         {
             if (_taskSender != null)
             {
-                _pomodoroTimer = new PomodoroTimer(_taskTime, CompleteTask);
+                _pomodoroTimer = new PomodoroTimer(_pomodoroDuration, CompleteTask);
                 _formTimer.Enabled = true;
 
                 _stopButton.Enabled = true;
