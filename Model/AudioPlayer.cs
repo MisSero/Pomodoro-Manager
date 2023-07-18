@@ -1,10 +1,11 @@
-﻿using System.Media;
+﻿using Pomodoro_Manager.Properties;
+using System.Media;
 
 namespace Pomodoro_Manager.Model
 {
     public class AudioPlayer
     {
-        string _soundPath = @"../../../Resourses/End Pomodoro Sound.wav";
+        string _soundPath = @"../../../Resources/End Pomodoro Sound.wav";
         SoundPlayer _soundPlayer;
         public AudioPlayer()
         {

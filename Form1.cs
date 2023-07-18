@@ -22,7 +22,8 @@ namespace Pomodoro_Manager
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            _timerController = new TimerController(MainTabControl, timerLabel, formTimer, this);
+            _timerController = new TimerController(MainTabControl, TimerLabel, formTimer, this,
+                TimerPlay, TimerStop, TimerClose, TimerHide, PickedTaskName);
             _inputPanelController = new InputPanelController(nameTextBox.Text,
                 nameTextBox, taskCountNumericUpDown);
             _saveController = new SaveController();
@@ -47,7 +48,7 @@ namespace Pomodoro_Manager
             ArchivePanel.HorizontalScroll.Maximum = 0;
             ArchivePanel.AutoScroll = true;
         }
-        private void Form1_Click(object sender, EventArgs e)
+        private void MainPage_Click(object sender, EventArgs e)
         {
             this.ActiveControl = null;
         }

@@ -8,54 +8,124 @@ namespace Pomodoro_Manager.ViewModel
         private PomodoroTimer? _pomodoroTimer;
         private TabControl _tabControl;
         private Label _timerLabel;
+        private Label _pickedTaskName;
         private System.Windows.Forms.Timer _formTimer;
         private Form1 _form;
         private AudioPlayer _audioPlayer;
-        private TaskFormObject _taskSender;
+        private TaskFormObject? _taskSender;
+        private Button _playButton;
+        private Button _stopButton;
+        private Button _closeButton;
+        private Button _hideButton;
+        private int _taskTime = 1;
+        private bool _isHidden = false;
+        private string _timerPlaceholder;
 
         public TimerController(TabControl tabControl, Label timerLabel,
-            System.Windows.Forms.Timer timer, Form1 form)
+            System.Windows.Forms.Timer timer, Form1 form, Button playButton,
+            Button stopButton, Button closeButton, Button hideButton, 
+            Label pickedTaskName)
         {
             _tabControl = tabControl;
             _timerLabel = timerLabel;
             _form = form;
             _formTimer = timer;
             _audioPlayer = new AudioPlayer();
+            _playButton = playButton;
+            _stopButton = stopButton;
+            _closeButton = closeButton;
+            _hideButton = hideButton;
+            _pickedTaskName = pickedTaskName;
 
             timer.Tick += Timer_Tick;
+            _playButton.Click += Play;
+            _stopButton.Click += Stop;
+            _closeButton.Click += Close;
+            _hideButton.Click += HideShow;
+
+            _timerPlaceholder = $"{_taskTime:00}:00";
         }
 
-        public void PlayButton_Click(object sender, EventArgs e)
+        public void PickTask(object sender, EventArgs e)
         {
-            if (!_formTimer.Enabled)
-            {
-                _pomodoroTimer = new PomodoroTimer(1, FinishTask);
-                _formTimer.Enabled = true;
-                _tabControl.SelectedTab = _tabControl
-                    .TabPages[(int)TabPagesEnum.TimerPage];
-            }
             if (sender is Button button)
             {
                 _taskSender = (TaskFormObject)button.Parent.DataContext;
+                _tabControl.SelectedTab = _tabControl
+                    .TabPages[(int)TabPagesEnum.TimerPage];
+                _timerLabel.Text = _timerPlaceholder;
+                _pickedTaskName.Text = _taskSender?.Name;
+                _playButton.Focus();
+                
+                _isHidden = false;
+                _timerLabel.ImageIndex = -1;
             }
         }
-        private void Timer_Tick(object sender, EventArgs e)
+        private void Timer_Tick(object? sender, EventArgs e)
         {
-            _timerLabel.Text = _pomodoroTimer?.ToString();
             _pomodoroTimer?.SubSecond();
-        }
+            if (!_isHidden && _pomodoroTimer != null)
+                _timerLabel.Text = _pomodoroTimer.ToString();
+    }
 
-        private void FinishTask()
+        private void CompleteTask()
         {
-            _formTimer.Enabled = false;
-            _pomodoroTimer = null;
-            _timerLabel.Text = "End of Timer";
+            _stopButton.PerformClick();
             _taskSender.CurrentCounter++;
             if (_form.WindowState == FormWindowState.Minimized)
                 _form.WindowState = FormWindowState.Normal;
             else
                 _form.Activate();
             _audioPlayer.Play();
+        }
+        private void Play(object? sender, EventArgs e)
+        {
+            if (_taskSender != null)
+            {
+                _pomodoroTimer = new PomodoroTimer(_taskTime, CompleteTask);
+                _formTimer.Enabled = true;
+
+                _stopButton.Enabled = true;
+                _playButton.Enabled = false;
+                _closeButton.Enabled = false;
+
+                _form.ActiveControl = null;
+            }
+        }
+        private void Stop(object? sender, EventArgs e)
+        {
+            _formTimer.Enabled = false;
+            _pomodoroTimer = null;
+            if (!_isHidden)
+                _timerLabel.Text = _timerPlaceholder;
+
+            _stopButton.Enabled = false;
+            _playButton.Enabled = true;
+            _closeButton.Enabled = true;
+
+            _playButton.Focus();
+        }
+        private void Close(object? sender, EventArgs e)
+        {
+            _taskSender = null;
+            _tabControl.SelectedTab = _tabControl
+                    .TabPages[(int)TabPagesEnum.MainPage];
+            _pickedTaskName.Text = "";
+        }
+        private void HideShow(object? sender, EventArgs e)
+        {
+            if (_isHidden)
+            {
+                _isHidden = false;
+                _timerLabel.ImageIndex = -1;
+                _timerLabel.Text = _timerPlaceholder;
+            }
+            else
+            {
+                _isHidden = true;
+                _timerLabel.ImageIndex = 0;
+                _timerLabel.Text = ""; 
+            }
         }
     }
 }

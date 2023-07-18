@@ -39,7 +39,7 @@ public class MainTaskController : TaskController
         Button button = new Button();
         button.Text = "Play!";
         button.Dock = DockStyle.Right;
-        button.Click += _timerController.PlayButton_Click;
+        button.Click += _timerController.PickTask;
 
         Panel taskPanel = CreateTaskPanel(task);
 

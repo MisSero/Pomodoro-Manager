@@ -4,10 +4,10 @@
     {
         public delegate void PomodoroTimerEventHandler();
         public event PomodoroTimerEventHandler? TimerFinished;
-        public byte Minutes { get; private set; }
-        public byte Seconds { get; private set; }
+        public int Minutes { get; private set; }
+        public int Seconds { get; private set; }
         
-        public PomodoroTimer(byte minutes, PomodoroTimerEventHandler eventHandler)
+        public PomodoroTimer(int minutes, PomodoroTimerEventHandler eventHandler)
         {
             Minutes = minutes;
             Seconds = 0;
