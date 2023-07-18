@@ -12,6 +12,8 @@ namespace Pomodoro_Manager.ViewModel
         private DataKeeper _dataKeeper;
         public List<TaskFormObject> MainTasks { private set; get; }
         public List<TaskFormObject> ArchiveTasks { private set; get; }
+        public Settings AppSettings { private set; get; }
+
 
         public SaveController()
         {
@@ -44,6 +46,7 @@ namespace Pomodoro_Manager.ViewModel
             }
             MainTasks = _dataKeeper!.MainTasks;
             ArchiveTasks = _dataKeeper!.ArchiveTasks;
+            AppSettings = _dataKeeper!.AppSettings;
         }
     }
 }

@@ -9,4 +9,5 @@ public class DataKeeper
 {
     public List<TaskFormObject> MainTasks { set; get; } = new();
     public List<TaskFormObject> ArchiveTasks { set; get; } = new();
+    public Settings AppSettings { get; set; } = new();
 }
