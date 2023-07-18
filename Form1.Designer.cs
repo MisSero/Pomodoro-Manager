@@ -61,6 +61,8 @@
             ArchiveButton = new Button();
             MainTabControl = new TabControl();
             ProgressPage = new TabPage();
+            BackFromArchive = new Button();
+            BackFromProgress = new Button();
             MainTaskContextMenu.SuspendLayout();
             ArchiveTaskContextMenu.SuspendLayout();
             TimerPage.SuspendLayout();
@@ -70,6 +72,7 @@
             ((System.ComponentModel.ISupportInitialize)taskCountNumericUpDown).BeginInit();
             MenuPanel.SuspendLayout();
             MainTabControl.SuspendLayout();
+            ProgressPage.SuspendLayout();
             SuspendLayout();
             // 
             // formTimer
@@ -220,6 +223,7 @@
             // ArchivePage
             // 
             ArchivePage.BackColor = Color.DarkGray;
+            ArchivePage.Controls.Add(BackFromArchive);
             ArchivePage.Controls.Add(ArchivePanel);
             ArchivePage.Location = new Point(4, 29);
             ArchivePage.Name = "ArchivePage";
@@ -371,12 +375,31 @@
             // ProgressPage
             // 
             ProgressPage.BackColor = Color.DarkGray;
+            ProgressPage.Controls.Add(BackFromProgress);
             ProgressPage.Location = new Point(4, 29);
             ProgressPage.Name = "ProgressPage";
             ProgressPage.Padding = new Padding(3);
             ProgressPage.Size = new Size(928, 465);
             ProgressPage.TabIndex = 3;
             ProgressPage.Text = "ProgressPage";
+            // 
+            // BackFromArchive
+            // 
+            BackFromArchive.Location = new Point(11, 369);
+            BackFromArchive.Name = "BackFromArchive";
+            BackFromArchive.Size = new Size(90, 88);
+            BackFromArchive.TabIndex = 8;
+            BackFromArchive.Text = "Back";
+            BackFromArchive.UseVisualStyleBackColor = true;
+            // 
+            // BackFromProgress
+            // 
+            BackFromProgress.Location = new Point(11, 369);
+            BackFromProgress.Name = "BackFromProgress";
+            BackFromProgress.Size = new Size(90, 88);
+            BackFromProgress.TabIndex = 9;
+            BackFromProgress.Text = "Back";
+            BackFromProgress.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -403,6 +426,7 @@
             ((System.ComponentModel.ISupportInitialize)taskCountNumericUpDown).EndInit();
             MenuPanel.ResumeLayout(false);
             MainTabControl.ResumeLayout(false);
+            ProgressPage.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -438,5 +462,7 @@
         private Button SettingsButton;
         private Button ProgressButton;
         private TabPage ProgressPage;
+        private Button BackFromArchive;
+        private Button BackFromProgress;
     }
 }

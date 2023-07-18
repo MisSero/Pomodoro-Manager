@@ -9,15 +9,23 @@ public class MenuPanelController
     private Settings _settings;
 
     public MenuPanelController(TabControl tabControl, Button arhciveButton,
-        Button settingsButton, Settings settings)
+        Button settingsButton, Settings settings, Button progressButton,
+        Button backFromArchive, Button backFromProgress)
     {
         _tabControl = tabControl;
         _settings = settings;
 
         arhciveButton.Click += AchiveOpen;
+        progressButton.Click += ProgressOpen;
         settingsButton.Click += SettingsOpen;
+        backFromArchive.Click += MainOpen;
+        backFromProgress.Click += MainOpen;
     }
-
+    private void MainOpen(object? sender, EventArgs e)
+    {
+        _tabControl.SelectedTab = _tabControl
+            .TabPages[(int)TabPagesEnum.MainPage];
+    }
     private void AchiveOpen(object? sender, EventArgs e)
     {
         _tabControl.SelectedTab = _tabControl

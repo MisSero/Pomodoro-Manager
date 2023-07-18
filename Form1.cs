@@ -30,7 +30,7 @@ namespace Pomodoro_Manager
             _mainTaskResizer = new TaskResizer(MainTaskPanel);
             _archiveTaskResizer = new TaskResizer(ArchivePanel);
             _menuPanelController = new MenuPanelController(MainTabControl, ArchiveButton, SettingsButton,
-                _saveController.AppSettings);
+                _saveController.AppSettings, ProgressButton, BackFromArchive, BackFromProgress);
 
             _mainTaskController = new MainTaskController(MainTaskPanel, _timerController,
                 nameTextBox, taskCountNumericUpDown, addTaskButton, _saveController.MainTasks,
