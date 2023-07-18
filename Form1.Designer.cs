@@ -56,9 +56,9 @@
             taskCountNumericUpDown = new NumericUpDown();
             nameTextBox = new TextBox();
             MenuPanel = new Panel();
+            SettingsButton = new Button();
             ArchiveButton = new Button();
             MainTabControl = new TabControl();
-            SettingsButton = new Button();
             MainTaskContextMenu.SuspendLayout();
             ArchiveTaskContextMenu.SuspendLayout();
             TimerPage.SuspendLayout();
@@ -72,7 +72,7 @@
             // 
             // formTimer
             // 
-            formTimer.Interval = 25;
+            formTimer.Interval = 10;
             // 
             // MainTaskContextMenu
             // 
@@ -325,6 +325,15 @@
             MenuPanel.Size = new Size(144, 462);
             MenuPanel.TabIndex = 8;
             // 
+            // SettingsButton
+            // 
+            SettingsButton.Location = new Point(25, 208);
+            SettingsButton.Name = "SettingsButton";
+            SettingsButton.Size = new Size(90, 88);
+            SettingsButton.TabIndex = 8;
+            SettingsButton.Text = "Settings";
+            SettingsButton.UseVisualStyleBackColor = true;
+            // 
             // ArchiveButton
             // 
             ArchiveButton.Location = new Point(25, 93);
@@ -345,15 +354,6 @@
             MainTabControl.SelectedIndex = 0;
             MainTabControl.Size = new Size(936, 498);
             MainTabControl.TabIndex = 1;
-            // 
-            // SettingsButton
-            // 
-            SettingsButton.Location = new Point(25, 208);
-            SettingsButton.Name = "SettingsButton";
-            SettingsButton.Size = new Size(90, 88);
-            SettingsButton.TabIndex = 8;
-            SettingsButton.Text = "Settings";
-            SettingsButton.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 

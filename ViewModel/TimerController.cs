@@ -117,7 +117,10 @@ namespace Pomodoro_Manager.ViewModel
             {
                 _isHidden = false;
                 _timerLabel.ImageIndex = -1;
-                _timerLabel.Text = _timerPlaceholder;
+                if (_pomodoroTimer != null)
+                    _timerLabel.Text = _pomodoroTimer.ToString();
+                else
+                    _timerLabel.Text = _timerPlaceholder;
             }
             else
             {
