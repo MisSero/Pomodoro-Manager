@@ -7,13 +7,20 @@ public class MenuPanelController
 {
     private TabControl _tabControl;
     private Settings _settings;
+    private Progress _progress;
+    private Label _progressTimeLabel;
+    private Label _taskCompletedLabel;
 
     public MenuPanelController(TabControl tabControl, Button arhciveButton,
-        Button settingsButton, Settings settings, Button progressButton,
-        Button backFromArchive, Button backFromProgress)
+        Button settingsButton, SaveController saveController, Button progressButton,
+        Button backFromArchive, Button backFromProgress, Label progressTimeLabel, 
+        Label taskCompletedLabel)
     {
         _tabControl = tabControl;
-        _settings = settings;
+        _settings = saveController.AppSettings;
+        _progress = saveController.UserProgress;
+        _progressTimeLabel = progressTimeLabel;
+        _taskCompletedLabel = taskCompletedLabel;
 
         arhciveButton.Click += AchiveOpen;
         progressButton.Click += ProgressOpen;
@@ -33,6 +40,11 @@ public class MenuPanelController
     }
     private void ProgressOpen(object? sender, EventArgs e)
     {
+        int minutes = (int)(_progress.MinutesAtWork % 60);
+        ulong hours = _progress.MinutesAtWork / 60;
+        _progressTimeLabel.Text = $"{hours:00}:{minutes:00}";
+        _taskCompletedLabel.Text = _progress.CompletedTasks.ToString();
+
         _tabControl.SelectedTab = _tabControl
             .TabPages[(int)TabPagesEnum.ProgressPage];
     }

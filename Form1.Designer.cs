@@ -48,6 +48,7 @@
             TimerHide = new Button();
             PickedTaskName = new Label();
             ArchivePage = new TabPage();
+            BackFromArchive = new Button();
             ArchivePanel = new FlowLayoutPanel();
             MainPage = new TabPage();
             MainTaskPanel = new FlowLayoutPanel();
@@ -61,7 +62,12 @@
             ArchiveButton = new Button();
             MainTabControl = new TabControl();
             ProgressPage = new TabPage();
-            BackFromArchive = new Button();
+            ProgressTimeBox = new GroupBox();
+            ProgressMinutesPictureBox = new PictureBox();
+            ProgressTimeLabel = new Label();
+            ProgressTaskBox = new GroupBox();
+            TaskCompletedPictureBox = new PictureBox();
+            TaskCompletedLabel = new Label();
             BackFromProgress = new Button();
             MainTaskContextMenu.SuspendLayout();
             ArchiveTaskContextMenu.SuspendLayout();
@@ -73,6 +79,10 @@
             MenuPanel.SuspendLayout();
             MainTabControl.SuspendLayout();
             ProgressPage.SuspendLayout();
+            ProgressTimeBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ProgressMinutesPictureBox).BeginInit();
+            ProgressTaskBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)TaskCompletedPictureBox).BeginInit();
             SuspendLayout();
             // 
             // formTimer
@@ -232,6 +242,15 @@
             ArchivePage.TabIndex = 1;
             ArchivePage.Text = "ArchivePage";
             // 
+            // BackFromArchive
+            // 
+            BackFromArchive.Location = new Point(11, 369);
+            BackFromArchive.Name = "BackFromArchive";
+            BackFromArchive.Size = new Size(90, 88);
+            BackFromArchive.TabIndex = 8;
+            BackFromArchive.Text = "Back";
+            BackFromArchive.UseVisualStyleBackColor = true;
+            // 
             // ArchivePanel
             // 
             ArchivePanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -375,6 +394,8 @@
             // ProgressPage
             // 
             ProgressPage.BackColor = Color.DarkGray;
+            ProgressPage.Controls.Add(ProgressTimeBox);
+            ProgressPage.Controls.Add(ProgressTaskBox);
             ProgressPage.Controls.Add(BackFromProgress);
             ProgressPage.Location = new Point(4, 29);
             ProgressPage.Name = "ProgressPage";
@@ -383,17 +404,75 @@
             ProgressPage.TabIndex = 3;
             ProgressPage.Text = "ProgressPage";
             // 
-            // BackFromArchive
+            // ProgressTimeBox
             // 
-            BackFromArchive.Location = new Point(11, 369);
-            BackFromArchive.Name = "BackFromArchive";
-            BackFromArchive.Size = new Size(90, 88);
-            BackFromArchive.TabIndex = 8;
-            BackFromArchive.Text = "Back";
-            BackFromArchive.UseVisualStyleBackColor = true;
+            ProgressTimeBox.Anchor = AnchorStyles.None;
+            ProgressTimeBox.Controls.Add(ProgressMinutesPictureBox);
+            ProgressTimeBox.Controls.Add(ProgressTimeLabel);
+            ProgressTimeBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            ProgressTimeBox.Location = new Point(523, 234);
+            ProgressTimeBox.Name = "ProgressTimeBox";
+            ProgressTimeBox.Size = new Size(340, 186);
+            ProgressTimeBox.TabIndex = 11;
+            ProgressTimeBox.TabStop = false;
+            ProgressTimeBox.Text = "Time at work";
+            // 
+            // ProgressMinutesPictureBox
+            // 
+            ProgressMinutesPictureBox.Image = Properties.Resources.Clock_icon;
+            ProgressMinutesPictureBox.Location = new Point(17, 72);
+            ProgressMinutesPictureBox.Name = "ProgressMinutesPictureBox";
+            ProgressMinutesPictureBox.Size = new Size(83, 80);
+            ProgressMinutesPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            ProgressMinutesPictureBox.TabIndex = 1;
+            ProgressMinutesPictureBox.TabStop = false;
+            // 
+            // ProgressTimeLabel
+            // 
+            ProgressTimeLabel.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point);
+            ProgressTimeLabel.Location = new Point(95, 53);
+            ProgressTimeLabel.Name = "ProgressTimeLabel";
+            ProgressTimeLabel.Size = new Size(239, 114);
+            ProgressTimeLabel.TabIndex = 0;
+            ProgressTimeLabel.Text = "?";
+            ProgressTimeLabel.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // ProgressTaskBox
+            // 
+            ProgressTaskBox.Anchor = AnchorStyles.None;
+            ProgressTaskBox.Controls.Add(TaskCompletedPictureBox);
+            ProgressTaskBox.Controls.Add(TaskCompletedLabel);
+            ProgressTaskBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            ProgressTaskBox.Location = new Point(98, 37);
+            ProgressTaskBox.Name = "ProgressTaskBox";
+            ProgressTaskBox.Size = new Size(340, 186);
+            ProgressTaskBox.TabIndex = 10;
+            ProgressTaskBox.TabStop = false;
+            ProgressTaskBox.Text = "Completed tasks";
+            // 
+            // TaskCompletedPictureBox
+            // 
+            TaskCompletedPictureBox.Image = Properties.Resources.done_icon;
+            TaskCompletedPictureBox.Location = new Point(17, 72);
+            TaskCompletedPictureBox.Name = "TaskCompletedPictureBox";
+            TaskCompletedPictureBox.Size = new Size(83, 80);
+            TaskCompletedPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            TaskCompletedPictureBox.TabIndex = 1;
+            TaskCompletedPictureBox.TabStop = false;
+            // 
+            // TaskCompletedLabel
+            // 
+            TaskCompletedLabel.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point);
+            TaskCompletedLabel.Location = new Point(95, 53);
+            TaskCompletedLabel.Name = "TaskCompletedLabel";
+            TaskCompletedLabel.Size = new Size(239, 114);
+            TaskCompletedLabel.TabIndex = 0;
+            TaskCompletedLabel.Text = "?";
+            TaskCompletedLabel.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // BackFromProgress
             // 
+            BackFromProgress.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             BackFromProgress.Location = new Point(11, 369);
             BackFromProgress.Name = "BackFromProgress";
             BackFromProgress.Size = new Size(90, 88);
@@ -427,6 +506,10 @@
             MenuPanel.ResumeLayout(false);
             MainTabControl.ResumeLayout(false);
             ProgressPage.ResumeLayout(false);
+            ProgressTimeBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)ProgressMinutesPictureBox).EndInit();
+            ProgressTaskBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)TaskCompletedPictureBox).EndInit();
             ResumeLayout(false);
         }
 
@@ -464,5 +547,11 @@
         private TabPage ProgressPage;
         private Button BackFromArchive;
         private Button BackFromProgress;
+        private GroupBox ProgressTaskBox;
+        private PictureBox TaskCompletedPictureBox;
+        private Label TaskCompletedLabel;
+        private GroupBox ProgressTimeBox;
+        private PictureBox ProgressMinutesPictureBox;
+        private Label ProgressTimeLabel;
     }
 }
