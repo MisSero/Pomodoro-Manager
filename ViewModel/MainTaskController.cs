@@ -31,7 +31,7 @@ public class MainTaskController : TaskController
         _nameTextBox.Focus();
         _nameTextBox.Text = "";
         _taskCountNumericUpDown.Value = _taskCountNumericUpDown.Minimum;
-        ((Button)sender).Focus();
+        _addButton.Focus();
     }
 
     protected override void AddToPanel(TaskFormObject task)

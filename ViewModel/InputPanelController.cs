@@ -5,17 +5,21 @@
         private string? _nameTextBoxPlaceholder;
         private TextBox? _nameTextBox;
         private NumericUpDown _taskCountNumericUpDown;
+        private Button _addButton;
 
-        public InputPanelController(string placeholder, 
-            TextBox nameTextBox, NumericUpDown taskCountNumericUpDown) 
+        public InputPanelController(string placeholder, TextBox nameTextBox, 
+            NumericUpDown taskCountNumericUpDown, Button addTask) 
         {
             _nameTextBoxPlaceholder = placeholder;
             _nameTextBox = nameTextBox;
             _taskCountNumericUpDown = taskCountNumericUpDown;
+            _addButton = addTask;
 
             _nameTextBox.Enter += TextBox_Enter;
             _nameTextBox.Leave += TextBox_Leave;
+            _nameTextBox.KeyDown += PressKeyEnter;
             _taskCountNumericUpDown.MouseWheel += NumericUpDown_MouseWheel;
+            _taskCountNumericUpDown.KeyDown += PressKeyEnter;
         }
         public InputPanelController(NumericUpDown taskCountNumericUpDown)
         {
@@ -49,6 +53,13 @@
             else if (e.Delta < 0 && _taskCountNumericUpDown.Value >= _taskCountNumericUpDown.Minimum + 5)
             {
                 _taskCountNumericUpDown.Value -= 2;
+            }
+        }
+        private void PressKeyEnter(object? sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _addButton.PerformClick();
             }
         }
     }
