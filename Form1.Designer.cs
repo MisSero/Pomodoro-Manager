@@ -119,24 +119,24 @@
             ArchiveTaskContextMenu.ImageScalingSize = new Size(20, 20);
             ArchiveTaskContextMenu.Items.AddRange(new ToolStripItem[] { ArchiveDelete, ArchiveMove, ArchiveChange });
             ArchiveTaskContextMenu.Name = "contextMenuStrip1";
-            ArchiveTaskContextMenu.Size = new Size(203, 76);
+            ArchiveTaskContextMenu.Size = new Size(211, 104);
             // 
             // ArchiveDelete
             // 
             ArchiveDelete.Name = "ArchiveDelete";
-            ArchiveDelete.Size = new Size(202, 24);
+            ArchiveDelete.Size = new Size(210, 24);
             ArchiveDelete.Text = "Delete";
             // 
             // ArchiveMove
             // 
             ArchiveMove.Name = "ArchiveMove";
-            ArchiveMove.Size = new Size(202, 24);
-            ArchiveMove.Text = "Move from archive";
+            ArchiveMove.Size = new Size(210, 24);
+            ArchiveMove.Text = "Return to active";
             // 
             // ArchiveChange
             // 
             ArchiveChange.Name = "ArchiveChange";
-            ArchiveChange.Size = new Size(202, 24);
+            ArchiveChange.Size = new Size(210, 24);
             ArchiveChange.Text = "Change Task";
             // 
             // TimerPage
@@ -244,6 +244,7 @@
             // 
             // BackFromArchive
             // 
+            BackFromArchive.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             BackFromArchive.Location = new Point(11, 369);
             BackFromArchive.Name = "BackFromArchive";
             BackFromArchive.Size = new Size(90, 88);
@@ -353,6 +354,7 @@
             // 
             // ProgressButton
             // 
+            ProgressButton.Anchor = AnchorStyles.None;
             ProgressButton.Location = new Point(27, 177);
             ProgressButton.Name = "ProgressButton";
             ProgressButton.Size = new Size(90, 88);
@@ -362,6 +364,7 @@
             // 
             // SettingsButton
             // 
+            SettingsButton.Anchor = AnchorStyles.None;
             SettingsButton.Location = new Point(27, 291);
             SettingsButton.Name = "SettingsButton";
             SettingsButton.Size = new Size(90, 88);
@@ -371,6 +374,7 @@
             // 
             // ArchiveButton
             // 
+            ArchiveButton.Anchor = AnchorStyles.None;
             ArchiveButton.Location = new Point(27, 68);
             ArchiveButton.Name = "ArchiveButton";
             ArchiveButton.Size = new Size(90, 88);
