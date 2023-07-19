@@ -1,4 +1,5 @@
-﻿using Pomodoro_Manager.Model;
+﻿using System.Diagnostics;
+using Pomodoro_Manager.Model;
 
 namespace Pomodoro_Manager.ViewModel;
 
@@ -10,7 +11,8 @@ public class SettingsFormController
 
     public SettingsFormController(SettingsForm settingsForm, 
         NumericUpDown pomodoroDurationUpDown, Button pomodoroPattern30, 
-        Button pomodoroPattern60, Button cancel, Button save, Settings settings)
+        Button pomodoroPattern60, Button cancel, Button save, Settings settings,
+        LinkLabel linkLabel)
     {
         _form = settingsForm;
         _settings = settings;
@@ -21,6 +23,7 @@ public class SettingsFormController
         save.Click += Save;
         pomodoroPattern30.Click += SetPattern;
         pomodoroPattern60.Click += SetPattern;
+        linkLabel.LinkClicked += GitHubLinkClick;
 
         _pomodoroDurationUpDown.Value = (int)_settings.TaskDuration;
     }
@@ -54,5 +57,13 @@ public class SettingsFormController
         {
             _pomodoroDurationUpDown.Value -= 2;
         }
+    }
+    private void GitHubLinkClick(object? sender, LinkLabelLinkClickedEventArgs e)
+    {
+        System.Diagnostics.Process.Start(new ProcessStartInfo
+        {
+            FileName = "https://github.com/MisSero/Pomodoro-Manager",
+            UseShellExecute = true
+        });
     }
 }

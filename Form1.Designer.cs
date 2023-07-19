@@ -286,7 +286,7 @@
             MainTaskPanel.Location = new Point(207, 177);
             MainTaskPanel.Name = "MainTaskPanel";
             MainTaskPanel.Size = new Size(663, 214);
-            MainTaskPanel.TabIndex = 0;
+            MainTaskPanel.TabIndex = 3;
             MainTaskPanel.WrapContents = false;
             // 
             // inputPanel
@@ -300,7 +300,7 @@
             inputPanel.Location = new Point(207, 103);
             inputPanel.Name = "inputPanel";
             inputPanel.Size = new Size(663, 38);
-            inputPanel.TabIndex = 3;
+            inputPanel.TabIndex = 0;
             // 
             // addTaskButton
             // 
@@ -309,7 +309,7 @@
             addTaskButton.Location = new Point(599, 1);
             addTaskButton.Name = "addTaskButton";
             addTaskButton.Size = new Size(56, 34);
-            addTaskButton.TabIndex = 5;
+            addTaskButton.TabIndex = 2;
             addTaskButton.Text = "Add";
             addTaskButton.UseVisualStyleBackColor = true;
             // 
@@ -322,7 +322,7 @@
             taskCountNumericUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             taskCountNumericUpDown.Name = "taskCountNumericUpDown";
             taskCountNumericUpDown.Size = new Size(86, 30);
-            taskCountNumericUpDown.TabIndex = 4;
+            taskCountNumericUpDown.TabIndex = 1;
             taskCountNumericUpDown.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // nameTextBox
@@ -336,7 +336,7 @@
             nameTextBox.MaxLength = 60;
             nameTextBox.Name = "nameTextBox";
             nameTextBox.Size = new Size(365, 32);
-            nameTextBox.TabIndex = 3;
+            nameTextBox.TabIndex = 0;
             nameTextBox.Text = "Enter task name";
             // 
             // MenuPanel
@@ -349,14 +349,14 @@
             MenuPanel.Location = new Point(0, 0);
             MenuPanel.Name = "MenuPanel";
             MenuPanel.Size = new Size(144, 462);
-            MenuPanel.TabIndex = 8;
+            MenuPanel.TabIndex = 4;
             // 
             // ProgressButton
             // 
             ProgressButton.Location = new Point(27, 177);
             ProgressButton.Name = "ProgressButton";
             ProgressButton.Size = new Size(90, 88);
-            ProgressButton.TabIndex = 9;
+            ProgressButton.TabIndex = 5;
             ProgressButton.Text = "Progress";
             ProgressButton.UseVisualStyleBackColor = true;
             // 
@@ -365,7 +365,7 @@
             SettingsButton.Location = new Point(27, 291);
             SettingsButton.Name = "SettingsButton";
             SettingsButton.Size = new Size(90, 88);
-            SettingsButton.TabIndex = 8;
+            SettingsButton.TabIndex = 6;
             SettingsButton.Text = "Settings";
             SettingsButton.UseVisualStyleBackColor = true;
             // 
@@ -374,7 +374,7 @@
             ArchiveButton.Location = new Point(27, 68);
             ArchiveButton.Name = "ArchiveButton";
             ArchiveButton.Size = new Size(90, 88);
-            ArchiveButton.TabIndex = 7;
+            ArchiveButton.TabIndex = 4;
             ArchiveButton.Text = "Archive";
             ArchiveButton.UseVisualStyleBackColor = true;
             // 
@@ -389,7 +389,7 @@
             MainTabControl.Name = "MainTabControl";
             MainTabControl.SelectedIndex = 0;
             MainTabControl.Size = new Size(936, 498);
-            MainTabControl.TabIndex = 1;
+            MainTabControl.TabIndex = 100;
             // 
             // ProgressPage
             // 

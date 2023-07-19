@@ -9,6 +9,6 @@ public partial class SettingsForm : Form
         InitializeComponent();
         SettingsFormController settingsController = new(this, PomodoroDurationUpDown,
             PomodoroDutationPattern30, PomodoroDutationPattern60, CancelSettingsButton,
-            SaveSettingsButton, settings);
+            SaveSettingsButton, settings, GithubLinkLabel);
     }
 }

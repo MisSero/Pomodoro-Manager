@@ -35,6 +35,7 @@
             SaveSettingsButton = new Button();
             PomodoroDutationPattern30 = new Button();
             PomodoroDutationPattern60 = new Button();
+            GithubLinkLabel = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)PomodoroDurationUpDown).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -42,7 +43,7 @@
             // CancelSettingsButton
             // 
             CancelSettingsButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            CancelSettingsButton.Location = new Point(12, 136);
+            CancelSettingsButton.Location = new Point(12, 126);
             CancelSettingsButton.Name = "CancelSettingsButton";
             CancelSettingsButton.Size = new Size(85, 35);
             CancelSettingsButton.TabIndex = 0;
@@ -86,7 +87,7 @@
             // SaveSettingsButton
             // 
             SaveSettingsButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            SaveSettingsButton.Location = new Point(319, 136);
+            SaveSettingsButton.Location = new Point(319, 126);
             SaveSettingsButton.Name = "SaveSettingsButton";
             SaveSettingsButton.Size = new Size(85, 35);
             SaveSettingsButton.TabIndex = 4;
@@ -113,6 +114,17 @@
             PomodoroDutationPattern60.Text = "60";
             PomodoroDutationPattern60.UseVisualStyleBackColor = true;
             // 
+            // GithubLinkLabel
+            // 
+            GithubLinkLabel.AutoSize = true;
+            GithubLinkLabel.Font = new Font("Segoe UI", 7.20000029F, FontStyle.Regular, GraphicsUnit.Point);
+            GithubLinkLabel.Location = new Point(12, 164);
+            GithubLinkLabel.Name = "GithubLinkLabel";
+            GithubLinkLabel.Size = new Size(294, 17);
+            GithubLinkLabel.TabIndex = 7;
+            GithubLinkLabel.TabStop = true;
+            GithubLinkLabel.Text = "https://github.com/MisSero/Pomodoro-Manager";
+            // 
             // SettingsForm
             // 
             AcceptButton = SaveSettingsButton;
@@ -120,8 +132,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             CancelButton = CancelSettingsButton;
-            ClientSize = new Size(416, 198);
+            ClientSize = new Size(416, 187);
             ControlBox = false;
+            Controls.Add(GithubLinkLabel);
             Controls.Add(PomodoroDutationPattern60);
             Controls.Add(PomodoroDutationPattern30);
             Controls.Add(SaveSettingsButton);
@@ -134,6 +147,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -145,5 +159,6 @@
         private Button SaveSettingsButton;
         private Button PomodoroDutationPattern30;
         private Button PomodoroDutationPattern60;
+        private LinkLabel GithubLinkLabel;
     }
 }
