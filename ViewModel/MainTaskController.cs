@@ -44,6 +44,7 @@ public class MainTaskController : TaskController
         Panel taskPanel = CreateTaskPanel(task);
 
         taskPanel.Controls.Add(button);
+        taskPanel.Controls.SetChildIndex(button, 1);
 
         _tasksPanel.Controls.Add(taskPanel);
     }

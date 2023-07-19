@@ -23,9 +23,9 @@ namespace Pomodoro_Manager.Model
         public void DeleteTask(TaskFormObject task) => _tasks.Remove(task);
         public void ChangePanel(TaskFormObject task)
         {
-            AnotherController._tasks.Add(task); //thats ok?
+            AnotherController._tasks.Add(task);
             DeleteTask(task);
-            AnotherController.AddToPanel(task); //same?
+            AnotherController.AddToPanel(task);
         }
         protected abstract void AddToPanel(TaskFormObject task);
         protected void LoadTasks()
@@ -63,6 +63,7 @@ namespace Pomodoro_Manager.Model
             taskPanel.DataContext = task;
             taskPanel.ContextMenuStrip = _contextMenuStrip;
 
+            taskPanel.Controls.SetChildIndex(taskLabel, 2);
             return taskPanel;
         }
     }
