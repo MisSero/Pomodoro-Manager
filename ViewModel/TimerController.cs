@@ -17,13 +17,14 @@ namespace Pomodoro_Manager.ViewModel
         private Button _stopButton;
         private Button _closeButton;
         private Settings _settings;
+        private Progress _progress;
         private bool _isHidden = false;
         private string _timerPlaceholder;
 
         public TimerController(TabControl tabControl, Label timerLabel,
             System.Windows.Forms.Timer timer, Form1 form, Button playButton,
             Button stopButton, Button closeButton, Button hideButton, 
-            Label pickedTaskName, Settings settings)
+            Label pickedTaskName, SaveController saveController)
         {
             _tabControl = tabControl;
             _timerLabel = timerLabel;
@@ -34,7 +35,8 @@ namespace Pomodoro_Manager.ViewModel
             _stopButton = stopButton;
             _closeButton = closeButton;
             _pickedTaskName = pickedTaskName;
-            _settings = settings;
+            _settings = saveController.AppSettings;
+            _progress = saveController.UserProgress;
 
             timer.Tick += Timer_Tick;
             _playButton.Click += Play;
@@ -70,7 +72,12 @@ namespace Pomodoro_Manager.ViewModel
         private void CompleteTask()
         {
             _stopButton.PerformClick();
+
             _taskSender.CurrentCounter++;
+            _progress.CompletedTasks++;
+            _progress.MinutesAtWork += (ulong)_settings.TaskDuration;
+
+
             if (_form.WindowState == FormWindowState.Minimized)
                 _form.WindowState = FormWindowState.Normal;
             else
