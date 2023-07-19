@@ -25,8 +25,17 @@ public class TaskContextMenuController
         ToolStripMenuItem? clickedItem = sender as ToolStripMenuItem;
         ContextMenuStrip contextMenu = (ContextMenuStrip)clickedItem!.GetCurrentParent();
         Control? sourceControl = contextMenu.SourceControl;
-        _taskController.DeleteTask((TaskFormObject)sourceControl!.DataContext!);
-        sourceControl!.Parent!.Controls.Remove(sourceControl);
+
+        if (sourceControl?.DataContext is TaskFormObject task)
+        {
+            var confirmResult = MessageBox.Show($"Are you sure you want to delete the \"{task.Name}\" task",
+                "Delete task", MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                _taskController.DeleteTask(task);
+                sourceControl!.Parent!.Controls.Remove(sourceControl);
+            }
+        }
     }
     private void MoveTask(object? sender, EventArgs e)
     {
@@ -42,7 +51,7 @@ public class TaskContextMenuController
         ContextMenuStrip contextMenu = (ContextMenuStrip)clickedItem!.GetCurrentParent();
         Control? sourceControl = contextMenu.SourceControl;
 
-        ChangeTaskForm changeForm = new ChangeTaskForm((TaskFormObject)sourceControl!.DataContext);
+        ChangeTaskForm changeForm = new ChangeTaskForm((TaskFormObject)sourceControl?.DataContext);
         changeForm.ShowDialog();
     }
 }
