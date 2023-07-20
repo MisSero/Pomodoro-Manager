@@ -12,8 +12,9 @@ public class MainTaskController : TaskController
     private Button _addButton;
     public MainTaskController(Panel panel, TimerController timerController,
             TextBox nameTextBox, NumericUpDown taskCountNumeric, Button addButton,
-            List<TaskFormObject> tasks, ContextMenuStrip contextMenuStrip) : base(panel, timerController,
-            nameTextBox, tasks, contextMenuStrip)
+            List<TaskFormObject> tasks, ContextMenuStrip contextMenuStrip, 
+            DeleteOrMoveEventHandler eventHandler) : base(panel, timerController,
+                nameTextBox, tasks, contextMenuStrip, eventHandler)
     {
         _taskCountNumericUpDown = taskCountNumeric;
         _addButton = addButton;

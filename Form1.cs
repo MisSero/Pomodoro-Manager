@@ -25,7 +25,7 @@ namespace Pomodoro_Manager
             _saveController = new SaveController();
             _menuPanelController = new MenuPanelController(MainTabControl, ArchiveButton, SettingsButton,
                 _saveController, ProgressButton, BackFromArchive, BackFromProgress, ProgressTimeLabel,
-                TaskCompletedLabel);
+                TaskCompletedLabel, ActiveTasksLabel, ArchiveTasksLabel);
             _timerController = new TimerController(MainTabControl, TimerLabel, formTimer, this, TimerPlay,
                 TimerStop, TimerClose, TimerHide, PickedTaskName, _saveController, _menuPanelController);
             _inputPanelController = new InputPanelController(nameTextBox.Text,
@@ -35,9 +35,10 @@ namespace Pomodoro_Manager
 
             _mainTaskController = new MainTaskController(MainTaskPanel, _timerController,
                 nameTextBox, taskCountNumericUpDown, addTaskButton, _saveController.MainTasks,
-                MainTaskContextMenu);
+                MainTaskContextMenu, _menuPanelController.UpdateTaskCounterLabels);
             _archiveTaskControlle = new ArchiveTaskController(ArchivePanel, _timerController,
-                nameTextBox, _saveController.ArchiveTasks, ArchiveTaskContextMenu);
+                nameTextBox, _saveController.ArchiveTasks, ArchiveTaskContextMenu,
+                _menuPanelController.UpdateTaskCounterLabels);
             _mainContextMenu = new TaskContextMenuController(MainTaskContextMenu, _mainTaskController, this);
             _archiveContextMenu = new TaskContextMenuController(ArchiveTaskContextMenu,
                 _archiveTaskControlle, this);

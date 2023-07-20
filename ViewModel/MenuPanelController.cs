@@ -8,20 +8,26 @@ public class MenuPanelController
     private TabControl _tabControl;
     private Settings _settings;
     private Progress _progress;
+    private SaveController _saveController;
     private Label _progressTimeLabel;
     private Label _taskCompletedLabel;
+    private Label _activeTasksLabel;
+    private Label _arhiveTasksLabel;
     public bool AllowTabSelection { get; set; } = false;
 
     public MenuPanelController(TabControl tabControl, Button arhciveButton,
         Button settingsButton, SaveController saveController, Button progressButton,
         Button backFromArchive, Button backFromProgress, Label progressTimeLabel,
-        Label taskCompletedLabel)
+        Label taskCompletedLabel, Label activeTasksLabel, Label arhiveTasksLabel)
     {
         _tabControl = tabControl;
+        _saveController = saveController;
         _settings = saveController.AppSettings;
         _progress = saveController.UserProgress;
         _progressTimeLabel = progressTimeLabel;
         _taskCompletedLabel = taskCompletedLabel;
+        _activeTasksLabel = activeTasksLabel;
+        _arhiveTasksLabel = arhiveTasksLabel;
 
         _tabControl.Selecting += PageSelecting;
         arhciveButton.Click += AchiveOpen;
@@ -29,6 +35,12 @@ public class MenuPanelController
         settingsButton.Click += SettingsOpen;
         backFromArchive.Click += MainOpen;
         backFromProgress.Click += MainOpen;
+    }
+
+    public void UpdateTaskCounterLabels()
+    {
+        _activeTasksLabel.Text = $"Active tasks: {_saveController.MainTasks.Count}";
+        _arhiveTasksLabel.Text = $"Archive tasks: {_saveController.ArchiveTasks.Count}";
     }
     private void MainOpen(object? sender, EventArgs e)
     {
@@ -43,6 +55,8 @@ public class MenuPanelController
         _tabControl.SelectedTab = _tabControl
             .TabPages[(int)TabPagesEnum.ArchivePage];
         AllowTabSelection = false;
+
+        UpdateTaskCounterLabels();
     }
     private void ProgressOpen(object? sender, EventArgs e)
     {

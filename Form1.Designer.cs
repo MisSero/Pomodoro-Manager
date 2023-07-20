@@ -48,6 +48,9 @@
             TimerHide = new Button();
             PickedTaskName = new Label();
             ArchivePage = new TabPage();
+            panel1 = new Panel();
+            ArchiveTasksLabel = new Label();
+            ActiveTasksLabel = new Label();
             BackFromArchive = new Button();
             ArchivePanel = new FlowLayoutPanel();
             MainPage = new TabPage();
@@ -73,6 +76,7 @@
             ArchiveTaskContextMenu.SuspendLayout();
             TimerPage.SuspendLayout();
             ArchivePage.SuspendLayout();
+            panel1.SuspendLayout();
             MainPage.SuspendLayout();
             inputPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)taskCountNumericUpDown).BeginInit();
@@ -119,24 +123,24 @@
             ArchiveTaskContextMenu.ImageScalingSize = new Size(20, 20);
             ArchiveTaskContextMenu.Items.AddRange(new ToolStripItem[] { ArchiveDelete, ArchiveMove, ArchiveChange });
             ArchiveTaskContextMenu.Name = "contextMenuStrip1";
-            ArchiveTaskContextMenu.Size = new Size(211, 104);
+            ArchiveTaskContextMenu.Size = new Size(183, 76);
             // 
             // ArchiveDelete
             // 
             ArchiveDelete.Name = "ArchiveDelete";
-            ArchiveDelete.Size = new Size(210, 24);
+            ArchiveDelete.Size = new Size(182, 24);
             ArchiveDelete.Text = "Delete";
             // 
             // ArchiveMove
             // 
             ArchiveMove.Name = "ArchiveMove";
-            ArchiveMove.Size = new Size(210, 24);
+            ArchiveMove.Size = new Size(182, 24);
             ArchiveMove.Text = "Return to active";
             // 
             // ArchiveChange
             // 
             ArchiveChange.Name = "ArchiveChange";
-            ArchiveChange.Size = new Size(210, 24);
+            ArchiveChange.Size = new Size(182, 24);
             ArchiveChange.Text = "Change Task";
             // 
             // TimerPage
@@ -233,6 +237,7 @@
             // ArchivePage
             // 
             ArchivePage.BackColor = Color.DarkGray;
+            ArchivePage.Controls.Add(panel1);
             ArchivePage.Controls.Add(BackFromArchive);
             ArchivePage.Controls.Add(ArchivePanel);
             ArchivePage.Location = new Point(4, 29);
@@ -241,6 +246,35 @@
             ArchivePage.Size = new Size(928, 465);
             ArchivePage.TabIndex = 1;
             ArchivePage.Text = "ArchivePage";
+            // 
+            // panel1
+            // 
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(ArchiveTasksLabel);
+            panel1.Controls.Add(ActiveTasksLabel);
+            panel1.Location = new Point(6, 28);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(915, 86);
+            panel1.TabIndex = 9;
+            // 
+            // ArchiveTasksLabel
+            // 
+            ArchiveTasksLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            ArchiveTasksLabel.Location = new Point(564, 42);
+            ArchiveTasksLabel.Name = "ArchiveTasksLabel";
+            ArchiveTasksLabel.RightToLeft = RightToLeft.Yes;
+            ArchiveTasksLabel.Size = new Size(348, 33);
+            ArchiveTasksLabel.TabIndex = 11;
+            ArchiveTasksLabel.Text = "Archive tasks: ?";
+            // 
+            // ActiveTasksLabel
+            // 
+            ActiveTasksLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            ActiveTasksLabel.Location = new Point(5, 9);
+            ActiveTasksLabel.Name = "ActiveTasksLabel";
+            ActiveTasksLabel.Size = new Size(348, 33);
+            ActiveTasksLabel.TabIndex = 10;
+            ActiveTasksLabel.Text = "Active tasks: ?";
             // 
             // BackFromArchive
             // 
@@ -503,6 +537,7 @@
             ArchiveTaskContextMenu.ResumeLayout(false);
             TimerPage.ResumeLayout(false);
             ArchivePage.ResumeLayout(false);
+            panel1.ResumeLayout(false);
             MainPage.ResumeLayout(false);
             inputPanel.ResumeLayout(false);
             inputPanel.PerformLayout();
@@ -557,5 +592,8 @@
         private GroupBox ProgressTimeBox;
         private PictureBox ProgressMinutesPictureBox;
         private Label ProgressTimeLabel;
+        private Panel panel1;
+        private Label ArchiveTasksLabel;
+        private Label ActiveTasksLabel;
     }
 }

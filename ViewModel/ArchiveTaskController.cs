@@ -8,8 +8,9 @@ namespace Pomodoro_Manager.ViewModel;
 public class ArchiveTaskController : TaskController
 {
     public ArchiveTaskController(Panel panel, TimerController timerController,
-            TextBox nameTextBox, List<TaskFormObject> tasks, ContextMenuStrip contextMenuStrip) 
-        : base(panel, timerController, nameTextBox, tasks, contextMenuStrip)
+            TextBox nameTextBox, List<TaskFormObject> tasks, ContextMenuStrip contextMenuStrip,
+            DeleteOrMoveEventHandler eventHandler) 
+        : base(panel, timerController, nameTextBox, tasks, contextMenuStrip, eventHandler)
     {
         LoadTasks();
     }

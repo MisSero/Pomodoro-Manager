@@ -4,6 +4,8 @@ namespace Pomodoro_Manager.Model
 {
     public abstract class TaskController
     {
+        public delegate void DeleteOrMoveEventHandler();
+        public event DeleteOrMoveEventHandler? DeleteOrMove;
         protected List<TaskFormObject> _tasks;
         protected TextBox _nameTextBox;
         protected Panel _tasksPanel;
@@ -12,20 +14,29 @@ namespace Pomodoro_Manager.Model
         public TaskController AnotherController { get; set; }
 
         public TaskController(Panel panel, TimerController timerController,
-            TextBox nameTextBox, List<TaskFormObject> tasks, ContextMenuStrip contextMenuStrip)
+            TextBox nameTextBox, List<TaskFormObject> tasks, 
+            ContextMenuStrip contextMenuStrip, DeleteOrMoveEventHandler eventHandler)
         {
             _tasks = tasks;
             _tasksPanel = panel;
             _timerController = timerController;
             _nameTextBox = nameTextBox;
             _contextMenuStrip = contextMenuStrip;
+            DeleteOrMove += eventHandler;
         }
-        public void DeleteTask(TaskFormObject task) => _tasks.Remove(task);
+        public void DeleteTask(TaskFormObject task)
+        {
+            _tasks.Remove(task);
+
+            DeleteOrMove?.Invoke();
+        }
         public void ChangePanel(TaskFormObject task)
         {
             AnotherController._tasks.Add(task);
             DeleteTask(task);
             AnotherController.AddToPanel(task);
+
+            DeleteOrMove?.Invoke();
         }
         protected abstract void AddToPanel(TaskFormObject task);
         protected void LoadTasks()
