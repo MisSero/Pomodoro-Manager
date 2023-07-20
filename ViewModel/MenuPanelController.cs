@@ -10,7 +10,7 @@ public class MenuPanelController
     private Progress _progress;
     private Label _progressTimeLabel;
     private Label _taskCompletedLabel;
-    private bool _allowTabSelection = false;
+    public bool AllowTabSelection { get; set; } = false;
 
     public MenuPanelController(TabControl tabControl, Button arhciveButton,
         Button settingsButton, SaveController saveController, Button progressButton,
@@ -32,17 +32,17 @@ public class MenuPanelController
     }
     private void MainOpen(object? sender, EventArgs e)
     {
-        _allowTabSelection = true;
+        AllowTabSelection = true;
         _tabControl.SelectedTab = _tabControl
             .TabPages[(int)TabPagesEnum.MainPage];
-        _allowTabSelection = false;
+        AllowTabSelection = false;
     }
     private void AchiveOpen(object? sender, EventArgs e)
     {
-        _allowTabSelection = true;
+        AllowTabSelection = true;
         _tabControl.SelectedTab = _tabControl
             .TabPages[(int)TabPagesEnum.ArchivePage];
-        _allowTabSelection = false;
+        AllowTabSelection = false;
     }
     private void ProgressOpen(object? sender, EventArgs e)
     {
@@ -51,10 +51,10 @@ public class MenuPanelController
         _progressTimeLabel.Text = $"{hours:00}:{minutes:00}";
         _taskCompletedLabel.Text = _progress.CompletedTasks.ToString();
 
-        _allowTabSelection = true;
+        AllowTabSelection = true;
         _tabControl.SelectedTab = _tabControl
             .TabPages[(int)TabPagesEnum.ProgressPage];
-        _allowTabSelection = false;
+        AllowTabSelection = false;
     }
     private void SettingsOpen(object? sender, EventArgs e)
     {
@@ -63,7 +63,7 @@ public class MenuPanelController
     }
     private void PageSelecting(object? sender, TabControlCancelEventArgs e)
     {
-        if (!_allowTabSelection)
+        if (!AllowTabSelection)
         {
             e.Cancel = true;
         }

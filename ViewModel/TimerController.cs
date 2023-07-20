@@ -6,6 +6,7 @@ namespace Pomodoro_Manager.ViewModel
     public class TimerController
     {
         private PomodoroTimer? _pomodoroTimer;
+        private MenuPanelController _menuController;
         private TabControl _tabControl;
         private Label _timerLabel;
         private Label _pickedTaskName;
@@ -24,7 +25,8 @@ namespace Pomodoro_Manager.ViewModel
         public TimerController(TabControl tabControl, Label timerLabel,
             System.Windows.Forms.Timer timer, Form1 form, Button playButton,
             Button stopButton, Button closeButton, Button hideButton, 
-            Label pickedTaskName, SaveController saveController)
+            Label pickedTaskName, SaveController saveController, 
+            MenuPanelController menuController)
         {
             _tabControl = tabControl;
             _timerLabel = timerLabel;
@@ -37,6 +39,7 @@ namespace Pomodoro_Manager.ViewModel
             _pickedTaskName = pickedTaskName;
             _settings = saveController.AppSettings;
             _progress = saveController.UserProgress;
+            _menuController = menuController;
 
             timer.Tick += Timer_Tick;
             _playButton.Click += Play;
@@ -52,8 +55,12 @@ namespace Pomodoro_Manager.ViewModel
                 _timerPlaceholder = $"{_settings.TaskDuration:00}:00";
 
                 _taskSender = (TaskFormObject)button.Parent.DataContext;
+
+                _menuController.AllowTabSelection = true;
                 _tabControl.SelectedTab = _tabControl
                     .TabPages[(int)TabPagesEnum.TimerPage];
+                _menuController.AllowTabSelection = false;
+
                 _timerLabel.Text = _timerPlaceholder;
                 _pickedTaskName.Text = _taskSender?.Name;
                 _playButton.Focus();
@@ -81,7 +88,11 @@ namespace Pomodoro_Manager.ViewModel
             if (_form.WindowState == FormWindowState.Minimized)
                 _form.WindowState = FormWindowState.Normal;
             else
-                _form.Activate();
+            {
+                _form.TopMost = true;
+                _form.TopMost = false;
+            }
+            _form.Activate();
             _audioPlayer.Play();
         }
         private void Play(object? sender, EventArgs e)
@@ -114,8 +125,12 @@ namespace Pomodoro_Manager.ViewModel
         private void Close(object? sender, EventArgs e)
         {
             _taskSender = null;
+
+            _menuController.AllowTabSelection = true;
             _tabControl.SelectedTab = _tabControl
                     .TabPages[(int)TabPagesEnum.MainPage];
+            _menuController.AllowTabSelection = false;
+
             _pickedTaskName.Text = "";
         }
         private void HideShow(object? sender, EventArgs e)

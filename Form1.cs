@@ -23,15 +23,15 @@ namespace Pomodoro_Manager
         private void Form1_Load(object sender, EventArgs e)
         {
             _saveController = new SaveController();
+            _menuPanelController = new MenuPanelController(MainTabControl, ArchiveButton, SettingsButton,
+                _saveController, ProgressButton, BackFromArchive, BackFromProgress, ProgressTimeLabel,
+                TaskCompletedLabel);
             _timerController = new TimerController(MainTabControl, TimerLabel, formTimer, this, TimerPlay,
-                TimerStop, TimerClose, TimerHide, PickedTaskName, _saveController);
+                TimerStop, TimerClose, TimerHide, PickedTaskName, _saveController, _menuPanelController);
             _inputPanelController = new InputPanelController(nameTextBox.Text,
                 nameTextBox, taskCountNumericUpDown, addTaskButton);
             _mainTaskResizer = new TaskResizer(MainTaskPanel);
             _archiveTaskResizer = new TaskResizer(ArchivePanel);
-            _menuPanelController = new MenuPanelController(MainTabControl, ArchiveButton, SettingsButton,
-                _saveController, ProgressButton, BackFromArchive, BackFromProgress, ProgressTimeLabel,
-                TaskCompletedLabel);
 
             _mainTaskController = new MainTaskController(MainTaskPanel, _timerController,
                 nameTextBox, taskCountNumericUpDown, addTaskButton, _saveController.MainTasks,
