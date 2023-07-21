@@ -281,11 +281,14 @@
             // BackFromArchive
             // 
             BackFromArchive.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            BackFromArchive.Location = new Point(11, 354);
+            BackFromArchive.BackgroundImage = Properties.Resources.back_icon;
+            BackFromArchive.BackgroundImageLayout = ImageLayout.Stretch;
+            BackFromArchive.FlatAppearance.BorderSize = 0;
+            BackFromArchive.FlatStyle = FlatStyle.Flat;
+            BackFromArchive.Location = new Point(6, 393);
             BackFromArchive.Name = "BackFromArchive";
-            BackFromArchive.Size = new Size(90, 88);
+            BackFromArchive.Size = new Size(70, 65);
             BackFromArchive.TabIndex = 8;
-            BackFromArchive.Text = "Back";
             BackFromArchive.UseVisualStyleBackColor = true;
             // 
             // ArchivePanel
@@ -392,34 +395,40 @@
             // ProgressButton
             // 
             ProgressButton.Anchor = AnchorStyles.None;
+            ProgressButton.BackgroundImage = Properties.Resources.progress_icon;
+            ProgressButton.BackgroundImageLayout = ImageLayout.Zoom;
+            ProgressButton.FlatAppearance.BorderSize = 0;
             ProgressButton.FlatStyle = FlatStyle.Flat;
             ProgressButton.Location = new Point(27, 183);
             ProgressButton.Name = "ProgressButton";
             ProgressButton.Size = new Size(90, 88);
             ProgressButton.TabIndex = 5;
-            ProgressButton.Text = "Progress";
             ProgressButton.UseVisualStyleBackColor = true;
             // 
             // SettingsButton
             // 
             SettingsButton.Anchor = AnchorStyles.None;
+            SettingsButton.BackgroundImage = Properties.Resources.settings_icon;
+            SettingsButton.BackgroundImageLayout = ImageLayout.Zoom;
+            SettingsButton.FlatAppearance.BorderSize = 0;
             SettingsButton.FlatStyle = FlatStyle.Flat;
             SettingsButton.Location = new Point(27, 297);
             SettingsButton.Name = "SettingsButton";
             SettingsButton.Size = new Size(90, 88);
             SettingsButton.TabIndex = 6;
-            SettingsButton.Text = "Settings";
             SettingsButton.UseVisualStyleBackColor = true;
             // 
             // ArchiveButton
             // 
             ArchiveButton.Anchor = AnchorStyles.None;
+            ArchiveButton.BackgroundImage = Properties.Resources.archive_icon;
+            ArchiveButton.BackgroundImageLayout = ImageLayout.Zoom;
+            ArchiveButton.FlatAppearance.BorderSize = 0;
             ArchiveButton.FlatStyle = FlatStyle.Flat;
             ArchiveButton.Location = new Point(27, 74);
             ArchiveButton.Name = "ArchiveButton";
             ArchiveButton.Size = new Size(90, 88);
             ArchiveButton.TabIndex = 4;
-            ArchiveButton.Text = "Archive";
             ArchiveButton.UseVisualStyleBackColor = true;
             // 
             // MainTabControl
@@ -517,11 +526,14 @@
             // BackFromProgress
             // 
             BackFromProgress.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            BackFromProgress.Location = new Point(11, 354);
+            BackFromProgress.BackgroundImage = Properties.Resources.back_icon;
+            BackFromProgress.BackgroundImageLayout = ImageLayout.Zoom;
+            BackFromProgress.FlatAppearance.BorderSize = 0;
+            BackFromProgress.FlatStyle = FlatStyle.Flat;
+            BackFromProgress.Location = new Point(6, 393);
             BackFromProgress.Name = "BackFromProgress";
-            BackFromProgress.Size = new Size(90, 88);
+            BackFromProgress.Size = new Size(70, 65);
             BackFromProgress.TabIndex = 9;
-            BackFromProgress.Text = "Back";
             BackFromProgress.UseVisualStyleBackColor = true;
             // 
             // Form1
