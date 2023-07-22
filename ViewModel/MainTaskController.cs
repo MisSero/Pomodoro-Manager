@@ -38,7 +38,10 @@ public class MainTaskController : TaskController
     protected override void AddToPanel(TaskFormObject task)
     {
         Button button = new Button();
-        button.Text = "Play!";
+        button.BackgroundImage = Properties.Resources.play_icon;
+        button.BackgroundImageLayout = ImageLayout.Zoom;
+        button.FlatStyle = FlatStyle.Flat;
+        button.FlatAppearance.BorderSize = 0;
         button.Dock = DockStyle.Right;
         button.Click += _timerController.PickTask;
 
@@ -46,7 +49,7 @@ public class MainTaskController : TaskController
 
         taskPanel.Controls.Add(button);
         taskPanel.Controls.SetChildIndex(button, 1);
-
+        
         _tasksPanel.Controls.Add(taskPanel);
     }
 }

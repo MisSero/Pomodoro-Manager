@@ -42,12 +42,15 @@
             // 
             // CancelSettingsButton
             // 
+            CancelSettingsButton.BackgroundImage = Properties.Resources.cancel_icon;
+            CancelSettingsButton.BackgroundImageLayout = ImageLayout.Zoom;
+            CancelSettingsButton.FlatAppearance.BorderSize = 0;
+            CancelSettingsButton.FlatStyle = FlatStyle.Flat;
             CancelSettingsButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             CancelSettingsButton.Location = new Point(12, 126);
             CancelSettingsButton.Name = "CancelSettingsButton";
-            CancelSettingsButton.Size = new Size(85, 35);
+            CancelSettingsButton.Size = new Size(37, 35);
             CancelSettingsButton.TabIndex = 0;
-            CancelSettingsButton.Text = "Cancel";
             CancelSettingsButton.UseVisualStyleBackColor = true;
             // 
             // TaskDurationLabel
@@ -86,16 +89,20 @@
             // 
             // SaveSettingsButton
             // 
+            SaveSettingsButton.BackgroundImage = Properties.Resources.save_icon;
+            SaveSettingsButton.BackgroundImageLayout = ImageLayout.Zoom;
+            SaveSettingsButton.FlatAppearance.BorderSize = 0;
+            SaveSettingsButton.FlatStyle = FlatStyle.Flat;
             SaveSettingsButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            SaveSettingsButton.Location = new Point(319, 126);
+            SaveSettingsButton.Location = new Point(367, 126);
             SaveSettingsButton.Name = "SaveSettingsButton";
-            SaveSettingsButton.Size = new Size(85, 35);
+            SaveSettingsButton.Size = new Size(37, 35);
             SaveSettingsButton.TabIndex = 4;
-            SaveSettingsButton.Text = "Save";
             SaveSettingsButton.UseVisualStyleBackColor = true;
             // 
             // PomodoroDutationPattern30
             // 
+            PomodoroDutationPattern30.FlatStyle = FlatStyle.Flat;
             PomodoroDutationPattern30.ForeColor = SystemColors.ControlDarkDark;
             PomodoroDutationPattern30.Location = new Point(298, 81);
             PomodoroDutationPattern30.Name = "PomodoroDutationPattern30";
@@ -106,6 +113,7 @@
             // 
             // PomodoroDutationPattern60
             // 
+            PomodoroDutationPattern60.FlatStyle = FlatStyle.Flat;
             PomodoroDutationPattern60.ForeColor = SystemColors.ControlDarkDark;
             PomodoroDutationPattern60.Location = new Point(354, 81);
             PomodoroDutationPattern60.Name = "PomodoroDutationPattern60";
@@ -117,10 +125,11 @@
             // GithubLinkLabel
             // 
             GithubLinkLabel.AutoSize = true;
+            GithubLinkLabel.BorderStyle = BorderStyle.FixedSingle;
             GithubLinkLabel.Font = new Font("Segoe UI", 7.20000029F, FontStyle.Regular, GraphicsUnit.Point);
             GithubLinkLabel.Location = new Point(12, 164);
             GithubLinkLabel.Name = "GithubLinkLabel";
-            GithubLinkLabel.Size = new Size(294, 17);
+            GithubLinkLabel.Size = new Size(296, 19);
             GithubLinkLabel.TabIndex = 7;
             GithubLinkLabel.TabStop = true;
             GithubLinkLabel.Text = "https://github.com/MisSero/Pomodoro-Manager";

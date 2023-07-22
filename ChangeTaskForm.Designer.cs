@@ -37,12 +37,12 @@
             // 
             // ChangeTextBox
             // 
-            ChangeTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            ChangeTextBox.BackColor = SystemColors.ActiveBorder;
+            ChangeTextBox.Anchor = AnchorStyles.None;
+            ChangeTextBox.BackColor = Color.White;
             ChangeTextBox.BorderStyle = BorderStyle.FixedSingle;
             ChangeTextBox.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             ChangeTextBox.ForeColor = Color.Black;
-            ChangeTextBox.Location = new Point(12, 90);
+            ChangeTextBox.Location = new Point(12, 21);
             ChangeTextBox.MaxLength = 60;
             ChangeTextBox.Name = "ChangeTextBox";
             ChangeTextBox.Size = new Size(344, 32);
@@ -51,9 +51,9 @@
             // 
             // ChangeNumericUpDown
             // 
-            ChangeNumericUpDown.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            ChangeNumericUpDown.Anchor = AnchorStyles.None;
             ChangeNumericUpDown.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            ChangeNumericUpDown.Location = new Point(362, 92);
+            ChangeNumericUpDown.Location = new Point(362, 23);
             ChangeNumericUpDown.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             ChangeNumericUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             ChangeNumericUpDown.Name = "ChangeNumericUpDown";
@@ -63,26 +63,34 @@
             // 
             // SaveChangeButton
             // 
-            SaveChangeButton.Anchor = AnchorStyles.Right;
+            SaveChangeButton.Anchor = AnchorStyles.None;
+            SaveChangeButton.BackgroundImage = Properties.Resources.save_icon;
+            SaveChangeButton.BackgroundImageLayout = ImageLayout.Zoom;
+            SaveChangeButton.FlatAppearance.BorderSize = 0;
+            SaveChangeButton.FlatStyle = FlatStyle.Flat;
             SaveChangeButton.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            SaveChangeButton.Location = new Point(278, 146);
+            SaveChangeButton.Location = new Point(405, 79);
             SaveChangeButton.Name = "SaveChangeButton";
-            SaveChangeButton.Size = new Size(170, 34);
+            SaveChangeButton.Size = new Size(43, 34);
             SaveChangeButton.TabIndex = 6;
-            SaveChangeButton.Text = "Save";
             SaveChangeButton.UseVisualStyleBackColor = true;
             SaveChangeButton.Click += SaveChangeButton_Click;
             // 
             // CanсelChangeButton
             // 
-            CanсelChangeButton.Anchor = AnchorStyles.Left;
+            CanсelChangeButton.Anchor = AnchorStyles.None;
+            CanсelChangeButton.BackColor = Color.Transparent;
+            CanсelChangeButton.BackgroundImage = Properties.Resources.cancel_icon;
+            CanсelChangeButton.BackgroundImageLayout = ImageLayout.Zoom;
+            CanсelChangeButton.FlatAppearance.BorderSize = 0;
+            CanсelChangeButton.FlatStyle = FlatStyle.Flat;
             CanсelChangeButton.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            CanсelChangeButton.Location = new Point(12, 146);
+            CanсelChangeButton.Location = new Point(12, 79);
             CanсelChangeButton.Name = "CanсelChangeButton";
-            CanсelChangeButton.Size = new Size(170, 34);
+            CanсelChangeButton.Size = new Size(43, 34);
             CanсelChangeButton.TabIndex = 7;
-            CanсelChangeButton.Text = "Canсel";
-            CanсelChangeButton.UseVisualStyleBackColor = true;
+            CanсelChangeButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            CanсelChangeButton.UseVisualStyleBackColor = false;
             CanсelChangeButton.Click += CanсelChangeButton_Click;
             // 
             // ChangeTaskForm
@@ -90,14 +98,14 @@
             AcceptButton = SaveChangeButton;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Silver;
+            BackColor = Color.FromArgb(135, 133, 162);
             CancelButton = CanсelChangeButton;
-            ClientSize = new Size(460, 254);
+            ClientSize = new Size(460, 120);
             ControlBox = false;
-            Controls.Add(CanсelChangeButton);
             Controls.Add(SaveChangeButton);
             Controls.Add(ChangeNumericUpDown);
             Controls.Add(ChangeTextBox);
+            Controls.Add(CanсelChangeButton);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;

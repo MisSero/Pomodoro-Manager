@@ -98,24 +98,27 @@
             MainTaskContextMenu.ImageScalingSize = new Size(20, 20);
             MainTaskContextMenu.Items.AddRange(new ToolStripItem[] { MainDelete, MainMove, MainChange });
             MainTaskContextMenu.Name = "contextMenuStrip1";
-            MainTaskContextMenu.Size = new Size(185, 76);
+            MainTaskContextMenu.Size = new Size(189, 82);
             // 
             // MainDelete
             // 
+            MainDelete.Image = Properties.Resources.cancel_icon;
             MainDelete.Name = "MainDelete";
-            MainDelete.Size = new Size(184, 24);
+            MainDelete.Size = new Size(188, 26);
             MainDelete.Text = "Delete";
             // 
             // MainMove
             // 
+            MainMove.Image = Properties.Resources.toArchive_icon;
             MainMove.Name = "MainMove";
-            MainMove.Size = new Size(184, 24);
+            MainMove.Size = new Size(188, 26);
             MainMove.Text = "Move to archive";
             // 
             // MainChange
             // 
+            MainChange.Image = Properties.Resources.changeTask_icon;
             MainChange.Name = "MainChange";
-            MainChange.Size = new Size(184, 24);
+            MainChange.Size = new Size(188, 26);
             MainChange.Text = "Change Task";
             // 
             // ArchiveTaskContextMenu
@@ -123,24 +126,27 @@
             ArchiveTaskContextMenu.ImageScalingSize = new Size(20, 20);
             ArchiveTaskContextMenu.Items.AddRange(new ToolStripItem[] { ArchiveDelete, ArchiveMove, ArchiveChange });
             ArchiveTaskContextMenu.Name = "contextMenuStrip1";
-            ArchiveTaskContextMenu.Size = new Size(183, 76);
+            ArchiveTaskContextMenu.Size = new Size(187, 82);
             // 
             // ArchiveDelete
             // 
+            ArchiveDelete.Image = Properties.Resources.cancel_icon;
             ArchiveDelete.Name = "ArchiveDelete";
-            ArchiveDelete.Size = new Size(182, 24);
+            ArchiveDelete.Size = new Size(186, 26);
             ArchiveDelete.Text = "Delete";
             // 
             // ArchiveMove
             // 
+            ArchiveMove.Image = Properties.Resources.fromArchive_icon;
             ArchiveMove.Name = "ArchiveMove";
-            ArchiveMove.Size = new Size(182, 24);
+            ArchiveMove.Size = new Size(186, 26);
             ArchiveMove.Text = "Return to active";
             // 
             // ArchiveChange
             // 
+            ArchiveChange.Image = Properties.Resources.changeTask_icon;
             ArchiveChange.Name = "ArchiveChange";
-            ArchiveChange.Size = new Size(182, 24);
+            ArchiveChange.Size = new Size(186, 26);
             ArchiveChange.Text = "Change Task";
             // 
             // TimerPage
@@ -182,6 +188,8 @@
             // TimerClose
             // 
             TimerClose.Anchor = AnchorStyles.Bottom;
+            TimerClose.BackgroundImageLayout = ImageLayout.Stretch;
+            TimerClose.FlatStyle = FlatStyle.Flat;
             TimerClose.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TimerClose.Location = new Point(149, 285);
             TimerClose.Name = "TimerClose";
@@ -193,7 +201,9 @@
             // TimerStop
             // 
             TimerStop.Anchor = AnchorStyles.Bottom;
+            TimerStop.BackgroundImageLayout = ImageLayout.Stretch;
             TimerStop.Enabled = false;
+            TimerStop.FlatStyle = FlatStyle.Flat;
             TimerStop.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TimerStop.Location = new Point(475, 285);
             TimerStop.Name = "TimerStop";
@@ -205,6 +215,8 @@
             // TimerPlay
             // 
             TimerPlay.Anchor = AnchorStyles.Bottom;
+            TimerPlay.BackgroundImageLayout = ImageLayout.Center;
+            TimerPlay.FlatStyle = FlatStyle.Flat;
             TimerPlay.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TimerPlay.Location = new Point(352, 285);
             TimerPlay.Name = "TimerPlay";
@@ -216,6 +228,8 @@
             // TimerHide
             // 
             TimerHide.Anchor = AnchorStyles.Bottom;
+            TimerHide.BackgroundImageLayout = ImageLayout.Stretch;
+            TimerHide.FlatStyle = FlatStyle.Flat;
             TimerHide.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TimerHide.Location = new Point(677, 285);
             TimerHide.Name = "TimerHide";
@@ -345,12 +359,15 @@
             // addTaskButton
             // 
             addTaskButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            addTaskButton.BackgroundImage = Properties.Resources.add_icon;
+            addTaskButton.BackgroundImageLayout = ImageLayout.Zoom;
+            addTaskButton.FlatAppearance.BorderSize = 0;
+            addTaskButton.FlatStyle = FlatStyle.Flat;
             addTaskButton.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            addTaskButton.Location = new Point(601, 1);
+            addTaskButton.Location = new Point(623, 1);
             addTaskButton.Name = "addTaskButton";
-            addTaskButton.Size = new Size(56, 34);
+            addTaskButton.Size = new Size(34, 34);
             addTaskButton.TabIndex = 2;
-            addTaskButton.Text = "Add";
             addTaskButton.UseVisualStyleBackColor = true;
             // 
             // taskCountNumericUpDown
@@ -438,7 +455,7 @@
             MainTabControl.Controls.Add(ArchivePage);
             MainTabControl.Controls.Add(TimerPage);
             MainTabControl.Controls.Add(ProgressPage);
-            MainTabControl.Location = new Point(-3, -1);
+            MainTabControl.Location = new Point(0, -1);
             MainTabControl.Name = "MainTabControl";
             MainTabControl.SelectedIndex = 0;
             MainTabControl.Size = new Size(936, 511);
