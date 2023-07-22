@@ -63,13 +63,15 @@
             // 
             // SaveChangeButton
             // 
+            SaveChangeButton.AccessibleDescription = "";
+            SaveChangeButton.AccessibleName = "";
             SaveChangeButton.Anchor = AnchorStyles.None;
             SaveChangeButton.BackgroundImage = Properties.Resources.save_icon;
             SaveChangeButton.BackgroundImageLayout = ImageLayout.Zoom;
             SaveChangeButton.FlatAppearance.BorderSize = 0;
             SaveChangeButton.FlatStyle = FlatStyle.Flat;
             SaveChangeButton.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            SaveChangeButton.Location = new Point(405, 79);
+            SaveChangeButton.Location = new Point(405, 74);
             SaveChangeButton.Name = "SaveChangeButton";
             SaveChangeButton.Size = new Size(43, 34);
             SaveChangeButton.TabIndex = 6;
@@ -85,7 +87,7 @@
             CanсelChangeButton.FlatAppearance.BorderSize = 0;
             CanсelChangeButton.FlatStyle = FlatStyle.Flat;
             CanсelChangeButton.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            CanсelChangeButton.Location = new Point(12, 79);
+            CanсelChangeButton.Location = new Point(12, 74);
             CanсelChangeButton.Name = "CanсelChangeButton";
             CanсelChangeButton.Size = new Size(43, 34);
             CanсelChangeButton.TabIndex = 7;

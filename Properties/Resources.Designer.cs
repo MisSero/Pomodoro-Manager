@@ -153,6 +153,16 @@ namespace Pomodoro_Manager.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hide_icon {
+            get {
+                object obj = ResourceManager.GetObject("hide_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap play_icon {
             get {
                 object obj = ResourceManager.GetObject("play_icon", resourceCulture);
@@ -186,6 +196,16 @@ namespace Pomodoro_Manager.Properties {
         internal static System.Drawing.Bitmap settings_icon {
             get {
                 object obj = ResourceManager.GetObject("settings_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stop_icon {
+            get {
+                object obj = ResourceManager.GetObject("stop_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -28,9 +28,10 @@ public class TaskContextMenuController
 
         if (sourceControl?.DataContext is TaskFormObject task)
         {
-            var confirmResult = MessageBox.Show($"Are you sure you want to delete the \"{task.Name}\" task",
-                "Delete task", MessageBoxButtons.YesNo);
-            if (confirmResult == DialogResult.Yes)
+            DeleteTaskForm deleteForm = new DeleteTaskForm(task.Name);
+            var confirmResult = deleteForm.ShowDialog();
+            
+            if (confirmResult == DialogResult.Yes) 
             {
                 _taskController.DeleteTask(task);
                 sourceControl!.Parent!.Controls.Remove(sourceControl);

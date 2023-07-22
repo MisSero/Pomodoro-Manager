@@ -119,7 +119,7 @@
             MainChange.Image = Properties.Resources.changeTask_icon;
             MainChange.Name = "MainChange";
             MainChange.Size = new Size(188, 26);
-            MainChange.Text = "Change Task";
+            MainChange.Text = "Change task";
             // 
             // ArchiveTaskContextMenu
             // 
@@ -147,7 +147,7 @@
             ArchiveChange.Image = Properties.Resources.changeTask_icon;
             ArchiveChange.Name = "ArchiveChange";
             ArchiveChange.Size = new Size(186, 26);
-            ArchiveChange.Text = "Change Task";
+            ArchiveChange.Text = "Change task";
             // 
             // TimerPage
             // 
@@ -188,20 +188,21 @@
             // TimerClose
             // 
             TimerClose.Anchor = AnchorStyles.Bottom;
-            TimerClose.BackgroundImageLayout = ImageLayout.Stretch;
+            TimerClose.BackgroundImage = Properties.Resources.cancel_icon;
+            TimerClose.BackgroundImageLayout = ImageLayout.Zoom;
             TimerClose.FlatStyle = FlatStyle.Flat;
             TimerClose.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TimerClose.Location = new Point(149, 285);
             TimerClose.Name = "TimerClose";
             TimerClose.Size = new Size(102, 40);
             TimerClose.TabIndex = 2;
-            TimerClose.Text = "Close";
-            TimerClose.UseVisualStyleBackColor = true;
+            TimerClose.UseVisualStyleBackColor = false;
             // 
             // TimerStop
             // 
             TimerStop.Anchor = AnchorStyles.Bottom;
-            TimerStop.BackgroundImageLayout = ImageLayout.Stretch;
+            TimerStop.BackgroundImage = Properties.Resources.stop_icon;
+            TimerStop.BackgroundImageLayout = ImageLayout.Zoom;
             TimerStop.Enabled = false;
             TimerStop.FlatStyle = FlatStyle.Flat;
             TimerStop.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -209,34 +210,33 @@
             TimerStop.Name = "TimerStop";
             TimerStop.Size = new Size(102, 40);
             TimerStop.TabIndex = 4;
-            TimerStop.Text = "Stop";
-            TimerStop.UseVisualStyleBackColor = true;
+            TimerStop.UseVisualStyleBackColor = false;
             // 
             // TimerPlay
             // 
             TimerPlay.Anchor = AnchorStyles.Bottom;
-            TimerPlay.BackgroundImageLayout = ImageLayout.Center;
+            TimerPlay.BackgroundImage = Properties.Resources.play_icon;
+            TimerPlay.BackgroundImageLayout = ImageLayout.Zoom;
             TimerPlay.FlatStyle = FlatStyle.Flat;
             TimerPlay.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TimerPlay.Location = new Point(352, 285);
             TimerPlay.Name = "TimerPlay";
             TimerPlay.Size = new Size(102, 40);
             TimerPlay.TabIndex = 3;
-            TimerPlay.Text = "Play";
-            TimerPlay.UseVisualStyleBackColor = true;
+            TimerPlay.UseVisualStyleBackColor = false;
             // 
             // TimerHide
             // 
             TimerHide.Anchor = AnchorStyles.Bottom;
-            TimerHide.BackgroundImageLayout = ImageLayout.Stretch;
+            TimerHide.BackgroundImage = Properties.Resources.hide_icon;
+            TimerHide.BackgroundImageLayout = ImageLayout.Zoom;
             TimerHide.FlatStyle = FlatStyle.Flat;
             TimerHide.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TimerHide.Location = new Point(677, 285);
             TimerHide.Name = "TimerHide";
             TimerHide.Size = new Size(102, 40);
             TimerHide.TabIndex = 5;
-            TimerHide.Text = "Hide";
-            TimerHide.UseVisualStyleBackColor = true;
+            TimerHide.UseVisualStyleBackColor = false;
             // 
             // PickedTaskName
             // 
