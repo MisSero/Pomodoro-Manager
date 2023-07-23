@@ -21,6 +21,8 @@ namespace Pomodoro_Manager.ViewModel
         private Progress _progress;
         private bool _isHidden = false;
         private string _timerPlaceholder;
+        private Color _enableButtonColor = Color.FromArgb(236, 248, 248);
+        private Color _disableButtonColor = Color.FromArgb(220, 232, 232);
 
         public TimerController(TabControl tabControl, Label timerLabel,
             System.Windows.Forms.Timer timer, Form1 form, Button playButton,
@@ -105,6 +107,9 @@ namespace Pomodoro_Manager.ViewModel
                 _stopButton.Enabled = true;
                 _playButton.Enabled = false;
                 _closeButton.Enabled = false;
+                _stopButton.BackColor = _enableButtonColor;
+                _playButton.BackColor = _disableButtonColor;
+                _closeButton.BackColor = _disableButtonColor;
 
                 _form.ActiveControl = null;
             }
@@ -119,6 +124,9 @@ namespace Pomodoro_Manager.ViewModel
             _stopButton.Enabled = false;
             _playButton.Enabled = true;
             _closeButton.Enabled = true;
+            _stopButton.BackColor = _disableButtonColor;
+            _playButton.BackColor = _enableButtonColor;
+            _closeButton.BackColor = _enableButtonColor;
 
             _playButton.Focus();
         }

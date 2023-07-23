@@ -201,6 +201,7 @@
             // TimerStop
             // 
             TimerStop.Anchor = AnchorStyles.Bottom;
+            TimerStop.BackColor = Color.FromArgb(220, 232, 232);
             TimerStop.BackgroundImage = Properties.Resources.stop_icon;
             TimerStop.BackgroundImageLayout = ImageLayout.Zoom;
             TimerStop.Enabled = false;
