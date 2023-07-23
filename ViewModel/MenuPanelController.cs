@@ -39,8 +39,8 @@ public class MenuPanelController
 
     public void UpdateTaskCounterLabels()
     {
-        _activeTasksLabel.Text = $"Active tasks: {_saveController.MainTasks.Count}";
-        _arhiveTasksLabel.Text = $"Archive tasks: {_saveController.ArchiveTasks.Count}";
+        _activeTasksLabel.Text = $"Active: {_saveController.MainTasks.Count}";
+        _arhiveTasksLabel.Text = $"Archive: {_saveController.ArchiveTasks.Count}";
     }
     private void MainOpen(object? sender, EventArgs e)
     {

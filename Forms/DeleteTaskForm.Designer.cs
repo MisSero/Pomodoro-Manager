@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             DeleteTaskLabel = new Label();
             DeleteTaskYes = new Button();
             DeleteTaskNo = new Button();
-            DeleteToolTip = new ToolTip(components);
             SuspendLayout();
             // 
             // DeleteTaskLabel
@@ -59,7 +57,6 @@
             DeleteTaskYes.Name = "DeleteTaskYes";
             DeleteTaskYes.Size = new Size(43, 34);
             DeleteTaskYes.TabIndex = 8;
-            DeleteToolTip.SetToolTip(DeleteTaskYes, "Yes");
             DeleteTaskYes.UseVisualStyleBackColor = true;
             // 
             // DeleteTaskNo
@@ -75,7 +72,6 @@
             DeleteTaskNo.Size = new Size(43, 34);
             DeleteTaskNo.TabIndex = 9;
             DeleteTaskNo.TextImageRelation = TextImageRelation.ImageBeforeText;
-            DeleteToolTip.SetToolTip(DeleteTaskNo, "No");
             DeleteTaskNo.UseVisualStyleBackColor = false;
             // 
             // DeleteTaskForm
@@ -103,6 +99,5 @@
         private Label DeleteTaskLabel;
         private Button DeleteTaskYes;
         private Button DeleteTaskNo;
-        private ToolTip DeleteToolTip;
     }
 }

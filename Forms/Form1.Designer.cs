@@ -50,8 +50,8 @@
             ArchivePage = new TabPage();
             panel1 = new Panel();
             ArchiveTasksLabel = new Label();
-            ActiveTasksLabel = new Label();
             BackFromArchive = new Button();
+            ActiveTasksLabel = new Label();
             ArchivePanel = new FlowLayoutPanel();
             MainPage = new TabPage();
             MainTaskPanel = new FlowLayoutPanel();
@@ -161,7 +161,7 @@
             TimerPage.Location = new Point(4, 29);
             TimerPage.Name = "TimerPage";
             TimerPage.Padding = new Padding(3);
-            TimerPage.Size = new Size(928, 478);
+            TimerPage.Size = new Size(934, 478);
             TimerPage.TabIndex = 2;
             TimerPage.Text = "TimerPage";
             // 
@@ -253,58 +253,58 @@
             // 
             ArchivePage.BackColor = Color.FromArgb(236, 248, 248);
             ArchivePage.Controls.Add(panel1);
-            ArchivePage.Controls.Add(BackFromArchive);
             ArchivePage.Controls.Add(ArchivePanel);
             ArchivePage.Location = new Point(4, 29);
             ArchivePage.Name = "ArchivePage";
             ArchivePage.Padding = new Padding(3);
-            ArchivePage.Size = new Size(928, 478);
+            ArchivePage.Size = new Size(934, 478);
             ArchivePage.TabIndex = 1;
             ArchivePage.Text = "ArchivePage";
             // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.BackColor = Color.FromArgb(231, 216, 201);
+            panel1.BorderStyle = BorderStyle.Fixed3D;
             panel1.Controls.Add(ArchiveTasksLabel);
+            panel1.Controls.Add(BackFromArchive);
             panel1.Controls.Add(ActiveTasksLabel);
-            panel1.Location = new Point(6, 28);
+            panel1.Location = new Point(0, -1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(914, 86);
+            panel1.Size = new Size(144, 474);
             panel1.TabIndex = 9;
             // 
             // ArchiveTasksLabel
             // 
             ArchiveTasksLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             ArchiveTasksLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            ArchiveTasksLabel.Location = new Point(563, 42);
+            ArchiveTasksLabel.Location = new Point(7, 237);
             ArchiveTasksLabel.Name = "ArchiveTasksLabel";
-            ArchiveTasksLabel.RightToLeft = RightToLeft.Yes;
-            ArchiveTasksLabel.Size = new Size(348, 33);
+            ArchiveTasksLabel.Size = new Size(126, 101);
             ArchiveTasksLabel.TabIndex = 11;
-            ArchiveTasksLabel.Text = "Archive tasks: ?";
-            // 
-            // ActiveTasksLabel
-            // 
-            ActiveTasksLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            ActiveTasksLabel.Location = new Point(5, 9);
-            ActiveTasksLabel.Name = "ActiveTasksLabel";
-            ActiveTasksLabel.Size = new Size(348, 33);
-            ActiveTasksLabel.TabIndex = 10;
-            ActiveTasksLabel.Text = "Active tasks: ?";
+            ArchiveTasksLabel.Text = "Archive: ??";
             // 
             // BackFromArchive
             // 
             BackFromArchive.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             BackFromArchive.BackgroundImage = Properties.Resources.back_icon;
-            BackFromArchive.BackgroundImageLayout = ImageLayout.Stretch;
+            BackFromArchive.BackgroundImageLayout = ImageLayout.Zoom;
             BackFromArchive.FlatAppearance.BorderSize = 0;
             BackFromArchive.FlatStyle = FlatStyle.Flat;
-            BackFromArchive.Location = new Point(6, 393);
+            BackFromArchive.Location = new Point(12, 392);
             BackFromArchive.Name = "BackFromArchive";
             BackFromArchive.Size = new Size(70, 65);
             BackFromArchive.TabIndex = 8;
             BackFromArchive.UseVisualStyleBackColor = true;
+            // 
+            // ActiveTasksLabel
+            // 
+            ActiveTasksLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            ActiveTasksLabel.Location = new Point(7, 61);
+            ActiveTasksLabel.Name = "ActiveTasksLabel";
+            ActiveTasksLabel.Size = new Size(126, 101);
+            ActiveTasksLabel.TabIndex = 10;
+            ActiveTasksLabel.Text = "Active: ??";
             // 
             // ArchivePanel
             // 
@@ -312,9 +312,9 @@
             ArchivePanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ArchivePanel.BorderStyle = BorderStyle.FixedSingle;
             ArchivePanel.FlowDirection = FlowDirection.TopDown;
-            ArchivePanel.Location = new Point(207, 177);
+            ArchivePanel.Location = new Point(187, 10);
             ArchivePanel.Name = "ArchivePanel";
-            ArchivePanel.Size = new Size(649, 208);
+            ArchivePanel.Size = new Size(737, 448);
             ArchivePanel.TabIndex = 2;
             ArchivePanel.WrapContents = false;
             // 
@@ -327,7 +327,7 @@
             MainPage.Location = new Point(4, 29);
             MainPage.Name = "MainPage";
             MainPage.Padding = new Padding(3);
-            MainPage.Size = new Size(928, 478);
+            MainPage.Size = new Size(934, 478);
             MainPage.TabIndex = 0;
             MainPage.Text = "MainPage";
             MainPage.Click += MainPage_Click;
@@ -405,9 +405,9 @@
             MenuPanel.Controls.Add(ProgressButton);
             MenuPanel.Controls.Add(SettingsButton);
             MenuPanel.Controls.Add(ArchiveButton);
-            MenuPanel.Location = new Point(0, 0);
+            MenuPanel.Location = new Point(0, -1);
             MenuPanel.Name = "MenuPanel";
-            MenuPanel.Size = new Size(144, 458);
+            MenuPanel.Size = new Size(144, 474);
             MenuPanel.TabIndex = 4;
             // 
             // ProgressButton
@@ -417,7 +417,7 @@
             ProgressButton.BackgroundImageLayout = ImageLayout.Zoom;
             ProgressButton.FlatAppearance.BorderSize = 0;
             ProgressButton.FlatStyle = FlatStyle.Flat;
-            ProgressButton.Location = new Point(27, 183);
+            ProgressButton.Location = new Point(27, 191);
             ProgressButton.Name = "ProgressButton";
             ProgressButton.Size = new Size(90, 88);
             ProgressButton.TabIndex = 5;
@@ -430,7 +430,7 @@
             SettingsButton.BackgroundImageLayout = ImageLayout.Zoom;
             SettingsButton.FlatAppearance.BorderSize = 0;
             SettingsButton.FlatStyle = FlatStyle.Flat;
-            SettingsButton.Location = new Point(27, 297);
+            SettingsButton.Location = new Point(27, 305);
             SettingsButton.Name = "SettingsButton";
             SettingsButton.Size = new Size(90, 88);
             SettingsButton.TabIndex = 6;
@@ -443,7 +443,7 @@
             ArchiveButton.BackgroundImageLayout = ImageLayout.Zoom;
             ArchiveButton.FlatAppearance.BorderSize = 0;
             ArchiveButton.FlatStyle = FlatStyle.Flat;
-            ArchiveButton.Location = new Point(27, 74);
+            ArchiveButton.Location = new Point(27, 82);
             ArchiveButton.Name = "ArchiveButton";
             ArchiveButton.Size = new Size(90, 88);
             ArchiveButton.TabIndex = 4;
@@ -456,10 +456,10 @@
             MainTabControl.Controls.Add(ArchivePage);
             MainTabControl.Controls.Add(TimerPage);
             MainTabControl.Controls.Add(ProgressPage);
-            MainTabControl.Location = new Point(0, -1);
+            MainTabControl.Location = new Point(-6, -1);
             MainTabControl.Name = "MainTabControl";
             MainTabControl.SelectedIndex = 0;
-            MainTabControl.Size = new Size(936, 511);
+            MainTabControl.Size = new Size(942, 511);
             MainTabControl.TabIndex = 100;
             // 
             // ProgressPage
@@ -471,7 +471,7 @@
             ProgressPage.Location = new Point(4, 29);
             ProgressPage.Name = "ProgressPage";
             ProgressPage.Padding = new Padding(3);
-            ProgressPage.Size = new Size(928, 478);
+            ProgressPage.Size = new Size(934, 478);
             ProgressPage.TabIndex = 3;
             ProgressPage.Text = "ProgressPage";
             // 
@@ -548,7 +548,7 @@
             BackFromProgress.BackgroundImageLayout = ImageLayout.Zoom;
             BackFromProgress.FlatAppearance.BorderSize = 0;
             BackFromProgress.FlatStyle = FlatStyle.Flat;
-            BackFromProgress.Location = new Point(6, 393);
+            BackFromProgress.Location = new Point(8, 393);
             BackFromProgress.Name = "BackFromProgress";
             BackFromProgress.Size = new Size(70, 65);
             BackFromProgress.TabIndex = 9;
