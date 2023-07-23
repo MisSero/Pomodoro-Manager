@@ -41,7 +41,6 @@ public class MainTaskController : TaskController
         button.BackgroundImage = Properties.Resources.play_icon;
         button.BackgroundImageLayout = ImageLayout.Zoom;
         button.FlatStyle = FlatStyle.Flat;
-        button.FlatAppearance.BorderSize = 0;
         button.Dock = DockStyle.Right;
         button.Click += _timerController.PickTask;
 
