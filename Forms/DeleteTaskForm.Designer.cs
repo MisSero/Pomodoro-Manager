@@ -40,9 +40,9 @@
             DeleteTaskLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             DeleteTaskLabel.Location = new Point(12, 9);
             DeleteTaskLabel.Name = "DeleteTaskLabel";
-            DeleteTaskLabel.Size = new Size(436, 117);
+            DeleteTaskLabel.Size = new Size(475, 92);
             DeleteTaskLabel.TabIndex = 0;
-            DeleteTaskLabel.Text = "???42";
+            DeleteTaskLabel.Text = "???";
             DeleteTaskLabel.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // DeleteTaskYes
@@ -55,7 +55,7 @@
             DeleteTaskYes.FlatAppearance.BorderSize = 0;
             DeleteTaskYes.FlatStyle = FlatStyle.Flat;
             DeleteTaskYes.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            DeleteTaskYes.Location = new Point(444, 129);
+            DeleteTaskYes.Location = new Point(444, 104);
             DeleteTaskYes.Name = "DeleteTaskYes";
             DeleteTaskYes.Size = new Size(43, 34);
             DeleteTaskYes.TabIndex = 8;
@@ -65,13 +65,12 @@
             // DeleteTaskNo
             // 
             DeleteTaskNo.Anchor = AnchorStyles.None;
-            DeleteTaskNo.BackColor = Color.Transparent;
             DeleteTaskNo.BackgroundImage = Properties.Resources.cancel_icon;
             DeleteTaskNo.BackgroundImageLayout = ImageLayout.Zoom;
             DeleteTaskNo.FlatAppearance.BorderSize = 0;
             DeleteTaskNo.FlatStyle = FlatStyle.Flat;
             DeleteTaskNo.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            DeleteTaskNo.Location = new Point(12, 129);
+            DeleteTaskNo.Location = new Point(12, 104);
             DeleteTaskNo.Name = "DeleteTaskNo";
             DeleteTaskNo.Size = new Size(43, 34);
             DeleteTaskNo.TabIndex = 9;
@@ -84,9 +83,9 @@
             AcceptButton = DeleteTaskYes;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(135, 133, 162);
+            BackColor = Color.FromArgb(183, 175, 185);
             CancelButton = DeleteTaskNo;
-            ClientSize = new Size(499, 175);
+            ClientSize = new Size(499, 150);
             ControlBox = false;
             Controls.Add(DeleteTaskYes);
             Controls.Add(DeleteTaskNo);

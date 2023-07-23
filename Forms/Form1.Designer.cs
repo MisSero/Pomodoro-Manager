@@ -151,7 +151,7 @@
             // 
             // TimerPage
             // 
-            TimerPage.BackColor = Color.FromArgb(246, 246, 246);
+            TimerPage.BackColor = Color.FromArgb(236, 248, 248);
             TimerPage.Controls.Add(TimerLabel);
             TimerPage.Controls.Add(TimerClose);
             TimerPage.Controls.Add(TimerStop);
@@ -250,7 +250,7 @@
             // 
             // ArchivePage
             // 
-            ArchivePage.BackColor = Color.FromArgb(246, 246, 246);
+            ArchivePage.BackColor = Color.FromArgb(236, 248, 248);
             ArchivePage.Controls.Add(panel1);
             ArchivePage.Controls.Add(BackFromArchive);
             ArchivePage.Controls.Add(ArchivePanel);
@@ -319,7 +319,7 @@
             // 
             // MainPage
             // 
-            MainPage.BackColor = Color.FromArgb(246, 246, 246);
+            MainPage.BackColor = Color.FromArgb(236, 248, 248);
             MainPage.Controls.Add(MainTaskPanel);
             MainPage.Controls.Add(inputPanel);
             MainPage.Controls.Add(MenuPanel);
@@ -400,7 +400,7 @@
             // MenuPanel
             // 
             MenuPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            MenuPanel.BackColor = Color.FromArgb(255, 199, 199);
+            MenuPanel.BackColor = Color.FromArgb(231, 216, 201);
             MenuPanel.Controls.Add(ProgressButton);
             MenuPanel.Controls.Add(SettingsButton);
             MenuPanel.Controls.Add(ArchiveButton);
@@ -446,7 +446,7 @@
             ArchiveButton.Name = "ArchiveButton";
             ArchiveButton.Size = new Size(90, 88);
             ArchiveButton.TabIndex = 4;
-            ArchiveButton.UseVisualStyleBackColor = true;
+            ArchiveButton.UseVisualStyleBackColor = false;
             // 
             // MainTabControl
             // 
@@ -463,7 +463,7 @@
             // 
             // ProgressPage
             // 
-            ProgressPage.BackColor = Color.FromArgb(246, 246, 246);
+            ProgressPage.BackColor = Color.FromArgb(236, 248, 248);
             ProgressPage.Controls.Add(ProgressTimeBox);
             ProgressPage.Controls.Add(ProgressTaskBox);
             ProgressPage.Controls.Add(BackFromProgress);

@@ -139,7 +139,7 @@
             AcceptButton = SaveSettingsButton;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.WhiteSmoke;
+            BackColor = Color.FromArgb(183, 175, 185);
             CancelButton = CancelSettingsButton;
             ClientSize = new Size(416, 187);
             ControlBox = false;

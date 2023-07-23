@@ -81,7 +81,6 @@
             // CanсelChangeButton
             // 
             CanсelChangeButton.Anchor = AnchorStyles.None;
-            CanсelChangeButton.BackColor = Color.Transparent;
             CanсelChangeButton.BackgroundImage = Properties.Resources.cancel_icon;
             CanсelChangeButton.BackgroundImageLayout = ImageLayout.Zoom;
             CanсelChangeButton.FlatAppearance.BorderSize = 0;
@@ -100,7 +99,7 @@
             AcceptButton = SaveChangeButton;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(135, 133, 162);
+            BackColor = Color.FromArgb(183, 175, 185);
             CancelButton = CanсelChangeButton;
             ClientSize = new Size(460, 120);
             ControlBox = false;

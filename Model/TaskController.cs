@@ -73,7 +73,7 @@ namespace Pomodoro_Manager.Model
             taskPanel.Controls.Add(taskLabel);
             taskPanel.DataContext = task;
             taskPanel.ContextMenuStrip = _contextMenuStrip;
-            taskPanel.BackColor = Color.FromArgb(255, 226, 226);
+            taskPanel.BackColor = Color.FromArgb(238, 228, 225);
 
             taskPanel.Controls.SetChildIndex(taskLabel, 2);
             return taskPanel;
