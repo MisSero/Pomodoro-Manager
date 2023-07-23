@@ -104,6 +104,8 @@ namespace Pomodoro_Manager.ViewModel
                 _pomodoroTimer = new PomodoroTimer(_settings.TaskDuration, CompleteTask);
                 _formTimer.Enabled = true;
 
+                _audioPlayer.Play();
+
                 _stopButton.Enabled = true;
                 _playButton.Enabled = false;
                 _closeButton.Enabled = false;

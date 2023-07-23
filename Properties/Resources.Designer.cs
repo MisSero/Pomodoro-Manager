@@ -93,16 +93,6 @@ namespace Pomodoro_Manager.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap button_frame {
-            get {
-                object obj = ResourceManager.GetObject("button_frame", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap cancel_icon {
             get {
                 object obj = ResourceManager.GetObject("cancel_icon", resourceCulture);
