@@ -7,11 +7,16 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>Resources\pomodoro_form.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Form1.cs~RF2694e46.TMP" />
     <None Remove="iswnh3x5.534~" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\pomodoro_form.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,10 +32,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Resources\" />
   </ItemGroup>
 
 </Project>

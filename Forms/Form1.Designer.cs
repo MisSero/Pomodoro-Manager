@@ -561,7 +561,7 @@
             ClientSize = new Size(835, 516);
             Controls.Add(MainTabControl);
             ForeColor = SystemColors.ControlText;
-            Icon = (Icon)resources.GetObject("$this.Icon");
+            Icon = Properties.Resources.pomodoro_form;
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
