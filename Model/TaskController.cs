@@ -53,7 +53,7 @@ namespace Pomodoro_Manager.Model
             taskLabel.DataBindings.Add(new Binding("Text", task, "Name",
                 false, DataSourceUpdateMode.OnPropertyChanged));
             taskLabel.AutoSize = true;
-            taskLabel.Font = new Font("Malgun Gothic", 12);
+            taskLabel.Font = new Font("Comic Sans MS", 12);
             taskLabel.TextAlign = ContentAlignment.MiddleLeft;
 
             Label labelCounter = new Label();
@@ -61,7 +61,7 @@ namespace Pomodoro_Manager.Model
                 false, DataSourceUpdateMode.OnPropertyChanged));
             labelCounter.Dock = DockStyle.Right;
             labelCounter.AutoSize = true;
-            labelCounter.Font = new Font("Malgun Gothic", 12);
+            labelCounter.Font = new Font("Comic Sans MS", 12);
             labelCounter.TextAlign = ContentAlignment.MiddleLeft;
 
             Panel taskPanel = new Panel();

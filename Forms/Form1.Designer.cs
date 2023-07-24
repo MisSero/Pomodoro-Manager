@@ -48,7 +48,7 @@
             TimerHide = new Button();
             PickedTaskName = new Label();
             ArchivePage = new TabPage();
-            panel1 = new Panel();
+            ArchiveMenuPanel = new Panel();
             ArchiveTasksLabel = new Label();
             BackFromArchive = new Button();
             ActiveTasksLabel = new Label();
@@ -76,7 +76,7 @@
             ArchiveTaskContextMenu.SuspendLayout();
             TimerPage.SuspendLayout();
             ArchivePage.SuspendLayout();
-            panel1.SuspendLayout();
+            ArchiveMenuPanel.SuspendLayout();
             MainPage.SuspendLayout();
             inputPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)taskCountNumericUpDown).BeginInit();
@@ -91,7 +91,7 @@
             // 
             // formTimer
             // 
-            formTimer.Interval = 10;
+            formTimer.Interval = 1000;
             // 
             // MainTaskContextMenu
             // 
@@ -161,19 +161,19 @@
             TimerPage.Location = new Point(4, 29);
             TimerPage.Name = "TimerPage";
             TimerPage.Padding = new Padding(3);
-            TimerPage.Size = new Size(934, 478);
+            TimerPage.Size = new Size(843, 534);
             TimerPage.TabIndex = 2;
             TimerPage.Text = "TimerPage";
             // 
             // TimerLabel
             // 
             TimerLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            TimerLabel.Font = new Font("Segoe UI", 58.2F, FontStyle.Regular, GraphicsUnit.Point);
+            TimerLabel.Font = new Font("Comic Sans MS", 58.2F, FontStyle.Regular, GraphicsUnit.Point);
             TimerLabel.ImageKey = "(нет)";
             TimerLabel.ImageList = BaseImageList;
-            TimerLabel.Location = new Point(11, 93);
+            TimerLabel.Location = new Point(14, 104);
             TimerLabel.Name = "TimerLabel";
-            TimerLabel.Size = new Size(909, 177);
+            TimerLabel.Size = new Size(780, 293);
             TimerLabel.TabIndex = 1;
             TimerLabel.Text = "00:00";
             TimerLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -191,8 +191,8 @@
             TimerClose.BackgroundImage = Properties.Resources.cancel_icon;
             TimerClose.BackgroundImageLayout = ImageLayout.Zoom;
             TimerClose.FlatStyle = FlatStyle.Flat;
-            TimerClose.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TimerClose.Location = new Point(149, 285);
+            TimerClose.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TimerClose.Location = new Point(74, 400);
             TimerClose.Name = "TimerClose";
             TimerClose.Size = new Size(102, 40);
             TimerClose.TabIndex = 2;
@@ -206,8 +206,8 @@
             TimerStop.BackgroundImageLayout = ImageLayout.Zoom;
             TimerStop.Enabled = false;
             TimerStop.FlatStyle = FlatStyle.Flat;
-            TimerStop.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TimerStop.Location = new Point(475, 285);
+            TimerStop.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TimerStop.Location = new Point(432, 400);
             TimerStop.Name = "TimerStop";
             TimerStop.Size = new Size(102, 40);
             TimerStop.TabIndex = 4;
@@ -219,8 +219,8 @@
             TimerPlay.BackgroundImage = Properties.Resources.play_icon;
             TimerPlay.BackgroundImageLayout = ImageLayout.Zoom;
             TimerPlay.FlatStyle = FlatStyle.Flat;
-            TimerPlay.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TimerPlay.Location = new Point(352, 285);
+            TimerPlay.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TimerPlay.Location = new Point(295, 400);
             TimerPlay.Name = "TimerPlay";
             TimerPlay.Size = new Size(102, 40);
             TimerPlay.TabIndex = 3;
@@ -232,8 +232,8 @@
             TimerHide.BackgroundImage = Properties.Resources.hide_icon;
             TimerHide.BackgroundImageLayout = ImageLayout.Zoom;
             TimerHide.FlatStyle = FlatStyle.Flat;
-            TimerHide.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TimerHide.Location = new Point(677, 285);
+            TimerHide.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TimerHide.Location = new Point(663, 400);
             TimerHide.Name = "TimerHide";
             TimerHide.Size = new Size(102, 40);
             TimerHide.TabIndex = 5;
@@ -242,47 +242,45 @@
             // PickedTaskName
             // 
             PickedTaskName.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            PickedTaskName.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            PickedTaskName.Location = new Point(11, 33);
+            PickedTaskName.Font = new Font("Comic Sans MS", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            PickedTaskName.Location = new Point(14, 44);
             PickedTaskName.Name = "PickedTaskName";
-            PickedTaskName.Size = new Size(909, 38);
+            PickedTaskName.Size = new Size(811, 60);
             PickedTaskName.TabIndex = 6;
             PickedTaskName.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // ArchivePage
             // 
             ArchivePage.BackColor = Color.FromArgb(236, 248, 248);
-            ArchivePage.Controls.Add(panel1);
+            ArchivePage.Controls.Add(ArchiveMenuPanel);
             ArchivePage.Controls.Add(ArchivePanel);
             ArchivePage.Location = new Point(4, 29);
             ArchivePage.Name = "ArchivePage";
             ArchivePage.Padding = new Padding(3);
-            ArchivePage.Size = new Size(934, 478);
+            ArchivePage.Size = new Size(843, 534);
             ArchivePage.TabIndex = 1;
             ArchivePage.Text = "ArchivePage";
             // 
-            // panel1
+            // ArchiveMenuPanel
             // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.BackColor = Color.FromArgb(231, 216, 201);
-            panel1.BorderStyle = BorderStyle.Fixed3D;
-            panel1.Controls.Add(ArchiveTasksLabel);
-            panel1.Controls.Add(BackFromArchive);
-            panel1.Controls.Add(ActiveTasksLabel);
-            panel1.Location = new Point(0, -1);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(144, 474);
-            panel1.TabIndex = 9;
+            ArchiveMenuPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            ArchiveMenuPanel.BackColor = Color.FromArgb(231, 216, 201);
+            ArchiveMenuPanel.Controls.Add(ArchiveTasksLabel);
+            ArchiveMenuPanel.Controls.Add(BackFromArchive);
+            ArchiveMenuPanel.Controls.Add(ActiveTasksLabel);
+            ArchiveMenuPanel.Location = new Point(0, 0);
+            ArchiveMenuPanel.Name = "ArchiveMenuPanel";
+            ArchiveMenuPanel.Size = new Size(143, 524);
+            ArchiveMenuPanel.TabIndex = 9;
             // 
             // ArchiveTasksLabel
             // 
-            ArchiveTasksLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            ArchiveTasksLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            ArchiveTasksLabel.Font = new Font("Comic Sans MS", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             ArchiveTasksLabel.Location = new Point(7, 237);
             ArchiveTasksLabel.Name = "ArchiveTasksLabel";
-            ArchiveTasksLabel.Size = new Size(126, 101);
+            ArchiveTasksLabel.Size = new Size(133, 101);
             ArchiveTasksLabel.TabIndex = 11;
-            ArchiveTasksLabel.Text = "Archive: ??";
+            ArchiveTasksLabel.Text = "Archive taks: ??";
             // 
             // BackFromArchive
             // 
@@ -291,7 +289,7 @@
             BackFromArchive.BackgroundImageLayout = ImageLayout.Zoom;
             BackFromArchive.FlatAppearance.BorderSize = 0;
             BackFromArchive.FlatStyle = FlatStyle.Flat;
-            BackFromArchive.Location = new Point(12, 392);
+            BackFromArchive.Location = new Point(14, 436);
             BackFromArchive.Name = "BackFromArchive";
             BackFromArchive.Size = new Size(70, 65);
             BackFromArchive.TabIndex = 8;
@@ -299,12 +297,12 @@
             // 
             // ActiveTasksLabel
             // 
-            ActiveTasksLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            ActiveTasksLabel.Font = new Font("Comic Sans MS", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             ActiveTasksLabel.Location = new Point(7, 61);
             ActiveTasksLabel.Name = "ActiveTasksLabel";
-            ActiveTasksLabel.Size = new Size(126, 101);
+            ActiveTasksLabel.Size = new Size(133, 101);
             ActiveTasksLabel.TabIndex = 10;
-            ActiveTasksLabel.Text = "Active: ??";
+            ActiveTasksLabel.Text = "Active taks: ??";
             // 
             // ArchivePanel
             // 
@@ -312,9 +310,9 @@
             ArchivePanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ArchivePanel.BorderStyle = BorderStyle.FixedSingle;
             ArchivePanel.FlowDirection = FlowDirection.TopDown;
-            ArchivePanel.Location = new Point(187, 10);
+            ArchivePanel.Location = new Point(171, 29);
             ArchivePanel.Name = "ArchivePanel";
-            ArchivePanel.Size = new Size(737, 448);
+            ArchivePanel.Size = new Size(641, 469);
             ArchivePanel.TabIndex = 2;
             ArchivePanel.WrapContents = false;
             // 
@@ -327,7 +325,7 @@
             MainPage.Location = new Point(4, 29);
             MainPage.Name = "MainPage";
             MainPage.Padding = new Padding(3);
-            MainPage.Size = new Size(934, 478);
+            MainPage.Size = new Size(843, 543);
             MainPage.TabIndex = 0;
             MainPage.Text = "MainPage";
             MainPage.Click += MainPage_Click;
@@ -338,9 +336,9 @@
             MainTaskPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             MainTaskPanel.BorderStyle = BorderStyle.FixedSingle;
             MainTaskPanel.FlowDirection = FlowDirection.TopDown;
-            MainTaskPanel.Location = new Point(207, 177);
+            MainTaskPanel.Location = new Point(176, 177);
             MainTaskPanel.Name = "MainTaskPanel";
-            MainTaskPanel.Size = new Size(664, 273);
+            MainTaskPanel.Size = new Size(635, 331);
             MainTaskPanel.TabIndex = 3;
             MainTaskPanel.WrapContents = false;
             // 
@@ -352,9 +350,9 @@
             inputPanel.Controls.Add(addTaskButton);
             inputPanel.Controls.Add(taskCountNumericUpDown);
             inputPanel.Controls.Add(nameTextBox);
-            inputPanel.Location = new Point(207, 103);
+            inputPanel.Location = new Point(176, 103);
             inputPanel.Name = "inputPanel";
-            inputPanel.Size = new Size(664, 38);
+            inputPanel.Size = new Size(635, 38);
             inputPanel.TabIndex = 0;
             // 
             // addTaskButton
@@ -364,10 +362,10 @@
             addTaskButton.BackgroundImageLayout = ImageLayout.Zoom;
             addTaskButton.FlatAppearance.BorderSize = 0;
             addTaskButton.FlatStyle = FlatStyle.Flat;
-            addTaskButton.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            addTaskButton.Location = new Point(623, 1);
+            addTaskButton.Font = new Font("Comic Sans MS", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            addTaskButton.Location = new Point(595, 1);
             addTaskButton.Name = "addTaskButton";
-            addTaskButton.Size = new Size(34, 34);
+            addTaskButton.Size = new Size(34, 35);
             addTaskButton.TabIndex = 2;
             addTaskButton.UseVisualStyleBackColor = true;
             // 
@@ -375,12 +373,12 @@
             // 
             taskCountNumericUpDown.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             taskCountNumericUpDown.BackColor = Color.White;
-            taskCountNumericUpDown.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            taskCountNumericUpDown.Location = new Point(376, 4);
+            taskCountNumericUpDown.Font = new Font("Comic Sans MS", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            taskCountNumericUpDown.Location = new Point(348, 4);
             taskCountNumericUpDown.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             taskCountNumericUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             taskCountNumericUpDown.Name = "taskCountNumericUpDown";
-            taskCountNumericUpDown.Size = new Size(86, 30);
+            taskCountNumericUpDown.Size = new Size(86, 31);
             taskCountNumericUpDown.TabIndex = 1;
             taskCountNumericUpDown.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
@@ -389,12 +387,12 @@
             nameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             nameTextBox.BackColor = Color.White;
             nameTextBox.BorderStyle = BorderStyle.FixedSingle;
-            nameTextBox.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            nameTextBox.Font = new Font("Comic Sans MS", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             nameTextBox.ForeColor = Color.DimGray;
             nameTextBox.Location = new Point(3, 3);
             nameTextBox.MaxLength = 60;
             nameTextBox.Name = "nameTextBox";
-            nameTextBox.Size = new Size(367, 32);
+            nameTextBox.Size = new Size(338, 31);
             nameTextBox.TabIndex = 0;
             nameTextBox.Text = "Enter task name";
             // 
@@ -407,7 +405,7 @@
             MenuPanel.Controls.Add(ArchiveButton);
             MenuPanel.Location = new Point(0, -1);
             MenuPanel.Name = "MenuPanel";
-            MenuPanel.Size = new Size(144, 474);
+            MenuPanel.Size = new Size(144, 541);
             MenuPanel.TabIndex = 4;
             // 
             // ProgressButton
@@ -417,7 +415,7 @@
             ProgressButton.BackgroundImageLayout = ImageLayout.Zoom;
             ProgressButton.FlatAppearance.BorderSize = 0;
             ProgressButton.FlatStyle = FlatStyle.Flat;
-            ProgressButton.Location = new Point(27, 191);
+            ProgressButton.Location = new Point(27, 223);
             ProgressButton.Name = "ProgressButton";
             ProgressButton.Size = new Size(90, 88);
             ProgressButton.TabIndex = 5;
@@ -430,7 +428,7 @@
             SettingsButton.BackgroundImageLayout = ImageLayout.Zoom;
             SettingsButton.FlatAppearance.BorderSize = 0;
             SettingsButton.FlatStyle = FlatStyle.Flat;
-            SettingsButton.Location = new Point(27, 305);
+            SettingsButton.Location = new Point(27, 338);
             SettingsButton.Name = "SettingsButton";
             SettingsButton.Size = new Size(90, 88);
             SettingsButton.TabIndex = 6;
@@ -443,7 +441,7 @@
             ArchiveButton.BackgroundImageLayout = ImageLayout.Zoom;
             ArchiveButton.FlatAppearance.BorderSize = 0;
             ArchiveButton.FlatStyle = FlatStyle.Flat;
-            ArchiveButton.Location = new Point(27, 82);
+            ArchiveButton.Location = new Point(27, 115);
             ArchiveButton.Name = "ArchiveButton";
             ArchiveButton.Size = new Size(90, 88);
             ArchiveButton.TabIndex = 4;
@@ -456,10 +454,11 @@
             MainTabControl.Controls.Add(ArchivePage);
             MainTabControl.Controls.Add(TimerPage);
             MainTabControl.Controls.Add(ProgressPage);
-            MainTabControl.Location = new Point(-6, -1);
+            MainTabControl.Font = new Font("Comic Sans MS", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            MainTabControl.Location = new Point(-6, -32);
             MainTabControl.Name = "MainTabControl";
             MainTabControl.SelectedIndex = 0;
-            MainTabControl.Size = new Size(942, 511);
+            MainTabControl.Size = new Size(851, 576);
             MainTabControl.TabIndex = 100;
             // 
             // ProgressPage
@@ -471,7 +470,7 @@
             ProgressPage.Location = new Point(4, 29);
             ProgressPage.Name = "ProgressPage";
             ProgressPage.Padding = new Padding(3);
-            ProgressPage.Size = new Size(934, 478);
+            ProgressPage.Size = new Size(843, 534);
             ProgressPage.TabIndex = 3;
             ProgressPage.Text = "ProgressPage";
             // 
@@ -480,10 +479,10 @@
             ProgressTimeBox.Anchor = AnchorStyles.None;
             ProgressTimeBox.Controls.Add(ProgressMinutesPictureBox);
             ProgressTimeBox.Controls.Add(ProgressTimeLabel);
-            ProgressTimeBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            ProgressTimeBox.Location = new Point(522, 227);
+            ProgressTimeBox.Font = new Font("Comic Sans MS", 18F, FontStyle.Italic, GraphicsUnit.Point);
+            ProgressTimeBox.Location = new Point(448, 250);
             ProgressTimeBox.Name = "ProgressTimeBox";
-            ProgressTimeBox.Size = new Size(340, 186);
+            ProgressTimeBox.Size = new Size(341, 187);
             ProgressTimeBox.TabIndex = 11;
             ProgressTimeBox.TabStop = false;
             ProgressTimeBox.Text = "Time at work";
@@ -500,10 +499,10 @@
             // 
             // ProgressTimeLabel
             // 
-            ProgressTimeLabel.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point);
+            ProgressTimeLabel.Font = new Font("Comic Sans MS", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point);
             ProgressTimeLabel.Location = new Point(95, 53);
             ProgressTimeLabel.Name = "ProgressTimeLabel";
-            ProgressTimeLabel.Size = new Size(239, 114);
+            ProgressTimeLabel.Size = new Size(239, 115);
             ProgressTimeLabel.TabIndex = 0;
             ProgressTimeLabel.Text = "?";
             ProgressTimeLabel.TextAlign = ContentAlignment.MiddleLeft;
@@ -513,10 +512,10 @@
             ProgressTaskBox.Anchor = AnchorStyles.None;
             ProgressTaskBox.Controls.Add(TaskCompletedPictureBox);
             ProgressTaskBox.Controls.Add(TaskCompletedLabel);
-            ProgressTaskBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            ProgressTaskBox.Location = new Point(97, 30);
+            ProgressTaskBox.Font = new Font("Comic Sans MS", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            ProgressTaskBox.Location = new Point(59, 59);
             ProgressTaskBox.Name = "ProgressTaskBox";
-            ProgressTaskBox.Size = new Size(340, 186);
+            ProgressTaskBox.Size = new Size(341, 187);
             ProgressTaskBox.TabIndex = 10;
             ProgressTaskBox.TabStop = false;
             ProgressTaskBox.Text = "Completed tasks";
@@ -533,10 +532,10 @@
             // 
             // TaskCompletedLabel
             // 
-            TaskCompletedLabel.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point);
+            TaskCompletedLabel.Font = new Font("Comic Sans MS", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point);
             TaskCompletedLabel.Location = new Point(95, 53);
             TaskCompletedLabel.Name = "TaskCompletedLabel";
-            TaskCompletedLabel.Size = new Size(239, 114);
+            TaskCompletedLabel.Size = new Size(239, 115);
             TaskCompletedLabel.TabIndex = 0;
             TaskCompletedLabel.Text = "?";
             TaskCompletedLabel.TextAlign = ContentAlignment.MiddleLeft;
@@ -548,7 +547,7 @@
             BackFromProgress.BackgroundImageLayout = ImageLayout.Zoom;
             BackFromProgress.FlatAppearance.BorderSize = 0;
             BackFromProgress.FlatStyle = FlatStyle.Flat;
-            BackFromProgress.Location = new Point(8, 393);
+            BackFromProgress.Location = new Point(14, 433);
             BackFromProgress.Name = "BackFromProgress";
             BackFromProgress.Size = new Size(70, 65);
             BackFromProgress.TabIndex = 9;
@@ -559,7 +558,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(934, 498);
+            ClientSize = new Size(835, 516);
             Controls.Add(MainTabControl);
             ForeColor = SystemColors.ControlText;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -573,7 +572,7 @@
             ArchiveTaskContextMenu.ResumeLayout(false);
             TimerPage.ResumeLayout(false);
             ArchivePage.ResumeLayout(false);
-            panel1.ResumeLayout(false);
+            ArchiveMenuPanel.ResumeLayout(false);
             MainPage.ResumeLayout(false);
             inputPanel.ResumeLayout(false);
             inputPanel.PerformLayout();
@@ -628,7 +627,7 @@
         private GroupBox ProgressTimeBox;
         private PictureBox ProgressMinutesPictureBox;
         private Label ProgressTimeLabel;
-        private Panel panel1;
+        private Panel ArchiveMenuPanel;
         private Label ArchiveTasksLabel;
         private Label ActiveTasksLabel;
     }

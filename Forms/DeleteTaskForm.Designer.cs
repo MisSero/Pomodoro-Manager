@@ -35,7 +35,7 @@
             // 
             // DeleteTaskLabel
             // 
-            DeleteTaskLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            DeleteTaskLabel.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             DeleteTaskLabel.Location = new Point(12, 9);
             DeleteTaskLabel.Name = "DeleteTaskLabel";
             DeleteTaskLabel.Size = new Size(475, 92);
@@ -52,7 +52,7 @@
             DeleteTaskYes.BackgroundImageLayout = ImageLayout.Zoom;
             DeleteTaskYes.FlatAppearance.BorderSize = 0;
             DeleteTaskYes.FlatStyle = FlatStyle.Flat;
-            DeleteTaskYes.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            DeleteTaskYes.Font = new Font("Comic Sans MS", 11F, FontStyle.Regular, GraphicsUnit.Point);
             DeleteTaskYes.Location = new Point(444, 104);
             DeleteTaskYes.Name = "DeleteTaskYes";
             DeleteTaskYes.Size = new Size(43, 34);
@@ -66,7 +66,7 @@
             DeleteTaskNo.BackgroundImageLayout = ImageLayout.Zoom;
             DeleteTaskNo.FlatAppearance.BorderSize = 0;
             DeleteTaskNo.FlatStyle = FlatStyle.Flat;
-            DeleteTaskNo.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            DeleteTaskNo.Font = new Font("Comic Sans MS", 11F, FontStyle.Regular, GraphicsUnit.Point);
             DeleteTaskNo.Location = new Point(12, 104);
             DeleteTaskNo.Name = "DeleteTaskNo";
             DeleteTaskNo.Size = new Size(43, 34);

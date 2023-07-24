@@ -46,7 +46,7 @@
             CancelSettingsButton.BackgroundImageLayout = ImageLayout.Zoom;
             CancelSettingsButton.FlatAppearance.BorderSize = 0;
             CancelSettingsButton.FlatStyle = FlatStyle.Flat;
-            CancelSettingsButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            CancelSettingsButton.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             CancelSettingsButton.Location = new Point(12, 126);
             CancelSettingsButton.Name = "CancelSettingsButton";
             CancelSettingsButton.Size = new Size(37, 35);
@@ -57,22 +57,22 @@
             // 
             TaskDurationLabel.Anchor = AnchorStyles.None;
             TaskDurationLabel.AutoSize = true;
-            TaskDurationLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TaskDurationLabel.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TaskDurationLabel.Location = new Point(11, 10);
             TaskDurationLabel.Name = "TaskDurationLabel";
-            TaskDurationLabel.Size = new Size(190, 28);
+            TaskDurationLabel.Size = new Size(192, 28);
             TaskDurationLabel.TabIndex = 1;
             TaskDurationLabel.Text = "Pomodoro duration:";
             // 
             // PomodoroDurationUpDown
             // 
             PomodoroDurationUpDown.Anchor = AnchorStyles.None;
-            PomodoroDurationUpDown.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            PomodoroDurationUpDown.Font = new Font("Comic Sans MS", 10F, FontStyle.Regular, GraphicsUnit.Point);
             PomodoroDurationUpDown.Location = new Point(295, 13);
             PomodoroDurationUpDown.Maximum = new decimal(new int[] { 10080, 0, 0, 0 });
             PomodoroDurationUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             PomodoroDurationUpDown.Name = "PomodoroDurationUpDown";
-            PomodoroDurationUpDown.Size = new Size(82, 30);
+            PomodoroDurationUpDown.Size = new Size(82, 31);
             PomodoroDurationUpDown.TabIndex = 2;
             PomodoroDurationUpDown.ThousandsSeparator = true;
             PomodoroDurationUpDown.Value = new decimal(new int[] { 25, 0, 0, 0 });
@@ -93,7 +93,7 @@
             SaveSettingsButton.BackgroundImageLayout = ImageLayout.Zoom;
             SaveSettingsButton.FlatAppearance.BorderSize = 0;
             SaveSettingsButton.FlatStyle = FlatStyle.Flat;
-            SaveSettingsButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SaveSettingsButton.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             SaveSettingsButton.Location = new Point(367, 126);
             SaveSettingsButton.Name = "SaveSettingsButton";
             SaveSettingsButton.Size = new Size(37, 35);
@@ -103,6 +103,7 @@
             // PomodoroDutationPattern30
             // 
             PomodoroDutationPattern30.FlatStyle = FlatStyle.Flat;
+            PomodoroDutationPattern30.Font = new Font("Comic Sans MS", 9F, FontStyle.Regular, GraphicsUnit.Point);
             PomodoroDutationPattern30.ForeColor = SystemColors.ControlDarkDark;
             PomodoroDutationPattern30.Location = new Point(298, 81);
             PomodoroDutationPattern30.Name = "PomodoroDutationPattern30";
@@ -114,6 +115,7 @@
             // PomodoroDutationPattern60
             // 
             PomodoroDutationPattern60.FlatStyle = FlatStyle.Flat;
+            PomodoroDutationPattern60.Font = new Font("Comic Sans MS", 9F, FontStyle.Regular, GraphicsUnit.Point);
             PomodoroDutationPattern60.ForeColor = SystemColors.ControlDarkDark;
             PomodoroDutationPattern60.Location = new Point(354, 81);
             PomodoroDutationPattern60.Name = "PomodoroDutationPattern60";
@@ -126,10 +128,10 @@
             // 
             GithubLinkLabel.AutoSize = true;
             GithubLinkLabel.BorderStyle = BorderStyle.FixedSingle;
-            GithubLinkLabel.Font = new Font("Segoe UI", 7.20000029F, FontStyle.Regular, GraphicsUnit.Point);
+            GithubLinkLabel.Font = new Font("Comic Sans MS", 7.20000029F, FontStyle.Regular, GraphicsUnit.Point);
             GithubLinkLabel.Location = new Point(12, 164);
             GithubLinkLabel.Name = "GithubLinkLabel";
-            GithubLinkLabel.Size = new Size(296, 19);
+            GithubLinkLabel.Size = new Size(301, 20);
             GithubLinkLabel.TabIndex = 7;
             GithubLinkLabel.TabStop = true;
             GithubLinkLabel.Text = "https://github.com/MisSero/Pomodoro-Manager";

@@ -40,7 +40,7 @@
             ChangeTextBox.Anchor = AnchorStyles.None;
             ChangeTextBox.BackColor = Color.White;
             ChangeTextBox.BorderStyle = BorderStyle.FixedSingle;
-            ChangeTextBox.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            ChangeTextBox.Font = new Font("Comic Sans MS", 11F, FontStyle.Regular, GraphicsUnit.Point);
             ChangeTextBox.ForeColor = Color.Black;
             ChangeTextBox.Location = new Point(12, 21);
             ChangeTextBox.MaxLength = 60;
@@ -52,7 +52,7 @@
             // ChangeNumericUpDown
             // 
             ChangeNumericUpDown.Anchor = AnchorStyles.None;
-            ChangeNumericUpDown.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            ChangeNumericUpDown.Font = new Font("Comic Sans MS", 10F, FontStyle.Regular, GraphicsUnit.Point);
             ChangeNumericUpDown.Location = new Point(362, 23);
             ChangeNumericUpDown.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             ChangeNumericUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
@@ -70,7 +70,7 @@
             SaveChangeButton.BackgroundImageLayout = ImageLayout.Zoom;
             SaveChangeButton.FlatAppearance.BorderSize = 0;
             SaveChangeButton.FlatStyle = FlatStyle.Flat;
-            SaveChangeButton.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            SaveChangeButton.Font = new Font("Comic Sans MS", 11F, FontStyle.Regular, GraphicsUnit.Point);
             SaveChangeButton.Location = new Point(405, 74);
             SaveChangeButton.Name = "SaveChangeButton";
             SaveChangeButton.Size = new Size(43, 34);
@@ -85,7 +85,7 @@
             CanсelChangeButton.BackgroundImageLayout = ImageLayout.Zoom;
             CanсelChangeButton.FlatAppearance.BorderSize = 0;
             CanсelChangeButton.FlatStyle = FlatStyle.Flat;
-            CanсelChangeButton.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            CanсelChangeButton.Font = new Font("Comic Sans MS", 11F, FontStyle.Regular, GraphicsUnit.Point);
             CanсelChangeButton.Location = new Point(12, 74);
             CanсelChangeButton.Name = "CanсelChangeButton";
             CanсelChangeButton.Size = new Size(43, 34);
