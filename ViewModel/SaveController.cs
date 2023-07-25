@@ -8,7 +8,8 @@ namespace Pomodoro_Manager.ViewModel
 {
     public class SaveController
     {
-        private string _path;
+        private string _pathDirectory;
+        private string _fileName = "save.xml";
         private DataKeeper _dataKeeper;
         public List<TaskFormObject> MainTasks { private set; get; }
         public List<TaskFormObject> ArchiveTasks { private set; get; }
@@ -18,25 +19,30 @@ namespace Pomodoro_Manager.ViewModel
 
         public SaveController()
         {
-            _path = Application.StartupPath + @"save.xml";
-
+            _pathDirectory = Environment.GetFolderPath(
+                Environment.SpecialFolder.MyDocuments) + @"\Pomodoro Manager\";
             Load();
         }
         
         public void Save()
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(DataKeeper));
-            using (StreamWriter streamWriter = new StreamWriter(_path))
+            using (StreamWriter streamWriter = new StreamWriter(_pathDirectory + _fileName))
             {
                 xmlSerializer.Serialize(streamWriter, _dataKeeper);
             }
         }
         private void Load()
         {
-            if (File.Exists(_path))
+            if (!Directory.Exists(_pathDirectory))
+            {
+                Directory.CreateDirectory(_pathDirectory);
+            }
+
+            if (File.Exists(_pathDirectory + _fileName))
             {
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(DataKeeper));
-                using (StreamReader streamReader = new StreamReader(_path))
+                using (StreamReader streamReader = new StreamReader(_pathDirectory + _fileName))
                 {
                     _dataKeeper = (DataKeeper)xmlSerializer.Deserialize(streamReader);
                 }
