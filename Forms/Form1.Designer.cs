@@ -161,7 +161,7 @@
             TimerPage.Location = new Point(4, 29);
             TimerPage.Name = "TimerPage";
             TimerPage.Padding = new Padding(3);
-            TimerPage.Size = new Size(843, 534);
+            TimerPage.Size = new Size(843, 543);
             TimerPage.TabIndex = 2;
             TimerPage.Text = "TimerPage";
             // 
@@ -257,7 +257,7 @@
             ArchivePage.Location = new Point(4, 29);
             ArchivePage.Name = "ArchivePage";
             ArchivePage.Padding = new Padding(3);
-            ArchivePage.Size = new Size(843, 534);
+            ArchivePage.Size = new Size(843, 543);
             ArchivePage.TabIndex = 1;
             ArchivePage.Text = "ArchivePage";
             // 
@@ -470,7 +470,7 @@
             ProgressPage.Location = new Point(4, 29);
             ProgressPage.Name = "ProgressPage";
             ProgressPage.Padding = new Padding(3);
-            ProgressPage.Size = new Size(843, 534);
+            ProgressPage.Size = new Size(843, 543);
             ProgressPage.TabIndex = 3;
             ProgressPage.Text = "ProgressPage";
             // 

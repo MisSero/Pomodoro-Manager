@@ -60,6 +60,7 @@
             if (e.KeyCode == Keys.Enter)
             {
                 _addButton.PerformClick();
+                e.SuppressKeyPress = true;
             }
         }
     }

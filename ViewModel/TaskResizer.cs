@@ -17,6 +17,7 @@
             {
                 taskPanel.Width = panelWidth;
             }
+            _panel.PerformLayout();
         }
     }
 }
