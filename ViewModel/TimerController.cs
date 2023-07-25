@@ -148,7 +148,7 @@ namespace Pomodoro_Manager.ViewModel
             if (_isHidden)
             {
                 _isHidden = false;
-                _timerLabel.ImageIndex = -1;
+                _timerLabel.Image = null;
                 if (_pomodoroTimer != null)
                     _timerLabel.Text = _pomodoroTimer.ToString();
                 else
@@ -157,7 +157,7 @@ namespace Pomodoro_Manager.ViewModel
             else
             {
                 _isHidden = true;
-                _timerLabel.ImageIndex = 0;
+                _timerLabel.Image = Properties.Resources.hide_icon;
                 _timerLabel.Text = ""; 
             }
         }

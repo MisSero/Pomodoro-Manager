@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             formTimer = new System.Windows.Forms.Timer(components);
             MainTaskContextMenu = new ContextMenuStrip(components);
             MainDelete = new ToolStripMenuItem();
@@ -41,7 +40,6 @@
             ArchiveChange = new ToolStripMenuItem();
             TimerPage = new TabPage();
             TimerLabel = new Label();
-            BaseImageList = new ImageList(components);
             TimerClose = new Button();
             TimerStop = new Button();
             TimerPlay = new Button();
@@ -170,20 +168,12 @@
             TimerLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             TimerLabel.Font = new Font("Comic Sans MS", 58.2F, FontStyle.Regular, GraphicsUnit.Point);
             TimerLabel.ImageKey = "(нет)";
-            TimerLabel.ImageList = BaseImageList;
             TimerLabel.Location = new Point(14, 104);
             TimerLabel.Name = "TimerLabel";
             TimerLabel.Size = new Size(780, 293);
             TimerLabel.TabIndex = 1;
             TimerLabel.Text = "00:00";
             TimerLabel.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // BaseImageList
-            // 
-            BaseImageList.ColorDepth = ColorDepth.Depth8Bit;
-            BaseImageList.ImageStream = (ImageListStreamer)resources.GetObject("BaseImageList.ImageStream");
-            BaseImageList.TransparentColor = Color.Transparent;
-            BaseImageList.Images.SetKeyName(0, "hide_icon.png");
             // 
             // TimerClose
             // 
@@ -614,7 +604,6 @@
         private Button TimerHide;
         private Button TimerStop;
         private Button TimerPlay;
-        private ImageList BaseImageList;
         private Label PickedTaskName;
         private Button SettingsButton;
         private Button ProgressButton;
