@@ -63,11 +63,11 @@ namespace Pomodoro_Manager.ViewModel
                     .TabPages[(int)TabPagesEnum.TimerPage];
                 _menuController.AllowTabSelection = false;
 
-                _timerLabel.Text = _timerPlaceholder;
+                if (!_isHidden)
+                    _timerLabel.Text = _timerPlaceholder;
                 _pickedTaskName.Text = _taskSender?.Name;
                 _playButton.Focus();
                 
-                _isHidden = false;
                 _timerLabel.ImageIndex = -1;
             }
         }
